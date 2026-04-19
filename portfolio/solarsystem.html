@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Solar System - Multimedia & Authoring</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+    
+    <!-- Project Content -->
+    <section class="portfolio" style="padding-top: var(--spacing-lg);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Back Button -->
+                    <div class="mb-4">
+                        <a href="../index.html" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Home
+                        </a>
+                    </div>
+                    
+                    <!-- Project Title -->
+                    <h1 class="section-title text-start">3D Solar System</h1>
+                    
+                    <!-- Project Image -->
+                    <div class="mb-4">
+                        <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1200&h=600&fit=crop" 
+                             alt="3D Solar System" 
+                             class="img-fluid rounded-3 shadow">
+                    </div>
+                    
+                    <!-- Project Description -->
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h3 class="mb-3" style="color: var(--text-primary); font-weight: 600;">Project Overview</h3>
+                            <p class="mb-4" style="color: var(--text-secondary); line-height: 1.7;">
+                                An interactive 3D solar system visualization featuring realistic planetary orbits, 
+                                detailed textures, and dynamic lighting effects. This project demonstrates advanced 
+                                3D modeling techniques using Blender combined with Python scripting for 
+                                automated animation generation.
+                            </p>
+                            
+                            <h4 class="mb-3" style="color: var(--text-primary); font-weight: 600;">Key Features</h4>
+                            <ul class="mb-4" style="color: var(--text-secondary); line-height: 1.7;">
+                                <li>Realistic planetary textures and materials</li>
+                                <li>Accurate orbital mechanics and timing</li>
+                                <li>Dynamic lighting and shadow casting</li>
+                                <li>Python-driven animation system</li>
+                                <li>High-resolution rendering capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Load components dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header
+            fetch('../components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+            
+            // Load footer
+            fetch('../components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+</body>
+</html>

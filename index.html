@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia & Authoring - Rotoscope and 3D Rendering Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Multimedia & Authoring portfolio showcasing rotoscoping and 3D rendering projects">
+    <meta name="keywords" content="rotoscope, 3D rendering, multimedia, authoring, portfolio, blender, after effects">
+    <meta name="author" content="Multimedia & Authoring">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1>Multimedia & Authoring</h1>
+                <h2>Rotoscope and 3D Rendering</h2>
+                <p>Combining creativity and technology to bring visual stories to life through advanced rotoscoping techniques and stunning 3D rendering projects.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            
+            <div class="row g-4">
+                <!-- Project 1: 3D Solar System -->
+                <div class="col-lg-6 fade-in">
+                    <a href="./portfolio/solarsystem.html" class="portfolio-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&h=600&fit=crop" alt="3D Solar System">
+                            <div class="card-overlay">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">3D Solar System</h3>
+                            <span class="card-category">3D Rendering</span>
+                            <p class="card-description">An interactive 3D solar system visualization with realistic planetary orbits, textures, and lighting effects created using Blender and Python scripting.</p>
+                            <div class="card-tags">
+                                <span class="tag"><i class="fas fa-cube"></i> Blender</span>
+                                <span class="tag"><i class="fas fa-shapes"></i> 3D Modeling</span>
+                                <span class="tag"><i class="fab fa-python"></i> Python Script</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Project 2: 1-minute Video Rotoscope -->
+                <div class="col-lg-6 fade-in">
+                    <a href="./portfolio/rotoscope.html" class="portfolio-card">
+                        <div class="card-image">
+                            <img src="./images/image.png" alt="Video Rotoscope">
+                            <div class="card-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">1-minute Video Rotoscope</h3>
+                            <span class="card-category">Rotoscope</span>
+                            <p class="card-description">Frame-by-frame rotoscoping project transforming live-action footage into stylized animation with precise mask creation and seamless compositing.</p>
+                            <div class="card-tags">
+                                <span class="tag"><i class="fas fa-video"></i> Adobe After Effects</span>
+                                <span class="tag"><i class="fas fa-film"></i> Premiere Pro</span>
+                                <span class="tag"><i class="fas fa-cut"></i> CapCut</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Load components dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header
+            fetch('components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+            
+            // Load footer
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+            
+            // Initialize scroll animations
+            initScrollAnimations();
+        });
+        
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Smooth scrolling for navigation links
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('a[href^="#"]')) {
+                e.preventDefault();
+                const target = document.querySelector(e.target.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+        
+        // Parallax effect removed to prevent overlapping
+    </script>
+</body>
+</html>
