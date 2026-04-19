@@ -1,28 +1,68 @@
-<header class="sticky-top bg-white shadow-sm">
-    <nav class="navbar navbar-expand-lg navbar-light">
+<header class="sticky-top shadow-lg" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); backdrop-filter: blur(10px);">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#home">
-                <i class="fas fa-cube me-2"></i>Multimedia & Authoring
+            <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="#home" style="font-size: 1.5rem; transition: all 0.3s ease;">
+                <i class="fas fa-cube me-2" style="color: var(--accent-color);"></i>
+                <span style="background: linear-gradient(45deg, #ffffff, var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Multimedia & Authoring</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: rgba(255,255,255,0.3);">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link text-white px-3 rounded-3 mx-1" href="#home" style="transition: all 0.3s ease; position: relative;">
+                            <i class="fas fa-home me-2"></i>Home
+                            <span class="position-absolute bottom-0 start-50 translate-middle-x w-0 bg-white" style="height: 2px; transition: all 0.3s ease; left: 50%; transform: translateX(-50%);"></span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link text-white px-3 rounded-3 mx-1" href="#portfolio" style="transition: all 0.3s ease; position: relative;">
+                            <i class="fas fa-briefcase me-2"></i>Portfolio
+                            <span class="position-absolute bottom-0 start-50 translate-middle-x w-0 bg-white" style="height: 2px; transition: all 0.3s ease; left: 50%; transform: translateX(-50%);"></span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link text-white px-3 rounded-3 mx-1" href="#about" style="transition: all 0.3s ease; position: relative;">
+                            <i class="fas fa-user me-2"></i>About
+                            <span class="position-absolute bottom-0 start-50 translate-middle-x w-0 bg-white" style="height: 2px; transition: all 0.3s ease; left: 50%; transform: translateX(-50%);"></span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link text-white px-3 rounded-3 mx-1" href="#contact" style="transition: all 0.3s ease; position: relative;">
+                            <i class="fas fa-envelope me-2"></i>Contact
+                            <span class="position-absolute bottom-0 start-50 translate-middle-x w-0 bg-white" style="height: 2px; transition: all 0.3s ease; left: 50%; transform: translateX(-50%);"></span>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
+<style>
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link:hover span {
+    width: 100% !important;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+        border-radius: 0.5rem !important;
+    }
+}
+</style>
