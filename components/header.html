@@ -1,7 +1,7 @@
 <header class="sticky-top shadow-lg" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); backdrop-filter: blur(10px);">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="#home" style="font-size: 1.5rem; transition: all 0.3s ease;">
+            <a class="navbar-brand fw-bold text-white d-flex align-items-center" data-home-link href="index.html#home" style="font-size: 1.5rem; transition: all 0.3s ease;">
                 <i class="fas fa-cube me-2" style="color: var(--accent-color);"></i>
                 <span style="background: linear-gradient(45deg, #ffffff, var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Multimedia & Authoring</span>
             </a>
@@ -11,25 +11,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white px-3 rounded-3 mx-1" href="#home" style="transition: all 0.3s ease; position: relative;">
+                        <a class="nav-link text-white px-3 rounded-3 mx-1" data-home-link href="index.html#home" style="transition: all 0.3s ease; position: relative;">
                             <i class="fas fa-home me-2"></i>Home
                             <span class="position-absolute bottom-0 start-50 translate-middle-x w-0 bg-white" style="height: 2px; transition: all 0.3s ease; left: 50%; transform: translateX(-50%);"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white px-3 rounded-3 mx-1" href="#portfolio" style="transition: all 0.3s ease; position: relative;">
+                        <a class="nav-link text-white px-3 rounded-3 mx-1" data-portfolio-link href="index.html#portfolio" style="transition: all 0.3s ease; position: relative;">
                             <i class="fas fa-briefcase me-2"></i>Portfolio
                             <span class="position-absolute bottom-0 start-50 translate-middle-x w-0 bg-white" style="height: 2px; transition: all 0.3s ease; left: 50%; transform: translateX(-50%);"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white px-3 rounded-3 mx-1" href="#about" style="transition: all 0.3s ease; position: relative;">
+                        <a class="nav-link text-white px-3 rounded-3 mx-1" data-about-link href="index.html#about" style="transition: all 0.3s ease; position: relative;">
                             <i class="fas fa-user me-2"></i>About
                             <span class="position-absolute bottom-0 start-50 translate-middle-x w-0 bg-white" style="height: 2px; transition: all 0.3s ease; left: 50%; transform: translateX(-50%);"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white px-3 rounded-3 mx-1" href="#contact" style="transition: all 0.3s ease; position: relative;">
+                        <a class="nav-link text-white px-3 rounded-3 mx-1" data-contact-link href="index.html#contact" style="transition: all 0.3s ease; position: relative;">
                             <i class="fas fa-envelope me-2"></i>Contact
                             <span class="position-absolute bottom-0 start-50 translate-middle-x w-0 bg-white" style="height: 2px; transition: all 0.3s ease; left: 50%; transform: translateX(-50%);"></span>
                         </a>
@@ -66,3 +66,28 @@
     }
 }
 </style>
+
+<script>
+    (function() {
+        const path = window.location.pathname.replace(/\\/g, '/').toLowerCase();
+        const baseIndex = path.includes('/portfolio/') ? '../index.html' : 'index.html';
+
+        const homeLinks = document.querySelectorAll('[data-home-link]');
+        const portfolioLinks = document.querySelectorAll('[data-portfolio-link]');
+        const aboutLinks = document.querySelectorAll('[data-about-link]');
+        const contactLinks = document.querySelectorAll('[data-contact-link]');
+
+        homeLinks.forEach(link => {
+            link.setAttribute('href', `${baseIndex}#home`);
+        });
+        portfolioLinks.forEach(link => {
+            link.setAttribute('href', `${baseIndex}#portfolio`);
+        });
+        aboutLinks.forEach(link => {
+            link.setAttribute('href', `${baseIndex}#about`);
+        });
+        contactLinks.forEach(link => {
+            link.setAttribute('href', `${baseIndex}#contact`);
+        });
+    })();
+</script>

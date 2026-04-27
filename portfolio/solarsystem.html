@@ -13,54 +13,256 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        .project-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-on-dark);
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+        
+        .project-title {
+            font-size: var(--font-size-hero);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-on-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .project-title i {
+            color: var(--accent-color);
+        }
+        
+        .project-subtitle {
+            font-size: var(--font-size-section);
+            color: var(--text-on-dark);
+            opacity: 0.9;
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .feature-card {
+            background: var(--surface-color);
+            border-radius: 20px;
+            padding: var(--spacing-lg);
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .showcase-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+        
+        .showcase-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(6, 30, 41, 0.1), rgba(95, 149, 152, 0.1));
+            pointer-events: none;
+        }
+        
+        .showcase-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .showcase-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .tech-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-on-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(6, 30, 41, 0.2);
+        }
+        
+        .tech-badge i {
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-container"></div>
     
-    <!-- Project Content -->
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="project-title">
+                    <i class="fas fa-globe"></i>
+                    3D Solar System
+                </h1>
+                <p class="project-subtitle">Interactive 3D Visualization with Realistic Planetary Motion</p>
+                
+                <div class="tech-stack">
+                    <span class="tech-badge">
+                        <i class="fas fa-cube"></i>
+                        Blender
+                    </span>
+                    <span class="tech-badge">
+                        <i class="fab fa-python"></i>
+                        Python
+                    </span>
+                    <span class="tech-badge">
+                        <i class="fas fa-shapes"></i>
+                        3D Modeling
+                    </span>
+                    <span class="tech-badge">
+                        <i class="fas fa-lightbulb"></i>
+                        Lighting
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Project Content -->
     <section class="portfolio" style="padding-top: var(--spacing-lg);">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <!-- Back Button -->
-                    <div class="mb-4">
-                        <a href="../index.html" class="btn btn-outline-secondary">
-                            <i class="fas fa-arrow-left me-2"></i>Back to Home
-                        </a>
-                    </div>
-                    
-                    <!-- Project Title -->
-                    <h1 class="section-title text-start">3D Solar System</h1>
-                    
-                    <!-- Project Image -->
-                    <div class="mb-4">
-                        <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1200&h=600&fit=crop" 
-                             alt="3D Solar System" 
-                             class="img-fluid rounded-3 shadow">
-                    </div>
-                    
-                    <!-- Project Description -->
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <h3 class="mb-3" style="color: var(--text-primary); font-weight: 600;">Project Overview</h3>
-                            <p class="mb-4" style="color: var(--text-secondary); line-height: 1.7;">
+            <!-- Back Button -->
+            <div class="mb-4">
+                <a href="../index.html#portfolio" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+                </a>
+            </div>
+            
+            <!-- Project Showcase -->
+            <div class="showcase-image mb-5">
+                <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1200&h=600&fit=crop" 
+                     alt="3D Solar System">
+            </div>
+            
+            <!-- Project Overview -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <div class="video-container">
+                        <div class="card-content">
+                            <h3 class="card-title text-center mb-4">
+                                <i class="fas fa-info-circle me-2" style="color: var(--accent-color);"></i>
+                                Project Overview
+                            </h3>
+                            <p class="card-description">
                                 An interactive 3D solar system visualization featuring realistic planetary orbits, 
                                 detailed textures, and dynamic lighting effects. This project demonstrates advanced 
                                 3D modeling techniques using Blender combined with Python scripting for 
                                 automated animation generation.
                             </p>
-                            
-                            <h4 class="mb-3" style="color: var(--text-primary); font-weight: 600;">Key Features</h4>
-                            <ul class="mb-4" style="color: var(--text-secondary); line-height: 1.7;">
-                                <li>Realistic planetary textures and materials</li>
-                                <li>Accurate orbital mechanics and timing</li>
-                                <li>Dynamic lighting and shadow casting</li>
-                                <li>Python-driven animation system</li>
-                                <li>High-resolution rendering capabilities</li>
-                            </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Key Features Grid -->
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-palette feature-icon"></i>
+                    <h4>Realistic Textures</h4>
+                    <p>High-quality planetary textures and materials based on real NASA data</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt feature-icon"></i>
+                    <h4>Accurate Orbits</h4>
+                    <p>Precise orbital mechanics and timing for realistic planetary motion</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-sun feature-icon"></i>
+                    <h4>Dynamic Lighting</h4>
+                    <p>Advanced lighting system with realistic shadow casting</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h4>Python Automation</h4>
+                    <p>Scripted animation system for efficient workflow</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-camera feature-icon"></i>
+                    <h4>HD Rendering</h4>
+                    <p>High-resolution output capabilities for professional use</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-gamepad feature-icon"></i>
+                    <h4>Interactive Controls</h4>
+                    <p>User-friendly interface for exploring the solar system</p>
                 </div>
             </div>
         </div>
@@ -68,10 +270,8 @@
     
     <!-- Footer Component -->
     <div id="footer-container"></div>
-    
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
     <!-- Custom JavaScript -->
     <script>
         // Load components dynamically
@@ -83,7 +283,6 @@
                     document.getElementById('header-container').innerHTML = data;
                 })
                 .catch(error => console.error('Error loading header:', error));
-            
             // Load footer
             fetch('../components/footer.html')
                 .then(response => response.text())

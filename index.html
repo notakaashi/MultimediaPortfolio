@@ -87,43 +87,90 @@
         </div>
     </section>
     
+    <!-- About Section -->
+    <section id="about" class="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="video-container">
+                        <div class="card-content text-center">
+                            <div class="mb-4">
+                                <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-gradient" style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+                                    <i class="fas fa-user text-white" style="font-size: 3rem;"></i>
+                                </div>
+                            </div>
+                            <h3 class="card-title mb-3">Multimedia Artist & Designer</h3>
+                            <p class="card-description">
+                                I am passionate about multimedia and digital storytelling. My work combines technology and creativity to produce engaging visual experiences, from 3D graphics to video editing and animation. I specialize in rotoscoping techniques and 3D rendering, bringing ideas to life through industry-standard tools and innovative workflows.
+                            </p>
+                            <div class="card-tags justify-content-center">
+                                <span class="tag"><i class="fas fa-palette"></i> Creative</span>
+                                <span class="tag"><i class="fas fa-code"></i> Technical</span>
+                                <span class="tag"><i class="fas fa-rocket"></i> Innovative</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section (Redesigned) -->
+    <section id="contact" class="video-section">
+        <div class="container">
+            <h2 class="video-title">
+                <i class="fas fa-envelope"></i>
+                Get In Touch
+            </h2>
+            <p class="section-subtitle">Let's collaborate on your next creative project</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="video-container p-4">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-5 text-center border-end">
+                                <div class="mb-3">
+                                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                                </div>
+                                <h5 class="fw-bold mb-1">Email</h5>
+                                <p class="mb-0">hello@multimedia-portfolio.com</p>
+                            </div>
+                            <div class="col-md-7 text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-globe fa-2x text-primary mb-2"></i>
+                                </div>
+                                <h5 class="fw-bold mb-1">Social</h5>
+                                <div class="d-flex justify-content-center gap-3 mb-2">
+                                    <a href="#" class="text-dark"><i class="fab fa-github fa-lg"></i></a>
+                                    <a href="#" class="text-dark"><i class="fab fa-linkedin fa-lg"></i></a>
+                                    <a href="#" class="text-dark"><i class="fab fa-behance fa-lg"></i></a>
+                                    <a href="#" class="text-dark"><i class="fab fa-youtube fa-lg"></i></a>
+                                </div>
+                                <a href="mailto:hello@multimedia-portfolio.com" class="btn btn-primary mt-2">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer Component -->
     <div id="footer-container"></div>
-    
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
     <!-- Custom JavaScript -->
     <script>
-        // Load components dynamically
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load header
-            fetch('components/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-container').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading header:', error));
-            
-            // Load footer
-            fetch('components/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-container').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading footer:', error));
-            
-            // Initialize scroll animations
-            initScrollAnimations();
-        });
-        
         // Scroll animations
         function initScrollAnimations() {
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -131,13 +178,13 @@
                     }
                 });
             }, observerOptions);
-            
+
             // Observe all fade-in elements
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
             });
         }
-        
+
         // Smooth scrolling for navigation links
         document.addEventListener('click', function(e) {
             if (e.target.matches('a[href^="#"]')) {
@@ -151,8 +198,27 @@
                 }
             }
         });
-        
-        // Parallax effect removed to prevent overlapping
+
+        // Load components dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header
+            fetch('components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+            // Load footer
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+
+            initScrollAnimations();
+        });
     </script>
 </body>
 </html>

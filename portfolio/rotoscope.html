@@ -13,51 +13,397 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    
+    <style>
+        .project-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-on-dark);
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+        
+        .project-title {
+            font-size: var(--font-size-hero);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-on-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .project-title i {
+            color: var(--accent-color);
+        }
+        
+        .project-subtitle {
+            font-size: var(--font-size-section);
+            color: var(--text-on-dark);
+            opacity: 0.9;
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .tech-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-on-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(6, 30, 41, 0.2);
+        }
+        
+        .tech-badge i {
+            font-size: 0.9rem;
+        }
+        
+        .video-section {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--background-color);
+            position: relative;
+        }
+        
+        .video-section:nth-child(even) {
+            background-color: var(--surface-color);
+        }
+        
+        .video-container {
+            background: var(--surface-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .video-container:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .video-title {
+            font-size: var(--font-size-section);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .video-title i {
+            color: var(--accent-color);
+            font-size: 1.2em;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 3px;
+        }
+        
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 13px;
+            background: #000;
+        }
+        
+        .section-subtitle {
+            font-size: var(--font-size-body);
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .week-card {
+            background: var(--surface-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .week-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .week-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            z-index: 1;
+        }
+        
+        .week-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-on-dark);
+            padding: var(--spacing-md);
+            text-align: center;
+            font-weight: 600;
+            font-size: var(--font-size-card-title);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .week-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+            border-radius: 1px;
+        }
+        
+        .week-content {
+            padding: var(--spacing-md);
+        }
+        
+        .video-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-color);
+            color: var(--text-on-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .video-badge i {
+            font-size: 0.6rem;
+        }
+        
+        @media (max-width: 768px) {
+            .week-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-title {
+                font-size: 1.5rem;
+            }
+            
+            .week-header {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-container"></div>
     
-    <!-- Project Content -->
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="project-title">
+                    <i class="fas fa-video"></i>
+                    1-minute Video Rotoscope
+                </h1>
+                <p class="project-subtitle">Frame-by-Frame Animation with Advanced Compositing</p>
+                
+                <div class="tech-stack">
+                    <span class="tech-badge">
+                        <i class="fas fa-video"></i>
+                        After Effects
+                    </span>
+                    <span class="tech-badge">
+                        <i class="fas fa-film"></i>
+                        Premiere Pro
+                    </span>
+                    <span class="tech-badge">
+                        <i class="fas fa-cut"></i>
+                        CapCut
+                    </span>
+                    <span class="tech-badge">
+                        <i class="fas fa-magic"></i>
+                        Rotoscoping
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Back Button -->
     <section class="portfolio" style="padding-top: var(--spacing-lg);">
         <div class="container">
+            <div class="mb-4">
+                <a href="../index.html#portfolio" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+        
+    <!-- Source Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="video-title">
+                <i class="fas fa-film"></i>
+                Source Video
+            </h2>
+            <p class="section-subtitle">Original reference material for the rotoscoping project</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="video-container">
+                        <div class="video-badge">
+                            <i class="fas fa-play"></i>
+                            Original
+                        </div>
+                        <div class="video-wrapper">
+                            <video controls autoplay muted loop>
+                                <source src="../videos/source.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="video-title">
+                <i class="fas fa-star"></i>
+                Final Video
+            </h2>
+            <p class="section-subtitle">Complete rotoscoping project with all effects and compositing</p>
+            
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <!-- Back Button -->
-                    <div class="mb-4">
-                        <a href="../index.html" class="btn btn-outline-secondary">
-                            <i class="fas fa-arrow-left me-2"></i>Back to Home
-                        </a>
+                    <div class="video-container">
+                        <div class="video-badge">
+                            <i class="fas fa-check"></i>
+                            Complete
+                        </div>
+                        <div class="video-wrapper">
+                            <video controls autoplay muted loop>
+                                <source src="../videos/final.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
-                    
-                    <!-- Project Title -->
-                    <h1 class="section-title text-start">1-minute Video Rotoscope</h1>
-                    
-                    <!-- Project Image -->
-                    <div class="mb-4">
-                        <img src="../images/image.png" 
-                             alt="Video Rotoscope Project" 
-                             class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Weekly Progress Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="video-title">
+                <i class="fas fa-calendar-week"></i>
+                Weekly Progress
+            </h2>
+            <p class="section-subtitle">Track the development week by week</p>
+            
+            <div class="week-grid">
+                <!-- Week 1 -->
+                <div class="week-card">
+                    <div class="week-header">
+                        <i class="fas fa-flag"></i>
+                        Week 1
                     </div>
-                    
-                    <!-- Project Description -->
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <h3 class="mb-3" style="color: var(--text-primary); font-weight: 600;">Project Overview</h3>
-                            <p class="mb-4" style="color: var(--text-secondary); line-height: 1.7;">
-                                A frame-by-frame rotoscoping project transforming live-action footage into stylized animation. 
-                                This intensive 1-minute video demonstrates precise mask creation, seamless compositing, 
-                                and creative visual effects using industry-standard post-production tools.
-                            </p>
-                            
-                            <h4 class="mb-3" style="color: var(--text-primary); font-weight: 600;">Key Features</h4>
-                            <ul class="mb-4" style="color: var(--text-secondary); line-height: 1.7;">
-                                <li>Frame-by-frame precision rotoscoping</li>
-                                <li>Advanced motion tracking and stabilization</li>
-                                <li>Creative background replacement and effects</li>
-                                <li>Seamless compositing and color grading</li>
-                                <li>Professional workflow optimization</li>
-                            </ul>
+                    <div class="week-content">
+                        <div class="video-wrapper">
+                            <video controls autoplay muted loop>
+                                <source src="../videos/week1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Week 2 -->
+                <div class="week-card">
+                    <div class="week-header">
+                        <i class="fas fa-rocket"></i>
+                        Week 2
+                    </div>
+                    <div class="week-content">
+                        <div class="video-wrapper">
+                            <video controls autoplay muted loop>
+                                <source src="../videos/week2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
                 </div>
@@ -90,6 +436,12 @@
                     document.getElementById('footer-container').innerHTML = data;
                 })
                 .catch(error => console.error('Error loading footer:', error));
+            
+            // Auto-play all videos (muted for autoplay policies)
+            const videos = document.querySelectorAll('video[autoplay]');
+            videos.forEach(video => {
+                video.play().catch(e => console.log('Autoplay prevented:', e));
+            });
         });
     </script>
 </body>
