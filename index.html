@@ -18,6 +18,174 @@
     <meta name="description" content="Multimedia & Authoring portfolio showcasing rotoscoping and 3D rendering projects">
     <meta name="keywords" content="rotoscope, 3D rendering, multimedia, authoring, portfolio, blender, after effects">
     <meta name="author" content="Multimedia & Authoring">
+
+    <style>
+        .about-section {
+            padding-top: 2.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .about-panel {
+            max-width: 860px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(6, 30, 41, 0.08);
+            box-shadow: 0 12px 28px rgba(6, 30, 41, 0.08);
+            padding: 1.5rem 1.5rem 1.25rem;
+            text-align: center;
+        }
+
+        .about-avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            margin: 0 auto 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .about-text {
+            color: var(--text-secondary);
+            max-width: 760px;
+            margin: 0 auto 0.9rem;
+            line-height: 1.65;
+            font-size: 1.03rem;
+        }
+
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .contact-section {
+            padding-top: 1.25rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .contact-section .section-title {
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle-home {
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .contact-panel {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(6, 30, 41, 0.08);
+            box-shadow: 0 12px 28px rgba(6, 30, 41, 0.08);
+            padding: 1.5rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            background: #ffffff;
+            border: 1px solid rgba(6, 30, 41, 0.08);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item h5 {
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .contact-item p {
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.9rem;
+            margin: 0.5rem 0 0.85rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            background: #eef4f6;
+            transition: all 0.25s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            color: var(--text-on-dark);
+            transform: translateY(-2px);
+        }
+
+        .contact-action {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 767px) {
+            .about-section,
+            .contact-section {
+                padding-top: 1.5rem;
+                padding-bottom: 1.75rem;
+            }
+
+            .about-panel {
+                padding: 1.1rem 1rem;
+            }
+
+            .about-title {
+                font-size: 1.65rem;
+            }
+
+            .about-text {
+                font-size: 0.98rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-panel {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
@@ -66,7 +234,7 @@
                 <div class="col-lg-6 fade-in">
                     <a href="./portfolio/rotoscope.html" class="portfolio-card">
                         <div class="card-image">
-                            <img src="./images/image.png" alt="Video Rotoscope">
+                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop" alt="Video Rotoscope">
                             <div class="card-overlay">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -88,28 +256,24 @@
     </section>
     
     <!-- About Section -->
-    <section id="about" class="portfolio">
+    <section id="about" class="portfolio about-section">
         <div class="container">
             <h2 class="section-title fade-in">About Me</h2>
             
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="video-container">
-                        <div class="card-content text-center">
-                            <div class="mb-4">
-                                <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-gradient" style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-                                    <i class="fas fa-user text-white" style="font-size: 3rem;"></i>
-                                </div>
-                            </div>
-                            <h3 class="card-title mb-3">Multimedia Artist & Designer</h3>
-                            <p class="card-description">
+                    <div class="about-panel fade-in">
+                        <div class="about-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="about-title">Multimedia Artist & Designer</h3>
+                        <p class="about-text">
                                 I am passionate about multimedia and digital storytelling. My work combines technology and creativity to produce engaging visual experiences, from 3D graphics to video editing and animation. I specialize in rotoscoping techniques and 3D rendering, bringing ideas to life through industry-standard tools and innovative workflows.
-                            </p>
-                            <div class="card-tags justify-content-center">
-                                <span class="tag"><i class="fas fa-palette"></i> Creative</span>
-                                <span class="tag"><i class="fas fa-code"></i> Technical</span>
-                                <span class="tag"><i class="fas fa-rocket"></i> Innovative</span>
-                            </div>
+                        </p>
+                        <div class="about-tags">
+                            <span class="tag"><i class="fas fa-palette"></i> Creative</span>
+                            <span class="tag"><i class="fas fa-code"></i> Technical</span>
+                            <span class="tag"><i class="fas fa-rocket"></i> Innovative</span>
                         </div>
                     </div>
                 </div>
@@ -118,39 +282,34 @@
     </section>
     
     <!-- Contact Section (Redesigned) -->
-    <section id="contact" class="video-section">
+    <section id="contact" class="portfolio contact-section">
         <div class="container">
-            <h2 class="video-title">
-                <i class="fas fa-envelope"></i>
-                Get In Touch
-            </h2>
-            <p class="section-subtitle">Let's collaborate on your next creative project</p>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle-home">Let's collaborate on your next creative project.</p>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="video-container p-4">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-md-5 text-center border-end">
-                                <div class="mb-3">
-                                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
-                                </div>
-                                <h5 class="fw-bold mb-1">Email</h5>
-                                <p class="mb-0">hello@multimedia-portfolio.com</p>
+                    <div class="contact-panel">
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <h5>Email</h5>
+                                <p>hello@multimedia-portfolio.com</p>
                             </div>
-                            <div class="col-md-7 text-center">
-                                <div class="mb-3">
-                                    <i class="fas fa-globe fa-2x text-primary mb-2"></i>
+                            <div class="contact-item">
+                                <i class="fas fa-globe contact-icon"></i>
+                                <h5>Social</h5>
+                                <div class="social-links">
+                                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                                 </div>
-                                <h5 class="fw-bold mb-1">Social</h5>
-                                <div class="d-flex justify-content-center gap-3 mb-2">
-                                    <a href="#" class="text-dark"><i class="fab fa-github fa-lg"></i></a>
-                                    <a href="#" class="text-dark"><i class="fab fa-linkedin fa-lg"></i></a>
-                                    <a href="#" class="text-dark"><i class="fab fa-behance fa-lg"></i></a>
-                                    <a href="#" class="text-dark"><i class="fab fa-youtube fa-lg"></i></a>
-                                </div>
-                                <a href="mailto:hello@multimedia-portfolio.com" class="btn btn-primary mt-2">
-                                    <i class="fas fa-paper-plane me-2"></i>Send Message
-                                </a>
                             </div>
+                        </div>
+                        <div class="contact-action">
+                            <a href="mailto:hello@multimedia-portfolio.com" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -164,6 +323,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JavaScript -->
     <script>
+        function normalizeHeaderLinks() {
+            const headerContainer = document.getElementById('header-container');
+            if (!headerContainer) return;
+
+            const path = (window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
+            const baseIndex = path.includes('/portfolio/') ? '../index.html' : 'index.html';
+
+            headerContainer.querySelectorAll('[data-home-link]').forEach(link => {
+                link.setAttribute('href', `${baseIndex}#home`);
+            });
+            headerContainer.querySelectorAll('[data-portfolio-link]').forEach(link => {
+                link.setAttribute('href', `${baseIndex}#portfolio`);
+            });
+            headerContainer.querySelectorAll('[data-about-link]').forEach(link => {
+                link.setAttribute('href', `${baseIndex}#about`);
+            });
+            headerContainer.querySelectorAll('[data-contact-link]').forEach(link => {
+                link.setAttribute('href', `${baseIndex}#contact`);
+            });
+        }
+
         // Scroll animations
         function initScrollAnimations() {
             const observerOptions = {
@@ -206,6 +386,7 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header-container').innerHTML = data;
+                    normalizeHeaderLinks();
                 })
                 .catch(error => console.error('Error loading header:', error));
 

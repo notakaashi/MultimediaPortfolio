@@ -66,28 +66,3 @@
     }
 }
 </style>
-
-<script>
-    (function() {
-        const path = window.location.pathname.replace(/\\/g, '/').toLowerCase();
-        const baseIndex = path.includes('/portfolio/') ? '../index.html' : 'index.html';
-
-        const homeLinks = document.querySelectorAll('[data-home-link]');
-        const portfolioLinks = document.querySelectorAll('[data-portfolio-link]');
-        const aboutLinks = document.querySelectorAll('[data-about-link]');
-        const contactLinks = document.querySelectorAll('[data-contact-link]');
-
-        homeLinks.forEach(link => {
-            link.setAttribute('href', `${baseIndex}#home`);
-        });
-        portfolioLinks.forEach(link => {
-            link.setAttribute('href', `${baseIndex}#portfolio`);
-        });
-        aboutLinks.forEach(link => {
-            link.setAttribute('href', `${baseIndex}#about`);
-        });
-        contactLinks.forEach(link => {
-            link.setAttribute('href', `${baseIndex}#contact`);
-        });
-    })();
-</script>

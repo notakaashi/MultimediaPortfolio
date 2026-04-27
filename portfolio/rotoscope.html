@@ -419,6 +419,27 @@
     
     <!-- Custom JavaScript -->
     <script>
+        function normalizeHeaderLinks() {
+            const headerContainer = document.getElementById('header-container');
+            if (!headerContainer) return;
+
+            const path = (window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
+            const baseIndex = path.includes('/portfolio/') ? '../index.html' : 'index.html';
+
+            headerContainer.querySelectorAll('[data-home-link]').forEach(link => {
+                link.setAttribute('href', `${baseIndex}#home`);
+            });
+            headerContainer.querySelectorAll('[data-portfolio-link]').forEach(link => {
+                link.setAttribute('href', `${baseIndex}#portfolio`);
+            });
+            headerContainer.querySelectorAll('[data-about-link]').forEach(link => {
+                link.setAttribute('href', `${baseIndex}#about`);
+            });
+            headerContainer.querySelectorAll('[data-contact-link]').forEach(link => {
+                link.setAttribute('href', `${baseIndex}#contact`);
+            });
+        }
+
         // Load components dynamically
         document.addEventListener('DOMContentLoaded', function() {
             // Load header
@@ -426,6 +447,7 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header-container').innerHTML = data;
+                    normalizeHeaderLinks();
                 })
                 .catch(error => console.error('Error loading header:', error));
             
