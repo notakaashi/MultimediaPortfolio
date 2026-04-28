@@ -124,7 +124,7 @@ body {
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -var(--spacing-sm);
+    bottom: calc(-1 * var(--spacing-sm));
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
