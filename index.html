@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multimedia & Authoring - Rotoscope and 3D Rendering Portfolio</title>
+    <title>RP Portfolio - Multimedia & Authoring</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,267 +13,93 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Multimedia & Authoring portfolio showcasing rotoscoping and 3D rendering projects">
-    <meta name="keywords" content="rotoscope, 3D rendering, multimedia, authoring, portfolio, blender, after effects">
-    <meta name="author" content="Multimedia & Authoring">
-
-    <style>
-        .about-section {
-            padding-top: 2.5rem;
-            padding-bottom: 1rem;
-        }
-
-        .about-panel {
-            max-width: 860px;
-            margin: 0 auto;
-            background: linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%);
-            border-radius: 20px;
-            border: 1px solid rgba(6, 30, 41, 0.08);
-            box-shadow: 0 12px 28px rgba(6, 30, 41, 0.08);
-            padding: 1.5rem 1.5rem 1.25rem;
-            text-align: center;
-        }
-
-        .about-avatar {
-            width: 88px;
-            height: 88px;
-            border-radius: 50%;
-            margin: 0 auto 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
-            font-size: 2rem;
-        }
-
-        .about-title {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .about-text {
-            color: var(--text-secondary);
-            max-width: 760px;
-            margin: 0 auto 0.9rem;
-            line-height: 1.65;
-            font-size: 1.03rem;
-        }
-
-        .about-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .contact-section {
-            padding-top: 1.25rem;
-            padding-bottom: 2.5rem;
-        }
-
-        .contact-section .section-title {
-            margin-bottom: 0.75rem;
-        }
-
-        .section-subtitle-home {
-            text-align: center;
-            color: var(--text-secondary);
-            max-width: 560px;
-            margin: 0 auto 1.25rem;
-        }
-
-        .contact-panel {
-            background: linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%);
-            border-radius: 20px;
-            border: 1px solid rgba(6, 30, 41, 0.08);
-            box-shadow: 0 12px 28px rgba(6, 30, 41, 0.08);
-            padding: 1.5rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .contact-item {
-            background: #ffffff;
-            border: 1px solid rgba(6, 30, 41, 0.08);
-            border-radius: 16px;
-            padding: 1rem;
-            text-align: center;
-            min-height: 170px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .contact-icon {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item h5 {
-            margin-bottom: 0.25rem;
-            font-weight: 700;
-        }
-
-        .contact-item p {
-            margin-bottom: 0;
-            color: var(--text-secondary);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 0.9rem;
-            margin: 0.5rem 0 0.85rem;
-        }
-
-        .social-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            background: #eef4f6;
-        }
-
-        .contact-action {
-            margin-top: 1rem;
-            text-align: center;
-        }
-
-        .contact-label {
-            margin: 0;
-            font-weight: 600;
-            color: var(--text-secondary);
-            letter-spacing: 0.02em;
-        }
-
-        @media (max-width: 767px) {
-            .about-section,
-            .contact-section {
-                padding-top: 1.5rem;
-                padding-bottom: 1.75rem;
-            }
-
-            .about-panel {
-                padding: 1.1rem 1rem;
-            }
-
-            .about-title {
-                font-size: 1.65rem;
-            }
-
-            .about-text {
-                font-size: 0.98rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-panel {
-                padding: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
+    <div class="stars-overlay"></div>
+
     <!-- Header Component -->
     <div id="header-container"></div>
     
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content text-center">
-                <h1>Multimedia & Authoring</h1>
-                <h2>Rotoscope and 3D Rendering</h2>
-                <p>Combining creativity and technology to bring visual stories to life through advanced rotoscoping techniques and stunning 3D rendering projects.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2>COSMIC EXPLORATION</h2>
+                    <h1>Multimedia & Authoring</h1>
+                    <p class="text-secondary fs-5 mb-4">Combining creativity and technology to bring visual stories to life through advanced rotoscoping techniques and stunning 3D rendering projects.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#portfolio" class="btn btn-cosmic">View Portfolio</a>
+                        <a href="#about" class="btn btn-outline-cosmic">About Me</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
+    <section id="portfolio" class="container py-5">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="row g-4">
+            <!-- Project 1: 3D Solar System -->
+            <div class="col-lg-6">
+                <a href="./portfolio/solarsystem.html" class="portfolio-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800" alt="3D Solar System">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">3D Rendering</span>
+                        <h3 class="card-title">3D Solar System</h3>
+                        <p class="text-secondary">An interactive 3D solar system visualization with realistic planetary orbits, textures, and lighting effects created using Blender.</p>
+                        <div class="d-flex gap-2 flex-wrap mt-3">
+                            <span class="badge btn-outline-cosmic px-3">Blender</span>
+                            <span class="badge btn-outline-cosmic px-3">Python</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
             
-            <div class="row g-4">
-                <!-- Project 1: 3D Solar System -->
-                <div class="col-lg-6 fade-in">
-                    <a href="./portfolio/solarsystem.html" class="portfolio-card">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&h=600&fit=crop" alt="3D Solar System">
-                            <div class="card-overlay">
-                                <i class="fas fa-external-link-alt"></i>
-                            </div>
+            <!-- Project 2: Video Rotoscope -->
+            <div class="col-lg-6">
+                <a href="./portfolio/rotoscope.html" class="portfolio-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800" alt="Video Rotoscope">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Post-Production</span>
+                        <h3 class="card-title">Rotoscoping — Workflow</h3>
+                        <p class="text-secondary">Frame-by-frame rotoscoping project transforming live-action footage into stylized animation with precise mask creation.</p>
+                        <div class="d-flex gap-2 flex-wrap mt-3">
+                            <span class="badge btn-outline-cosmic px-3">After Effects</span>
+                            <span class="badge btn-outline-cosmic px-3">Compositing</span>
                         </div>
-                        <div class="card-content">
-                            <h3 class="card-title">3D Solar System</h3>
-                            <span class="card-category">3D Rendering</span>
-                            <p class="card-description">An interactive 3D solar system visualization with realistic planetary orbits, textures, and lighting effects created using Blender and Python scripting.</p>
-                            <div class="card-tags">
-                                <span class="tag"><i class="fas fa-cube"></i> Blender</span>
-                                <span class="tag"><i class="fas fa-shapes"></i> 3D Modeling</span>
-                                <span class="tag"><i class="fab fa-python"></i> Python Script</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Project 2: 1-minute Video Rotoscope -->
-                <div class="col-lg-6 fade-in">
-                    <a href="./portfolio/rotoscope.html" class="portfolio-card">
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop" alt="Video Rotoscope">
-                            <div class="card-overlay">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">1-minute Video Rotoscope</h3>
-                            <span class="card-category">Rotoscope</span>
-                            <p class="card-description">Frame-by-frame rotoscoping project transforming live-action footage into stylized animation with precise mask creation and seamless compositing.</p>
-                            <div class="card-tags">
-                                <span class="tag"><i class="fas fa-video"></i> Adobe After Effects</span>
-                                <span class="tag"><i class="fas fa-film"></i> Premiere Pro</span>
-                                <span class="tag"><i class="fas fa-cut"></i> CapCut</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
     
     <!-- About Section -->
-    <section id="about" class="portfolio about-section">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="about-panel fade-in">
-                        <div class="about-avatar">
-                            <i class="fas fa-user"></i>
+    <section id="about" class="container py-5">
+        <div class="cosmic-panel">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-user-astronaut fa-6x text-gradient"></i>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h2 class="section-title text-start mb-3">About the Artist</h2>
+                    <p class="text-secondary fs-5">I am passionate about multimedia and digital storytelling. My work combines technology and creativity to produce engaging visual experiences, from 3D graphics to video editing and animation. I specialize in rotoscoping techniques and 3D rendering, bringing ideas to life through industry-standard tools and innovative workflows.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <div class="text-center">
+                            <h4 class="text-white mb-0">12+</h4>
+                            <p class="text-muted small">Weeks Progress</p>
                         </div>
-                        <h3 class="about-title">Multimedia Artist & Designer</h3>
-                        <p class="about-text">
-                                I am passionate about multimedia and digital storytelling. My work combines technology and creativity to produce engaging visual experiences, from 3D graphics to video editing and animation. I specialize in rotoscoping techniques and 3D rendering, bringing ideas to life through industry-standard tools and innovative workflows.
-                        </p>
-                        <div class="about-tags">
-                            <span class="tag"><i class="fas fa-palette"></i> Creative</span>
-                            <span class="tag"><i class="fas fa-code"></i> Technical</span>
-                            <span class="tag"><i class="fas fa-rocket"></i> Innovative</span>
+                        <div class="vr bg-secondary"></div>
+                        <div class="text-center ms-3">
+                            <h4 class="text-white mb-0">9</h4>
+                            <p class="text-muted small">Planets Modeled</p>
                         </div>
                     </div>
                 </div>
@@ -281,124 +107,31 @@
         </div>
     </section>
     
-    <!-- Contact Section (Redesigned) -->
-    <section id="contact" class="portfolio contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle-home">Let's collaborate on your next creative project.</p>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-panel">
-                        <div class="contact-grid">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope contact-icon"></i>
-                                <h3 class="h5">Email</h3>
-                                <p>marcusinigo1205@gmail.com</p>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-globe contact-icon"></i>
-                                <h3 class="h5">Social</h3>
-                                <div class="social-links">
-                                    <span class="social-icon" aria-hidden="true"><i class="fab fa-github"></i></span>
-                                    <span class="social-icon" aria-hidden="true"><i class="fab fa-linkedin-in"></i></span>
-                                    <span class="social-icon" aria-hidden="true"><i class="fab fa-behance"></i></span>
-                                    <span class="social-icon" aria-hidden="true"><i class="fab fa-youtube"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contact-action">
-                            <p class="contact-label">
-                                <i class="fas fa-paper-plane me-2"></i>Send Message
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5 text-center">
+        <h2 class="section-title">Establish Connection</h2>
+        <div class="cosmic-panel d-inline-block p-5">
+            <h3 class="text-white mb-4">Ready for Liftoff?</h3>
+            <p class="text-secondary mb-4">Let's collaborate on your next creative mission.</p>
+            <a href="mailto:marcusinigo1205@gmail.com" class="btn btn-cosmic btn-lg">
+                <i class="fas fa-paper-plane me-2"></i>Send Transmission
+            </a>
         </div>
     </section>
     
     <!-- Footer Component -->
     <div id="footer-container"></div>
-    <!-- Bootstrap 5 JS -->
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript -->
     <script>
-        function normalizeHeaderLinks() {
-            const headerContainer = document.getElementById('header-container');
-            if (!headerContainer) return;
-
-            const path = (window.location.pathname || '').replace(/\\/g, '/').toLowerCase();
-            const baseIndex = path.includes('/portfolio/') ? '../index.html' : 'index.html';
-
-            headerContainer.querySelectorAll('[data-home-link]').forEach(link => {
-                link.setAttribute('href', `${baseIndex}#home`);
-            });
-            headerContainer.querySelectorAll('[data-portfolio-link]').forEach(link => {
-                link.setAttribute('href', `${baseIndex}#portfolio`);
-            });
-            headerContainer.querySelectorAll('[data-about-link]').forEach(link => {
-                link.setAttribute('href', `${baseIndex}#about`);
-            });
-            headerContainer.querySelectorAll('[data-contact-link]').forEach(link => {
-                link.setAttribute('href', `${baseIndex}#contact`);
-            });
-        }
-
-        // Scroll animations
-        function initScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all fade-in elements
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // Smooth scrolling for navigation links
-        document.addEventListener('click', function(e) {
-            if (e.target.matches('a[href^="#"]')) {
-                e.preventDefault();
-                const target = document.querySelector(e.target.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-
-        // Load components dynamically
         document.addEventListener('DOMContentLoaded', function() {
-            // Load header
-            fetch('components/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-container').innerHTML = data;
-                    normalizeHeaderLinks();
-                })
-                .catch(error => console.error('Error loading header:', error));
-
-            // Load footer
-            fetch('components/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-container').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading footer:', error));
-
-            initScrollAnimations();
+            fetch('components/header.html').then(r => r.text()).then(d => {
+                document.getElementById('header-container').innerHTML = d;
+            });
+            fetch('components/footer.html').then(r => r.text()).then(d => {
+                document.getElementById('footer-container').innerHTML = d;
+            });
         });
     </script>
 </body>
