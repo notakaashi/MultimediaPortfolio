@@ -19,7 +19,7 @@
     <main>
         <!-- Project Hero -->
         <section class="hero-pro border-bottom border-thin">
-            <div class="container">
+            <div class="container reveal-up">
                 <div class="hero-label">3D Visualization</div>
                 <h1 class="hero-title text-white">SOLAR SYSTEM<br><span class="text-dim">BLENDER PROJECTS</span></h1>
                 <p class="text-dim fs-5 max-width-600 mb-0">Technical exploration of planetary orbits, PBR texturing, and automated animation workflows.</p>
@@ -27,7 +27,7 @@
         </section>
 
         <div class="section py-4">
-            <div class="container">
+            <div class="container reveal-up">
                 <a href="../index.html#portfolio" class="btn-outline-pro py-2 px-4">
                     <i class="fas fa-arrow-left me-2"></i> BACK TO WORK
                 </a>
@@ -38,7 +38,7 @@
         <section class="section bg-surface border-top border-bottom border-thin">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 reveal-left">
                         <div class="hero-label">Interactive</div>
                         <h2 class="text-white mb-4">PLANETARY AGE<br>CALCULATOR</h2>
                         <p class="text-dim mb-4">Convert Earth years into planetary orbital cycles to understand time progression across the solar system.</p>
@@ -47,7 +47,7 @@
                             <button id="calculateBtn" class="btn-pro">EXECUTE CALCULATION</button>
                         </div>
                     </div>
-                    <div class="col-lg-6 offset-lg-1 mt-5 mt-lg-0">
+                    <div class="col-lg-6 offset-lg-1 mt-5 mt-lg-0 reveal-up">
                         <div id="ageResults" style="display: none;">
                             <div id="planetAges" class="row g-3">
                                 <!-- Results populated by JS -->
@@ -65,12 +65,12 @@
         <!-- Data Visualization Section -->
         <section class="section">
             <div class="container">
-                <div class="hero-label">Database</div>
-                <h2 class="text-white display-4 mb-5">CELESTIAL DATA</h2>
+                <div class="hero-label reveal-up">Database</div>
+                <h2 class="text-white display-4 mb-5 reveal-up">CELESTIAL DATA</h2>
                 
                 <div id="planets-container" class="d-grid gap-5">
                     <!-- Sun Section -->
-                    <div class="row g-0 border border-thin bg-surface">
+                    <div class="row g-0 border border-thin bg-surface reveal-up">
                         <div class="col-lg-7">
                             <div class="card-pro-img rounded-0 h-100">
                                 <video autoplay muted loop playsinline class="w-100 h-100">
@@ -99,7 +99,7 @@
                             <pre id="script-sun" class="script-viewer mt-3" style="display: none;"></pre>
                         </div>
                     </div>
-                    <!-- Planets will be populated by JS -->
+                    <!-- Planets populated by JS -->
                 </div>
             </div>
         </section>
@@ -181,9 +181,9 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             const container = document.getElementById('planets-container');
-            planets.forEach(p => {
+            planets.forEach((p, index) => {
                 const html = `
-                    <div class="row g-0 border border-thin bg-surface">
+                    <div class="row g-0 border border-thin bg-surface reveal-up" style="animation-delay: ${0.1 * (index + 1)}s">
                         <div class="col-lg-7">
                             <div class="card-pro-img rounded-0 h-100">
                                 <video autoplay muted loop playsinline class="w-100 h-100">
@@ -216,7 +216,15 @@
             });
 
             fetch('../components/header.html').then(r => r.text()).then(d => {
-                document.getElementById('header-container').innerHTML = d;
+                const header = document.getElementById('header-container');
+                header.innerHTML = d;
+                // Fix relative paths for sub-folder pages
+                header.querySelectorAll('[data-nav-link]').forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('../')) {
+                        link.setAttribute('href', '../' + href);
+                    }
+                });
             });
             fetch('../components/footer.html').then(r => r.text()).then(d => {
                 document.getElementById('footer-container').innerHTML = d;

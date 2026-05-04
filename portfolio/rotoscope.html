@@ -19,7 +19,7 @@
     <main>
         <!-- Project Hero -->
         <section class="hero-pro border-bottom border-thin">
-            <div class="container">
+            <div class="container reveal-up">
                 <div class="hero-label">Post-Production</div>
                 <h1 class="hero-title text-white">ROTOSCOPING<br><span class="text-dim">WORKFLOW</span></h1>
                 <p class="text-dim fs-5 max-width-600 mb-0">High-precision frame-by-frame masking and subject isolation. A technical breakdown of the animation process.</p>
@@ -27,7 +27,7 @@
         </section>
 
         <div class="section py-4">
-            <div class="container">
+            <div class="container reveal-up">
                 <a href="../index.html#portfolio" class="btn-outline-pro py-2 px-4">
                     <i class="fas fa-arrow-left me-2"></i> BACK TO WORK
                 </a>
@@ -38,7 +38,7 @@
         <section class="section">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 reveal-up">
                         <div class="card-pro overflow-hidden">
                             <div class="card-pro-img" style="aspect-ratio: 16/9;">
                                 <video controls autoplay muted loop class="w-100 h-100">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 reveal-left">
                         <div class="hero-label">Reference</div>
                         <h2 class="text-white mb-4">SOURCE MATERIAL</h2>
                         <p class="text-dim">The original footage serves as the foundation for the rotoscoping process. Every frame is analyzed for motion paths and silhouette accuracy.</p>
@@ -68,7 +68,7 @@
 
         <!-- Final Video Section -->
         <section class="section">
-            <div class="container">
+            <div class="container reveal-up">
                 <div class="hero-label">Complete</div>
                 <h2 class="text-white display-4 mb-5">FINAL VIDEO</h2>
                 <div class="card-pro overflow-hidden">
@@ -85,12 +85,12 @@
         <!-- Weekly Progress -->
         <section class="section bg-surface">
             <div class="container">
-                <div class="hero-label">Timeline</div>
-                <h2 class="text-white display-4 mb-5">PRODUCTION LOG</h2>
+                <div class="hero-label reveal-up">Timeline</div>
+                <h2 class="text-white display-4 mb-5 reveal-up">PRODUCTION LOG</h2>
                 
                 <div class="row g-4">
                     <!-- Week 1 -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 reveal-up" style="animation-delay: 0.1s;">
                         <div class="card-pro">
                             <div class="card-pro-img">
                                 <video controls autoplay muted loop>
@@ -104,7 +104,7 @@
                     </div>
                     
                     <!-- Week 2 -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 reveal-up" style="animation-delay: 0.2s;">
                         <div class="card-pro">
                             <div class="card-pro-img">
                                 <video controls autoplay muted loop>
@@ -118,7 +118,7 @@
                     </div>
 
                     <!-- Week 3 -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 reveal-up" style="animation-delay: 0.3s;">
                         <div class="card-pro">
                             <div class="card-pro-img">
                                 <video controls autoplay muted loop>
@@ -132,7 +132,7 @@
                     </div>
 
                     <!-- Week 4 -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 reveal-up" style="animation-delay: 0.4s;">
                         <div class="card-pro">
                             <div class="card-pro-img">
                                 <video controls autoplay muted loop>
@@ -146,7 +146,7 @@
                     </div>
 
                     <!-- Weeks 5-12 -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 reveal-up" style="animation-delay: 0.5s;">
                         <div class="card-pro h-100 d-flex flex-column">
                             <div class="card-pro-img bg-dark d-flex align-items-center justify-content-center" style="height: 100%; min-height: 200px;">
                                 <i class="fas fa-clock fa-2x text-muted"></i>
@@ -165,14 +165,14 @@
         <section class="section">
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-md-6">
+                    <div class="col-md-6 reveal-up" style="animation-delay: 0.1s;">
                         <div class="p-5 border border-thin h-100">
                             <div class="text-accent mb-4"><i class="fab fa-adobe fa-3x"></i></div>
                             <h3 class="text-white">AFTER EFFECTS</h3>
                             <p class="text-dim small mb-0">Primary engine for masking, interpolation, and advanced subject isolation using the Roto Brush and Pen toolsets.</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 reveal-up" style="animation-delay: 0.2s;">
                         <div class="p-5 border border-thin h-100">
                             <div class="text-accent mb-4"><i class="fas fa-bolt fa-3x"></i></div>
                             <h3 class="text-white">CAPCUT</h3>
@@ -190,7 +190,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('../components/header.html').then(r => r.text()).then(d => {
-                document.getElementById('header-container').innerHTML = d;
+                const header = document.getElementById('header-container');
+                header.innerHTML = d;
+                // Fix relative paths for sub-folder pages
+                header.querySelectorAll('[data-nav-link]').forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('../')) {
+                        link.setAttribute('href', '../' + href);
+                    }
+                });
             });
             fetch('../components/footer.html').then(r => r.text()).then(d => {
                 document.getElementById('footer-container').innerHTML = d;
