@@ -7,114 +7,118 @@
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <div class="stars-overlay"></div>
 
-    <!-- Header Component -->
     <div id="header-container"></div>
     
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container text-center">
-            <h2 class="text-gradient mb-2">3D RENDERING MISSION</h2>
-            <h1>Solar System Blender Projects</h1>
-            <p class="text-secondary fs-5 mx-auto" style="max-width: 800px;">A complete project stream for 3D modeling, textures, animation, and rendered outputs. Explore planetary data and calculate ages across the cosmos.</p>
-        </div>
-    </section>
-
-    <div class="container py-4">
-        <a href="../index.html#portfolio" class="btn btn-outline-cosmic">
-            <i class="fas fa-arrow-left me-2"></i>Abort to Hangar
-        </a>
-    </div>
-
-    <!-- Age Calculator Section -->
-    <section class="container py-5">
-        <div class="cosmic-panel">
-            <h2 class="section-title text-start mb-4">Planetary Age Calculator</h2>
-            <p class="text-secondary mb-4">Enter your age in Earth years to see your equivalent age across other planetary orbits.</p>
-            <div class="row g-3">
-                <div class="col-md-8">
-                    <input id="ageInput" class="form-control bg-transparent text-white border-secondary p-3" type="number" placeholder="Enter your age in Earth years">
-                </div>
-                <div class="col-md-4">
-                    <button id="calculateBtn" class="btn btn-cosmic w-100 h-100">Calculate Ages</button>
-                </div>
+    <main>
+        <!-- Project Hero -->
+        <section class="hero-pro border-bottom border-thin">
+            <div class="container">
+                <div class="hero-label">3D Visualization</div>
+                <h1 class="hero-title text-white">SOLAR SYSTEM<br><span class="text-dim">BLENDER PROJECTS</span></h1>
+                <p class="text-dim fs-5 max-width-600 mb-0">Technical exploration of planetary orbits, PBR texturing, and automated animation workflows.</p>
             </div>
-            <div id="ageResults" class="mt-5" style="display: none;">
-                <div id="planetAges" class="row g-3"></div>
+        </section>
+
+        <div class="section py-4">
+            <div class="container">
+                <a href="../index.html#portfolio" class="btn-outline-pro py-2 px-4">
+                    <i class="fas fa-arrow-left me-2"></i> BACK TO WORK
+                </a>
             </div>
         </div>
-    </section>
 
-    <!-- Celestial Bodies List -->
-    <section class="container py-5">
-        <h2 class="section-title">Celestial Data</h2>
-        <div class="d-grid gap-5">
-            <!-- Sun -->
-            <div class="cosmic-panel p-0 overflow-hidden">
-                <div class="row g-0">
-                    <div class="col-lg-6">
-                        <div class="portfolio-card m-0 h-100 border-0 rounded-0 overflow-hidden">
-                            <video autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
-                                <source src="../videos/solarsystem/sun.mkv" type="video/x-matroska">
-                                <source src="../videos/solarsystem/sun.mp4" type="video/mp4">
-                            </video>
+        <!-- Calculator Section -->
+        <section class="section bg-surface border-top border-bottom border-thin">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="hero-label">Interactive</div>
+                        <h2 class="text-white mb-4">PLANETARY AGE<br>CALCULATOR</h2>
+                        <p class="text-dim mb-4">Convert Earth years into planetary orbital cycles to understand time progression across the solar system.</p>
+                        <div class="d-grid gap-3">
+                            <input id="ageInput" class="form-control bg-deep border-thin text-white p-3 rounded-0" type="number" placeholder="ENTER EARTH YEARS">
+                            <button id="calculateBtn" class="btn-pro">EXECUTE CALCULATION</button>
                         </div>
                     </div>
-                    <div class="col-lg-6 p-4 d-flex flex-column justify-content-center">
-                        <h2 class="card-title text-gradient fs-1">The Sun</h2>
-                        <p class="text-secondary">The center of our solar system, a nearly perfect sphere of hot plasma, providing the energy that sustains life on Earth.</p>
-                        <div class="row g-2 mt-3">
-                            <div class="col-6">
-                                <div class="p-3 border border-secondary rounded-3 text-center">
-                                    <div class="text-muted small text-uppercase">Type</div>
-                                    <div class="text-white fw-bold">G2V Star</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="p-3 border border-secondary rounded-3 text-center">
-                                    <div class="text-muted small text-uppercase">Surface Temp</div>
-                                    <div class="text-white fw-bold">5,500 °C</div>
-                                </div>
+                    <div class="col-lg-6 offset-lg-1 mt-5 mt-lg-0">
+                        <div id="ageResults" style="display: none;">
+                            <div id="planetAges" class="row g-3">
+                                <!-- Results populated by JS -->
                             </div>
                         </div>
-                        <button class="btn btn-outline-cosmic mt-4 w-100" onclick="toggleScript('sun')">
-                            <i class="fas fa-code me-2"></i>View Python Script
-                        </button>
-                        <pre id="script-sun" class="script-viewer mt-3"></pre>
+                        <div id="calc-placeholder" class="p-5 border border-thin text-center">
+                            <i class="fas fa-calculator fa-3x mb-3 text-accent"></i>
+                            <p class="small mb-0 text-white">INPUT DATA TO START SIMULATION</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Planets Mapping -->
-            <div id="planets-container" class="d-grid gap-5"></div>
-        </div>
-    </section>
-
-    <!-- Footer Component -->
+        <!-- Data Visualization Section -->
+        <section class="section">
+            <div class="container">
+                <div class="hero-label">Database</div>
+                <h2 class="text-white display-4 mb-5">CELESTIAL DATA</h2>
+                
+                <div id="planets-container" class="d-grid gap-5">
+                    <!-- Sun Section -->
+                    <div class="row g-0 border border-thin bg-surface">
+                        <div class="col-lg-7">
+                            <div class="card-pro-img rounded-0 h-100">
+                                <video autoplay muted loop playsinline class="w-100 h-100">
+                                    <source src="../videos/solarsystem/sun.mkv" type="video/x-matroska">
+                                    <source src="../videos/solarsystem/sun.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
+                            <div class="hero-label">Star</div>
+                            <h2 class="text-white mb-3">THE SUN</h2>
+                            <p class="text-dim small mb-4">The gravitational anchor of our system. A G2V type star providing the energy required for planetary life.</p>
+                            
+                            <div class="data-row">
+                                <span class="data-label">Surface Temp</span>
+                                <span class="data-value text-accent">5,500 °C</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Mass</span>
+                                <span class="data-value text-white">333,000 Earths</span>
+                            </div>
+                            
+                            <button class="btn-outline-pro mt-4" onclick="toggleScript('sun')">
+                                <i class="fas fa-code me-2"></i> VIEW SCRIPT
+                            </button>
+                            <pre id="script-sun" class="script-viewer mt-3" style="display: none;"></pre>
+                        </div>
+                    </div>
+                    <!-- Planets will be populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+    
     <div id="footer-container"></div>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const planets = [
-            { id: 'mercury', name: 'Mercury', desc: 'The smallest planet in our solar system and the closest to the Sun.', dist: '57.9M km', orbit: '88 Days' },
-            { id: 'venus', name: 'Venus', desc: 'Spinning slowly in the opposite direction from most planets, Venus is the hottest planet.', dist: '108.2M km', orbit: '225 Days' },
-            { id: 'earth', name: 'Earth', desc: 'Our home planet is the only place we know of so far that’s inhabited by living things.', dist: '149.6M km', orbit: '365 Days' },
-            { id: 'mars', name: 'Mars', desc: 'Mars is a dusty, cold, desert world with a very thin atmosphere.', dist: '227.9M km', orbit: '687 Days' },
-            { id: 'jupiter', name: 'Jupiter', desc: 'Jupiter is more than twice as massive than the other planets combined.', dist: '778.5M km', orbit: '12 Years' },
-            { id: 'saturn', name: 'Saturn', desc: 'Adorned with a dazzling, complex system of icy rings, Saturn is unique.', dist: '1.4B km', orbit: '29 Years' },
-            { id: 'uranus', name: 'Uranus', desc: 'Uranus is the seventh planet from the Sun, and has the third-largest diameter.', dist: '2.9B km', orbit: '84 Years' },
-            { id: 'neptune', name: 'Neptune', desc: 'Dark, cold, and whipped by supersonic winds, Neptune is the eighth planet.', dist: '4.5B km', orbit: '165 Years' },
-            { id: 'pluto', name: 'Pluto', desc: 'Pluto is a complex world of ice mountains and frozen plains.', dist: '5.9B km', orbit: '248 Years' }
+            { id: 'mercury', name: 'MERCURY', desc: 'Smallest planet and closest to the Sun. Extreme thermal variance.', dist: '57.9M KM', orbit: '88 DAYS' },
+            { id: 'venus', name: 'VENUS', desc: 'Hottest planet in the system. Retrograde rotation and thick atmosphere.', dist: '108.2M KM', orbit: '225 DAYS' },
+            { id: 'earth', name: 'EARTH', desc: 'The only known planet capable of sustaining biological life forms.', dist: '149.6M KM', orbit: '365 DAYS' },
+            { id: 'mars', name: 'MARS', desc: 'The red planet. Host to the largest volcanoes in the solar system.', dist: '227.9M KM', orbit: '687 DAYS' },
+            { id: 'jupiter', name: 'JUPITER', desc: 'Gas giant. Massive gravitational influence and dozens of moons.', dist: '778.5M KM', orbit: '12 YEARS' },
+            { id: 'saturn', name: 'SATURN', desc: 'Famous for its complex icy ring system and low density.', dist: '1.4B KM', orbit: '29 YEARS' },
+            { id: 'uranus', name: 'URANUS', desc: 'Ice giant with a unique tilted axis of rotation.', dist: '2.9B KM', orbit: '84 YEARS' },
+            { id: 'neptune', name: 'NEPTUNE', desc: 'Most distant major planet. Subject to supersonic wind speeds.', dist: '4.5B KM', orbit: '165 YEARS' },
+            { id: 'pluto', name: 'PLUTO', desc: 'Famous dwarf planet located in the Kuiper Belt region.', dist: '5.9B KM', orbit: '248 YEARS' }
         ];
 
         const scripts = {
@@ -135,79 +139,76 @@
             if (el.style.display === 'block') {
                 el.style.display = 'none';
             } else {
-                el.innerText = scripts[id] || '# Script template available soon';
+                el.innerText = scripts[id] || '# Script unavailable';
                 el.style.display = 'block';
             }
         }
 
         const planetaryData = [
-            { name: 'Mercury', ratio: 0.24, icon: '☄️' },
-            { name: 'Venus', ratio: 0.615, icon: '✨' },
-            { name: 'Earth', ratio: 1.0, icon: '🌍' },
-            { name: 'Mars', ratio: 1.88, icon: '🔴' },
-            { name: 'Jupiter', ratio: 11.86, icon: '🌀' },
-            { name: 'Saturn', ratio: 29.46, icon: '🪐' },
-            { name: 'Uranus', ratio: 84, icon: '💎' },
-            { name: 'Neptune', ratio: 164.8, icon: '🌊' },
-            { name: 'Pluto', ratio: 248, icon: '🌑' }
+            { name: 'Mercury', ratio: 0.24 },
+            { name: 'Venus', ratio: 0.615 },
+            { name: 'Earth', ratio: 1.0 },
+            { name: 'Mars', ratio: 1.88 },
+            { name: 'Jupiter', ratio: 11.86 },
+            { name: 'Saturn', ratio: 29.46 },
+            { name: 'Uranus', ratio: 84 },
+            { name: 'Neptune', ratio: 164.8 },
+            { name: 'Pluto', ratio: 248 }
         ];
 
         document.getElementById('calculateBtn').addEventListener('click', function() {
             const earthAge = parseFloat(document.getElementById('ageInput').value);
             if (isNaN(earthAge) || earthAge <= 0) return;
+            
+            document.getElementById('calc-placeholder').style.display = 'none';
+            document.getElementById('ageResults').style.display = 'block';
+            
             const grid = document.getElementById('planetAges');
             grid.innerHTML = '';
             planetaryData.forEach(p => {
                 const age = (earthAge / p.ratio).toFixed(2);
                 const col = document.createElement('div');
-                col.className = 'col-md-4 col-6';
+                col.className = 'col-6 col-sm-4';
                 col.innerHTML = `
-                    <div class="p-3 border border-secondary rounded-3 text-center bg-dark bg-opacity-25 h-100">
-                        <div class="fs-4 mb-1">${p.icon}</div>
-                        <div class="text-white fw-bold mb-1">${p.name}</div>
-                        <div class="text-gradient fw-bold">${age} Years</div>
+                    <div class="p-3 border border-thin h-100 bg-surface">
+                        <div class="planet-name-calc small mb-1">${p.name.toUpperCase()}</div>
+                        <div class="age-value-calc fs-5">${age} <span class="small text-dim">YRS</span></div>
                     </div>
                 `;
                 grid.appendChild(col);
             });
-            document.getElementById('ageResults').style.display = 'block';
         });
 
         document.addEventListener('DOMContentLoaded', function() {
             const container = document.getElementById('planets-container');
             planets.forEach(p => {
                 const html = `
-                    <div class="cosmic-panel p-0 overflow-hidden">
-                        <div class="row g-0">
-                            <div class="col-lg-6">
-                                <div class="portfolio-card m-0 h-100 border-0 rounded-0 overflow-hidden">
-                                    <video autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
-                                        <source src="../videos/solarsystem/${p.id}.mp4" type="video/mp4">
-                                    </video>
-                                </div>
+                    <div class="row g-0 border border-thin bg-surface">
+                        <div class="col-lg-7">
+                            <div class="card-pro-img rounded-0 h-100">
+                                <video autoplay muted loop playsinline class="w-100 h-100">
+                                    <source src="../videos/solarsystem/${p.id}.mp4" type="video/mp4">
+                                </video>
                             </div>
-                            <div class="col-lg-6 p-4 d-flex flex-column justify-content-center">
-                                <h2 class="card-title text-gradient fs-1">${p.name}</h2>
-                                <p class="text-secondary">${p.desc}</p>
-                                <div class="row g-2 mt-3">
-                                    <div class="col-6">
-                                        <div class="p-3 border border-secondary rounded-3 text-center">
-                                            <div class="text-muted small text-uppercase">Distance</div>
-                                            <div class="text-white fw-bold">${p.dist}</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="p-3 border border-secondary rounded-3 text-center">
-                                            <div class="text-muted small text-uppercase">Orbit</div>
-                                            <div class="text-white fw-bold">${p.orbit}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn-outline-cosmic mt-4 w-100" onclick="toggleScript('${p.id}')">
-                                    <i class="fas fa-code me-2"></i>View Python Script
-                                </button>
-                                <pre id="script-${p.id}" class="script-viewer mt-3"></pre>
+                        </div>
+                        <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
+                            <div class="hero-label">Planet</div>
+                            <h2 class="text-white mb-3">${p.name}</h2>
+                            <p class="text-dim small mb-4">${p.desc}</p>
+                            
+                            <div class="data-row">
+                                <span class="data-label">Distance</span>
+                                <span class="data-value text-white">${p.dist}</span>
                             </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbit</span>
+                                <span class="data-value text-white">${p.orbit}</span>
+                            </div>
+                            
+                            <button class="btn-outline-pro mt-4" onclick="toggleScript('${p.id}')">
+                                <i class="fas fa-code me-2"></i> VIEW SCRIPT
+                            </button>
+                            <pre id="script-${p.id}" class="script-viewer mt-3" style="display: none;"></pre>
                         </div>
                     </div>
                 `;

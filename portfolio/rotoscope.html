@@ -7,149 +7,185 @@
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <div class="stars-overlay"></div>
 
-    <!-- Header Component -->
     <div id="header-container"></div>
     
-    <!-- Project Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="text-gradient mb-2">POST-PRODUCTION MISSION</h2>
-                <h1>Rotoscoping — Workflow</h1>
-                <p class="text-secondary fs-5 mx-auto" style="max-width: 800px;">Frame-by-frame masking and subject isolation, organized into a readable technical flow.</p>
+    <main>
+        <!-- Project Hero -->
+        <section class="hero-pro border-bottom border-thin">
+            <div class="container">
+                <div class="hero-label">Post-Production</div>
+                <h1 class="hero-title text-white">ROTOSCOPING<br><span class="text-dim">WORKFLOW</span></h1>
+                <p class="text-dim fs-5 max-width-600 mb-0">High-precision frame-by-frame masking and subject isolation. A technical breakdown of the animation process.</p>
+            </div>
+        </section>
+
+        <div class="section py-4">
+            <div class="container">
+                <a href="../index.html#portfolio" class="btn-outline-pro py-2 px-4">
+                    <i class="fas fa-arrow-left me-2"></i> BACK TO WORK
+                </a>
+            </div>
+        </div>
+
+        <!-- Technical Breakdown -->
+        <section class="section">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="card-pro overflow-hidden">
+                            <div class="card-pro-img" style="aspect-ratio: 16/9;">
+                                <video controls autoplay muted loop class="w-100 h-100">
+                                    <source src="../videos/rotoscope/source_video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="hero-label">Reference</div>
+                        <h2 class="text-white mb-4">SOURCE MATERIAL</h2>
+                        <p class="text-dim">The original footage serves as the foundation for the rotoscoping process. Every frame is analyzed for motion paths and silhouette accuracy.</p>
+                        <div class="d-grid gap-3 mt-4">
+                            <div class="stat-box">
+                                <div class="stat-label">Frame Rate</div>
+                                <div class="text-white fw-bold">30 FPS</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">Resolution</div>
+                                <div class="text-white fw-bold">1920 x 1080</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Video Section -->
+        <section class="section">
+            <div class="container">
+                <div class="hero-label">Complete</div>
+                <h2 class="text-white display-4 mb-5">FINAL VIDEO</h2>
+                <div class="card-pro overflow-hidden">
+                    <div class="card-pro-img" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; background: #000;">
+                        <div class="text-center text-muted">
+                            <i class="fas fa-film fa-3x mb-3"></i>
+                            <p>FINAL PRODUCTION VIDEO COMING SOON</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Progress -->
+        <section class="section bg-surface">
+            <div class="container">
+                <div class="hero-label">Timeline</div>
+                <h2 class="text-white display-4 mb-5">PRODUCTION LOG</h2>
                 
-                <div class="d-flex justify-content-center gap-2 mt-4">
-                    <span class="badge btn-outline-cosmic px-3 py-2"><i class="fas fa-video me-1"></i> After Effects</span>
-                    <span class="badge btn-outline-cosmic px-3 py-2"><i class="fas fa-magic me-1"></i> Rotoscoping</span>
-                    <span class="badge btn-outline-cosmic px-3 py-2"><i class="fas fa-layer-group me-1"></i> Compositing</span>
+                <div class="row g-4">
+                    <!-- Week 1 -->
+                    <div class="col-md-6">
+                        <div class="card-pro">
+                            <div class="card-pro-img">
+                                <video controls autoplay muted loop>
+                                    <source src="../videos/rotoscope/dance_1.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="card-pro-body text-center">
+                                <h4 class="text-white mb-0">WEEK 01</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Week 2 -->
+                    <div class="col-md-6">
+                        <div class="card-pro">
+                            <div class="card-pro-img">
+                                <video controls autoplay muted loop>
+                                    <source src="../videos/rotoscope/dance_2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="card-pro-body text-center">
+                                <h4 class="text-white mb-0">WEEK 02</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 3 -->
+                    <div class="col-md-6">
+                        <div class="card-pro">
+                            <div class="card-pro-img">
+                                <video controls autoplay muted loop>
+                                    <source src="../videos/rotoscope/dance_3.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="card-pro-body text-center">
+                                <h4 class="text-white mb-0">WEEK 03</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Week 4 -->
+                    <div class="col-md-6">
+                        <div class="card-pro">
+                            <div class="card-pro-img">
+                                <video controls autoplay muted loop>
+                                    <source src="../videos/rotoscope/dance_4.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="card-pro-body text-center">
+                                <h4 class="text-white mb-0">WEEK 04</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weeks 5-12 -->
+                    <div class="col-md-6">
+                        <div class="card-pro h-100 d-flex flex-column">
+                            <div class="card-pro-img bg-dark d-flex align-items-center justify-content-center" style="height: 100%; min-height: 200px;">
+                                <i class="fas fa-clock fa-2x text-muted"></i>
+                            </div>
+                            <div class="card-pro-body text-center">
+                                <h4 class="text-white mb-0">WEEK 05 - 12</h4>
+                                <p class="text-muted small mt-2 mb-0">FUTURE UPDATES PENDING</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Toolset -->
+        <section class="section">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="p-5 border border-thin h-100">
+                            <div class="text-accent mb-4"><i class="fab fa-adobe fa-3x"></i></div>
+                            <h3 class="text-white">AFTER EFFECTS</h3>
+                            <p class="text-dim small mb-0">Primary engine for masking, interpolation, and advanced subject isolation using the Roto Brush and Pen toolsets.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-5 border border-thin h-100">
+                            <div class="text-accent mb-4"><i class="fas fa-bolt fa-3x"></i></div>
+                            <h3 class="text-white">CAPCUT</h3>
+                            <p class="text-dim small mb-0">Optimized for final assembly, mobile-ready formatting, and seamless social media delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
-    <div class="container py-4">
-        <a href="../index.html#portfolio" class="btn btn-outline-cosmic">
-            <i class="fas fa-arrow-left me-2"></i>Abort to Hangar
-        </a>
-    </div>
-
-    <!-- Source Video Section -->
-    <section class="container py-5">
-        <h2 class="section-title">Source Transmission</h2>
-        <div class="cosmic-panel p-4 text-center">
-            <p class="text-secondary mb-4">Original reference material for the rotoscoping project</p>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="portfolio-card m-0 overflow-hidden" style="border-radius: 20px;">
-                        <video controls autoplay muted loop class="w-100 d-block">
-                            <source src="../videos/rotoscope/source_video.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Weekly Progress Section -->
-    <section class="container py-5">
-        <h2 class="section-title">Mission Progress</h2>
-        <p class="text-center text-secondary mb-5">Tracking the development cycle from initial mask to final compositing</p>
-        
-        <div class="row g-4">
-            <!-- Week 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="cosmic-panel p-3 h-100">
-                    <h3 class="card-title text-center text-gradient mb-3">Week 1: Initial Mask</h3>
-                    <div class="portfolio-card m-0 overflow-hidden" style="border-radius: 12px;">
-                        <video controls autoplay muted loop class="w-100 d-block">
-                            <source src="../videos/rotoscope/dance_1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Week 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="cosmic-panel p-3 h-100">
-                    <h3 class="card-title text-center text-gradient mb-3">Week 2: Refinement</h3>
-                    <div class="portfolio-card m-0 overflow-hidden" style="border-radius: 12px;">
-                        <video controls autoplay muted loop class="w-100 d-block">
-                            <source src="../videos/rotoscope/dance_2.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Week 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="cosmic-panel p-3 h-100">
-                    <h3 class="card-title text-center text-gradient mb-3">Week 3: Advanced Flow</h3>
-                    <div class="portfolio-card m-0 overflow-hidden" style="border-radius: 12px;">
-                        <video controls autoplay muted loop class="w-100 d-block">
-                            <source src="../videos/rotoscope/dance_3.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Week 4 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="cosmic-panel p-3 h-100">
-                    <h3 class="card-title text-center text-gradient mb-3">Week 4: Final Polish</h3>
-                    <div class="portfolio-card m-0 overflow-hidden" style="border-radius: 12px;">
-                        <video controls autoplay muted loop class="w-100 d-block">
-                            <source src="../videos/rotoscope/dance_4.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Placeholder Weeks -->
-            <div class="col-lg-4 col-md-6">
-                <div class="cosmic-panel p-3 h-100 text-center d-flex flex-column justify-content-center opacity-50">
-                    <i class="fas fa-satellite-dish fa-3x mb-3 text-gradient"></i>
-                    <h3 class="text-white">Week 5-12</h3>
-                    <p class="text-muted">Awaiting further transmissions...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools Used Section -->
-    <section class="container py-5">
-        <h2 class="section-title">Mission Equipment</h2>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-5">
-                <div class="cosmic-panel text-center p-4">
-                    <i class="fab fa-adobe fa-3x text-gradient mb-3"></i>
-                    <h3 class="text-white">Adobe After Effects</h3>
-                    <p class="text-secondary small">Primary tool for advanced rotoscoping, frame-by-frame masking, and subject isolation.</p>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="cosmic-panel text-center p-4">
-                    <i class="fas fa-cut fa-3x text-gradient mb-3"></i>
-                    <h3 class="text-white">Capcut</h3>
-                    <p class="text-secondary small">Utilized for quick video assembly, mobile-optimized editing, and final transitions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer Component -->
     <div id="footer-container"></div>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

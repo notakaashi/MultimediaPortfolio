@@ -3,131 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RP Portfolio - Multimedia & Authoring</title>
+    <title>RP Portfolio - Professional Multimedia</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="stars-overlay"></div>
 
-    <!-- Header Component -->
     <div id="header-container"></div>
     
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h2>COSMIC EXPLORATION</h2>
-                    <h1>Multimedia & Authoring</h1>
-                    <p class="text-secondary fs-5 mb-4">Combining creativity and technology to bring visual stories to life through advanced rotoscoping techniques and stunning 3D rendering projects.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#portfolio" class="btn btn-cosmic">View Portfolio</a>
-                        <a href="#about" class="btn btn-outline-cosmic">About Me</a>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-pro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="hero-label">Available for Work</div>
+                        <h1 class="hero-title text-white">MULTIMEDIA<br><span class="text-dim">& AUTHORING</span></h1>
+                        <p class="text-dim fs-5 mb-5 max-width-600">Combining technical precision with creative vision. Specialized in 3D visualization, post-production, and digital storytelling.</p>
+                        <div class="d-flex gap-4">
+                            <a href="#portfolio" class="btn-pro">View Portfolio</a>
+                            <a href="#about" class="btn-outline-pro">About Me</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="container py-5">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="row g-4">
-            <!-- Project 1: 3D Solar System -->
-            <div class="col-lg-6">
-                <a href="./portfolio/solarsystem.html" class="portfolio-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800" alt="3D Solar System">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">3D Rendering</span>
-                        <h3 class="card-title">3D Solar System</h3>
-                        <p class="text-secondary">An interactive 3D solar system visualization with realistic planetary orbits, textures, and lighting effects created using Blender.</p>
-                        <div class="d-flex gap-2 flex-wrap mt-3">
-                            <span class="badge btn-outline-cosmic px-3">Blender</span>
-                            <span class="badge btn-outline-cosmic px-3">Python</span>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="section border-bottom border-thin">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-md-4">
+                        <div class="stat-box">
+                            <div class="stat-value text-white">12+</div>
+                            <div class="stat-label">Project Weeks</div>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="stat-box">
+                            <div class="stat-value text-white">09</div>
+                            <div class="stat-label">Planets Modeled</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-box">
+                            <div class="stat-value text-white">HD</div>
+                            <div class="stat-label">Standard Rendering</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-5">
+                    <div>
+                        <div class="hero-label">Showcase</div>
+                        <h2 class="text-white display-4 mb-0">SELECTED WORK</h2>
+                    </div>
+                    <div class="text-muted small">01 / 02</div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Project 1 -->
+                    <div class="col-lg-6">
+                        <a href="./portfolio/solarsystem.html" class="card-pro text-decoration-none">
+                            <div class="card-pro-img">
+                                <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1200" alt="3D Solar System">
+                            </div>
+                            <div class="card-pro-body">
+                                <div class="card-category">3D RENDERING</div>
+                                <h3 class="text-white mb-2">SOLAR SYSTEM VISUALIZATION</h3>
+                                <p class="text-dim small mb-0">An interactive 3D solar system with realistic planetary motion and PBR textures.</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="col-lg-6">
+                        <a href="./portfolio/rotoscope.html" class="card-pro text-decoration-none">
+                            <div class="card-pro-img">
+                                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200" alt="Video Rotoscope">
+                            </div>
+                            <div class="card-pro-body">
+                                <div class="card-category">POST-PRODUCTION</div>
+                                <h3 class="text-white mb-2">ROTOSCOPING WORKFLOW</h3>
+                                <p class="text-dim small mb-0">Technical frame-by-frame masking and advanced subject isolation process.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section bg-surface border-top border-bottom border-thin">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="hero-label">Background</div>
+                        <h2 class="text-white display-4 mb-4">THE ARTIST</h2>
+                        <p class="text-dim fs-5 mb-4">Passion for multimedia and digital storytelling. Combining technology and creativity to produce engaging visual experiences through industry-standard tools.</p>
+                        <ul class="list-unstyled text-white d-grid gap-3">
+                            <li><i class="fas fa-check text-accent me-2"></i> 3D Modeling & Animation</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> Advanced Video Editing</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> Python Automation</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 offset-md-1 mt-5 mt-md-0">
+                        <div class="p-5 border border-thin rounded-0 text-center">
+                            <i class="fas fa-microchip fa-4x text-accent mb-4"></i>
+                            <h4 class="text-white mb-3">TECHNICAL FOCUS</h4>
+                            <p class="text-dim small">Specializing in Blender, After Effects, and Python-driven creative workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container text-center">
+                <div class="hero-label mx-auto">Get in touch</div>
+                <h2 class="text-white display-3 mb-5">ESTABLISH<br>CONNECTION</h2>
+                <a href="mailto:marcusinigo1205@gmail.com" class="btn-pro btn-lg">
+                    SEND MESSAGE <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
-            
-            <!-- Project 2: Video Rotoscope -->
-            <div class="col-lg-6">
-                <a href="./portfolio/rotoscope.html" class="portfolio-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800" alt="Video Rotoscope">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-category">Post-Production</span>
-                        <h3 class="card-title">Rotoscoping — Workflow</h3>
-                        <p class="text-secondary">Frame-by-frame rotoscoping project transforming live-action footage into stylized animation with precise mask creation.</p>
-                        <div class="d-flex gap-2 flex-wrap mt-3">
-                            <span class="badge btn-outline-cosmic px-3">After Effects</span>
-                            <span class="badge btn-outline-cosmic px-3">Compositing</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
     
-    <!-- About Section -->
-    <section id="about" class="container py-5">
-        <div class="cosmic-panel">
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center">
-                    <div class="mb-4">
-                        <i class="fas fa-user-astronaut fa-6x text-gradient"></i>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <h2 class="section-title text-start mb-3">About the Artist</h2>
-                    <p class="text-secondary fs-5">I am passionate about multimedia and digital storytelling. My work combines technology and creativity to produce engaging visual experiences, from 3D graphics to video editing and animation. I specialize in rotoscoping techniques and 3D rendering, bringing ideas to life through industry-standard tools and innovative workflows.</p>
-                    <div class="d-flex gap-3 mt-4">
-                        <div class="text-center">
-                            <h4 class="text-white mb-0">12+</h4>
-                            <p class="text-muted small">Weeks Progress</p>
-                        </div>
-                        <div class="vr bg-secondary"></div>
-                        <div class="text-center ms-3">
-                            <h4 class="text-white mb-0">9</h4>
-                            <p class="text-muted small">Planets Modeled</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="container py-5 text-center">
-        <h2 class="section-title">Establish Connection</h2>
-        <div class="cosmic-panel d-inline-block p-5">
-            <h3 class="text-white mb-4">Ready for Liftoff?</h3>
-            <p class="text-secondary mb-4">Let's collaborate on your next creative mission.</p>
-            <a href="mailto:marcusinigo1205@gmail.com" class="btn btn-cosmic btn-lg">
-                <i class="fas fa-paper-plane me-2"></i>Send Transmission
-            </a>
-        </div>
-    </section>
-    
-    <!-- Footer Component -->
     <div id="footer-container"></div>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('components/header.html').then(r => r.text()).then(d => {
-                document.getElementById('header-container').innerHTML = d;
+                const header = document.getElementById('header-container');
+                header.innerHTML = d;
+                // Fix relative paths for index.html since it's in the root
+                header.querySelectorAll('.nav-link, .navbar-brand').forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('../')) {
+                        link.setAttribute('href', href.replace('../', ''));
+                    }
+                });
             });
             fetch('components/footer.html').then(r => r.text()).then(d => {
                 document.getElementById('footer-container').innerHTML = d;
