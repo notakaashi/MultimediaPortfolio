@@ -99,9 +99,221 @@ print("All animations applied! Press Spacebar to play.")`,
     jupiter: `import bpy\nimport math\n\n# ==========================================\n# 1. CLEAN UP THE SCENE\n# ==========================================\n# Delete all mesh objects\nfor obj in list(bpy.data.objects):\n    if obj.type == 'MESH':\n        bpy.data.objects.remove(obj, do_unlink=True)\n\n# Delete all lights\nfor obj in list(bpy.data.objects):\n    if obj.type == 'LIGHT':\n        bpy.data.objects.remove(obj, do_unlink=True)\n\n# ==========================================\n# 2. CREATE THE JUPITER OBJECT\n# ==========================================\nbpy.ops.mesh.primitive_uv_sphere_add(\n    segments=128, \n    ring_count=64, \n    radius=27.0, \n    location=(0, 0, 0)\n)\njupiter = bpy.context.active_object\njupiter.name = "Jupiter_Model"\nbpy.ops.object.shade_smooth()\n\n# ==========================================\n# 3. ADD LIGHTING\n# ==========================================\n\n# Main Sun Light\nbpy.ops.object.light_add(\n    type='SUN', \n    location=(30, 20, 20)\n)\nsun_light = bpy.context.active_object\nsun_light.name = "Sun_Light"\nsun_light.data.energy = 3.0\nsun_light.data.color = (1.0, 1.0, 0.95)\n\n# Fill Light\nbpy.ops.object.light_add(\n    type='SUN', \n    location=(-20, -10, -15)\n)\nfill_light = bpy.context.active_object\nfill_light.name = "Fill_Light"\nfill_light.data.energy = 1.0\nfill_light.data.color = (0.6, 0.7, 1.0)\n\n# ==========================================\n# 4. ANIMATE THE ROTATION\n# ==========================================\nbpy.context.scene.frame_start = 1\nbpy.context.scene.frame_end = 250\njupiter.rotation_mode = 'XYZ'\n\noriginal_interp = bpy.context.preferences.edit.keyframe_new_interpolation_type\nbpy.context.preferences.edit.keyframe_new_interpolation_type = 'LINEAR'\n\n# Insert keyframes\nbpy.context.scene.frame_set(1)\njupiter.rotation_euler = (0, 0, 0)\njupiter.keyframe_insert(data_path="rotation_euler", index=2, frame=1)\n\nbpy.context.scene.frame_set(250)\njupiter.rotation_euler = (0, 0, math.radians(360))\njupiter.keyframe_insert(data_path="rotation_euler", index=2, frame=250)\n\nbpy.context.preferences.edit.keyframe_new_interpolation_type = original_interp\nbpy.context.scene.frame_set(1)\n\nprint("✅ Jupiter created!")`,
     saturn: `import bpy\nimport math\n\n# ==========================================\n# CONFIG\n# ==========================================\nPLANET_NAME = "Saturn"\nSPIN_FRAMES = 240\nFPS = 24\n\n# ==========================================\n# SET UP SCENE\n# ==========================================\nscene = bpy.context.scene\nscene.render.fps = FPS\nscene.frame_start = 1\nscene.frame_end = SPIN_FRAMES\n\n# ==========================================\n# GET SATURN MODEL\n# ==========================================\nif PLANET_NAME not in bpy.data.objects:\n    print(f"❌ Object '{PLANET_NAME}' not found!")\nelse:\n    saturn = bpy.data.objects[PLANET_NAME]\n    saturn.rotation_mode = 'XYZ'\n    \n    # ==========================================\n    # ANIMATE SPIN\n    # ==========================================\n    bpy.context.preferences.edit.keyframe_new_interpolation_type = 'LINEAR'\n    \n    scene.frame_set(1)\n    saturn.rotation_euler = (0, 0, 0)\n    saturn.keyframe_insert(data_path="rotation_euler", frame=1)\n    \n    scene.frame_set(SPIN_FRAMES)\n    saturn.rotation_euler = (0, 0, math.radians(360))\n    saturn.keyframe_insert(data_path="rotation_euler", frame=SPIN_FRAMES)\n    \n    scene.frame_set(1)\n    print("✅ Saturn animation created!")`,
     uranus: `import bpy\nimport math\n\n# ==========================================\n# CONFIG\n# ==========================================\nPLANET_NAME = "Uranus"\nRING_NAME = "Uranus_Rings"\nSPIN_FRAMES = 240\nFPS = 24\n\nRING_INNER = 18.0\nRING_OUTER = 26.0\nRING_THICKNESS = 0.1\nRING_TILT = math.radians(82)  # Uranus rings are nearly vertical\n\n# ==========================================\n# SET UP SCENE\n# ==========================================\nscene = bpy.context.scene\nscene.render.fps = FPS\nscene.frame_start = 1\nscene.frame_end = SPIN_FRAMES\n\n# Remove existing ring if present\nif RING_NAME in bpy.data.objects:\n    bpy.data.objects.remove(bpy.data.objects[RING_NAME], do_unlink=True)\n\n# ==========================================\n# GET URANUS\n# ==========================================\nif PLANET_NAME not in bpy.data.objects:\n    print(f"❌ Object '{PLANET_NAME}' not found!")\nelse:\n    uranus = bpy.data.objects[PLANET_NAME]\n    \n    # ==========================================\n    # CREATE RINGS (TORUS)\n    # ==========================================\n    bpy.ops.mesh.primitive_torus_add(\n        major_radius=(RING_INNER + RING_OUTER) / 2,\n        minor_radius=(RING_OUTER - RING_INNER) / 2,\n        location=(0, 0, 0)\n    )\n    rings = bpy.context.active_object\n    rings.name = RING_NAME\n    rings.scale.z = RING_THICKNESS\n    rings.rotation_euler = (RING_TILT, 0, 0)\n    \n    # ==========================================\n    # RING MATERIAL\n    # ==========================================\n    ring_mat = bpy.data.materials.new(name="UranusRingMaterial")\n    ring_mat.use_nodes = True\n    nodes = ring_mat.node_tree.nodes\n    links = ring_mat.node_tree.links\n    \n    for n in nodes:\n        nodes.remove(n)\n    \n    r_out = nodes.new("ShaderNodeOutputMaterial")\n    r_bsdf = nodes.new("ShaderNodeBsdfPrincipled")\n    r_tex = nodes.new("ShaderNodeTexNoise")\n    r_ramp = nodes.new("ShaderNodeValToRGB")\n    r_coord = nodes.new("ShaderNodeTexCoord")\n    \n    links.new(r_coord.outputs["Generated"], r_tex.inputs["Vector"])\n    links.new(r_tex.outputs["Fac"], r_ramp.inputs["Fac"])\n    links.new(r_ramp.outputs["Color"], r_bsdf.inputs["Base Color"])\n    links.new(r_bsdf.outputs["BSDF"], r_out.inputs["Surface"])\n    \n    rings.data.materials.append(ring_mat)\n    print("✅ Uranus rings created!")`,
-    neptune: `# Neptune Python Script for Blender\nimport bpy\n\n# Planet parameters\nname = "Neptune"\nradius = 3.88\ndistance = 449.7\nrotation_speed = 0.012\n\n# Create sphere\nbpy.ops.mesh.primitive_uv_sphere_add(radius=radius, location=(distance, 0, 0))\nobj = bpy.context.active_object\nobj.name = name`,
-    pluto: `# Pluto Python Script for Blender\nimport bpy\n\n# Planet parameters\nname = "Pluto"\nradius = 0.18\ndistance = 590.6\nrotation_speed = 0.005\n\n# Create sphere\nbpy.ops.mesh.primitive_uv_sphere_add(radius=radius, location=(distance, 0, 0))\nobj = bpy.context.active_object\nobj.name = name`
+    neptune: `import bpy
+import math
+
+# ==========================================
+# CONFIG
+# ==========================================
+PLANET_NAME = "Neptune"
+SPIN_FRAMES = 240
+FPS = 24
+
+# ==========================================
+# SET UP SCENE
+# ==========================================
+scene = bpy.context.scene
+scene.render.fps = FPS
+scene.frame_start = 1
+scene.frame_end = SPIN_FRAMES
+
+# Remove existing objects if present
+if PLANET_NAME in bpy.data.objects:
+    bpy.data.objects.remove(bpy.data.objects[PLANET_NAME], do_unlink=True)
+
+# Remove all lights
+for obj in list(bpy.data.objects):
+    if obj.type == 'LIGHT':
+        bpy.data.objects.remove(obj, do_unlink=True)
+
+# ==========================================
+# CREATE NEPTUNE
+# ==========================================
+bpy.ops.mesh.primitive_uv_sphere_add(
+    segments=128,
+    ring_count=64,
+    radius=14.5,
+    location=(0, 0, 0)
+)
+neptune = bpy.context.active_object
+neptune.name = PLANET_NAME
+bpy.ops.object.shade_smooth()
+
+# ==========================================
+# ADD LIGHTING
+# ==========================================
+
+# Main Sun Light
+bpy.ops.object.light_add(
+    type='SUN',
+    location=(30, 20, 20)
+)
+sun_light = bpy.context.active_object
+sun_light.name = "Neptune_KeyLight"
+sun_light.data.energy = 3.0
+sun_light.data.color = (1.0, 1.0, 0.95)
+
+# Fill Light
+bpy.ops.object.light_add(
+    type='SUN',
+    location=(-20, -10, -15)
+)
+fill_light = bpy.context.active_object
+fill_light.name = "Neptune_FillLight"
+fill_light.data.energy = 1.0
+fill_light.data.color = (0.6, 0.7, 1.0)
+
+# ==========================================
+# ANIMATE SPIN - Left to right
+# ==========================================
+neptune.rotation_mode = 'XYZ'
+bpy.context.preferences.edit.keyframe_new_interpolation_type = 'LINEAR'
+
+# Neptune rotation - rotates around Z axis (left to right)
+scene.frame_set(1)
+neptune.rotation_euler = (0, 0, 0)
+neptune.keyframe_insert(data_path="rotation_euler", frame=1)
+
+scene.frame_set(SPIN_FRAMES)
+neptune.rotation_euler = (0, 0, math.radians(360))
+neptune.keyframe_insert(data_path="rotation_euler", frame=SPIN_FRAMES)
+
+scene.frame_set(1)
+
+print("✅ Neptune created with left to right spin!")`,
+    pluto: `import bpy
+import math
+
+# ---------------------------------------------------------
+# 1. CLEANUP: Remove old Pluto and Sun if we run this twice
+# ---------------------------------------------------------
+for obj_name in ["Pluto", "Pluto_Sun"]:
+    if obj_name in bpy.data.objects:
+        bpy.data.objects.remove(bpy.data.objects[obj_name], do_unlink=True)
+
+# ---------------------------------------------------------
+# 2. CREATE THE PLANET MESH
+# ---------------------------------------------------------
+# Create a high-res sphere so the shadows look smooth
+bpy.ops.mesh.primitive_uv_sphere_add(segments=128, ring_count=64, radius=1, location=(0, 0, 0))
+pluto = bpy.context.active_object
+pluto.name = "Pluto"
+bpy.ops.object.shade_smooth() # Make it smooth!
+
+# ---------------------------------------------------------
+# 3. CREATE THE PROCEDURAL TEXTURE (No images needed!)
+# ---------------------------------------------------------
+mat_name = "Pluto_Surface"
+if mat_name in bpy.data.materials:
+    bpy.data.materials.remove(bpy.data.materials[mat_name])
+
+mat = bpy.data.materials.new(name=mat_name)
+mat.use_nodes = True
+nodes = mat.node_tree.nodes
+links = mat.node_tree.links
+
+# Clear default nodes
+for node in nodes:
+    nodes.remove(node)
+
+# Create standard output and Principled BSDF
+output = nodes.new(type='ShaderNodeOutputMaterial')
+output.location = (400, 0)
+principled = nodes.new(type='ShaderNodeBsdfPrincipled')
+principled.location = (100, 0)
+principled.inputs['Roughness'].default_value = 0.75 # Rocky and dry
+
+# Create Noise Texture to generate the rocky/icy patterns
+noise = nodes.new(type='ShaderNodeTexNoise')
+noise.location = (-500, 0)
+noise.inputs['Scale'].default_value = 2.5
+noise.inputs['Detail'].default_value = 15.0
+noise.inputs['Roughness'].default_value = 0.65
+
+# Create ColorRamp to assign Pluto's actual colors to the noise
+color_ramp = nodes.new(type='ShaderNodeValToRGB')
+color_ramp.location = (-200, 0)
+color_ramp.color_ramp.elements[0].position = 0.35
+color_ramp.color_ramp.elements[0].color = (0.15, 0.08, 0.06, 1.0) # Dark reddish brown
+color_ramp.color_ramp.elements[1].position = 0.55
+color_ramp.color_ramp.elements[1].color = (0.5, 0.35, 0.25, 1.0)  # Dusty tan
+# Add a third color stop for the icy pale patches
+color_ramp.color_ramp.elements.new(0.7)
+color_ramp.color_ramp.elements[2].color = (0.8, 0.75, 0.7, 1.0)   # Pale ice
+
+# Create Bump Map to fake 3D craters using the noise data
+bump = nodes.new(type='ShaderNodeBump')
+bump.location = (-200, -300)
+bump.inputs['Strength'].default_value = 0.15 # Keep it subtle so shadows don't break
+bump.inputs['Distance'].default_value = 0.2
+
+# Link the material nodes together
+links.new(noise.outputs['Fac'], color_ramp.inputs['Fac'])
+links.new(noise.outputs['Fac'], bump.inputs['Height'])
+links.new(color_ramp.outputs['Color'], principled.inputs['Base Color'])
+links.new(bump.outputs['Normal'], principled.inputs['Normal'])
+links.new(principled.outputs['BSDF'], output.inputs['Surface'])
+
+# Assign the material to the Pluto sphere
+if pluto.data.materials:
+    pluto.data.materials[0] = mat
+else:
+    pluto.data.materials.append(mat)
+
+# ---------------------------------------------------------
+# 4. ADD LIGHTING
+# ---------------------------------------------------------
+# Create a harsh, distant sun to match deep space
+light_data = bpy.data.lights.new(name="Pluto_Sun_Light", type='SUN')
+light_data.energy = 3.0
+light_data.angle = math.radians(2.0) # Slightly soft shadows to avoid terminator noise!
+
+light_obj = bpy.data.objects.new(name="Pluto_Sun", object_data=light_data)
+bpy.context.collection.objects.link(light_obj)
+light_obj.location = (5, -5, 2)
+# Angle the sun at the planet
+light_obj.rotation_euler = (math.radians(60), 0, math.radians(45)) 
+
+# ---------------------------------------------------------
+# 5. ANIMATE THE ROTATION
+# ---------------------------------------------------------
+pluto.rotation_mode = 'XYZ'
+start_frame = 1
+end_frame = 250
+
+user_pref_interp = bpy.context.preferences.edit.keyframe_new_interpolation_type
+bpy.context.preferences.edit.keyframe_new_interpolation_type = 'LINEAR'
+
+pluto.rotation_euler[2] = 0
+pluto.keyframe_insert(data_path="rotation_euler", index=2, frame=start_frame)
+
+pluto.rotation_euler[2] = math.radians(360)
+pluto.keyframe_insert(data_path="rotation_euler", index=2, frame=end_frame)
+
+bpy.context.preferences.edit.keyframe_new_interpolation_type = user_pref_interp
+
+print("Success: Procedural Pluto with Textures, Lighting, and Animation generated!")`
 };
+
+/**
+ * Downloads the script for a specific planet
+ */
+function downloadScript(id) {
+    const scriptContent = scripts[id];
+    if (!scriptContent) return;
+
+    const blob = new Blob([scriptContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const filename = `${id}.py`;
+    
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+}
 
 /**
  * Toggles the script modal visibility and populates content
@@ -110,12 +322,18 @@ function toggleScript(id) {
     const modal = document.getElementById('scriptModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalContent = document.getElementById('modalScriptContent');
+    const downloadBtn = document.getElementById('modalDownloadBtn');
     
     if (!modal || !modalTitle || !modalContent) return;
 
     const name = id === 'sun' ? 'THE SUN' : id.toUpperCase();
     modalTitle.innerText = `${name} - BLENDER SCRIPT`;
     modalContent.innerText = scripts[id] || '# Script unavailable';
+    
+    // Update download button in modal if it exists
+    if (downloadBtn) {
+        downloadBtn.onclick = () => downloadScript(id);
+    }
     
     modal.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent scrolling
@@ -142,15 +360,15 @@ window.addEventListener('click', function(event) {
 
 // Planetary Age Calculation Data
 const planetaryData = [
-    { name: 'Mercury', ratio: 0.24 },
-    { name: 'Venus', ratio: 0.615 },
-    { name: 'Earth', ratio: 1.0 },
-    { name: 'Mars', ratio: 1.88 },
-    { name: 'Jupiter', ratio: 11.86 },
-    { name: 'Saturn', ratio: 29.46 },
-    { name: 'Uranus', ratio: 84 },
-    { name: 'Neptune', ratio: 164.8 },
-    { name: 'Pluto', ratio: 248 }
+    { name: 'Mercury', ratio: 0.24, icon: 'fa-meteor' },
+    { name: 'Venus', ratio: 0.615, icon: 'fa-sun' },
+    { name: 'Earth', ratio: 1.0, icon: 'fa-globe-americas' },
+    { name: 'Mars', ratio: 1.88, icon: 'fa-rocket' },
+    { name: 'Jupiter', ratio: 11.86, icon: 'fa-circle' },
+    { name: 'Saturn', ratio: 29.46, icon: 'fa-ring' },
+    { name: 'Uranus', ratio: 84, icon: 'fa-atom' },
+    { name: 'Neptune', ratio: 164.8, icon: 'fa-wind' },
+    { name: 'Pluto', ratio: 248, icon: 'fa-mountain' }
 ];
 
 // Initialize calculator on page load
@@ -162,21 +380,40 @@ document.addEventListener('DOMContentLoaded', function() {
     if (calculateBtn && ageInput && grid) {
         calculateBtn.addEventListener('click', function() {
             const earthAge = parseFloat(ageInput.value);
-            if (isNaN(earthAge) || earthAge <= 0) return;
+            if (isNaN(earthAge) || earthAge <= 0) {
+                // Flash error state on input
+                ageInput.classList.add('is-invalid');
+                setTimeout(() => ageInput.classList.remove('is-invalid'), 1000);
+                return;
+            }
             
             grid.innerHTML = '';
-            planetaryData.forEach(p => {
+            planetaryData.forEach((p, index) => {
                 const age = (earthAge / p.ratio).toFixed(2);
                 const col = document.createElement('div');
-                col.className = 'col-6 col-sm-4 reveal-up';
+                col.className = 'col-6 col-sm-4';
+                col.style.animationDelay = `${index * 0.05}s`;
+                col.classList.add('reveal-up');
+                
                 col.innerHTML = `
-                    <div class="p-3 border border-thin bg-surface">
+                    <div class="result-card-pro">
+                        <div class="planet-icon-placeholder">
+                            <i class="fas ${p.icon}"></i>
+                        </div>
                         <div class="planet-name-calc small mb-1">${p.name.toUpperCase()}</div>
-                        <div class="age-value-calc fs-5">${age} <span class="small text-dim">YRS</span></div>
+                        <div class="age-value-calc">${age}</div>
+                        <div class="small text-muted">YEARS</div>
                     </div>
                 `;
                 grid.appendChild(col);
             });
+        });
+
+        // Allow calculation on Enter key
+        ageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculateBtn.click();
+            }
         });
     }
 });

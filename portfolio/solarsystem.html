@@ -36,24 +36,32 @@
         </div>
 
         <!-- Calculator Section -->
-        <section class="section bg-surface border-top border-bottom border-thin">
+        <section class="section border-top border-bottom border-thin" style="background: #050505;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5 reveal-left">
-                        <div class="hero-label">Interactive</div>
-                        <h2 class="text-white mb-4">PLANETARY AGE<br>CALCULATOR</h2>
-                        <p class="text-dim mb-4">Convert Earth years into planetary orbital cycles to understand time progression across the solar system.</p>
-                        <div class="d-grid gap-3">
-                            <input id="ageInput" class="form-control bg-deep border-thin text-white p-3 rounded-0" type="number" placeholder="ENTER EARTH YEARS">
-                            <button id="calculateBtn" type="button" class="btn-pro">EXECUTE CALCULATION</button>
+                        <div class="calculator-card">
+                            <div class="hero-label">Interactive</div>
+                            <h2 class="text-white mb-4">PLANETARY AGE<br>CALCULATOR</h2>
+                            <p class="text-dim mb-4">Convert Earth years into planetary orbital cycles to understand time progression across the solar system.</p>
+                            
+                            <div class="age-input-group">
+                                <label>ENTER EARTH YEARS</label>
+                                <input id="ageInput" class="form-control calculator-input" type="number" placeholder="0.00">
+                            </div>
+                            
+                            <button id="calculateBtn" type="button" class="btn-pro w-100 justify-content-center">
+                                <i class="fas fa-calculator me-2"></i> EXECUTE CALCULATION
+                            </button>
                         </div>
                     </div>
                     <div class="col-lg-6 offset-lg-1 mt-5 mt-lg-0 reveal-up">
                         <div id="ageResults">
                             <div id="planetAges" class="row g-3">
-                                <!-- Initial state or results -->
-                                <div class="col-12 text-center p-5 border border-thin">
-                                    <p class="text-dim mb-0">Results will appear here after calculation.</p>
+                                <!-- Results will be injected here -->
+                                <div class="col-12 text-center p-5 border border-thin bg-surface">
+                                    <i class="fas fa-microchip text-accent mb-3 fs-1"></i>
+                                    <p class="text-dim mb-0">System ready. Enter data to calculate orbital age across the solar system.</p>
                                 </div>
                             </div>
                         </div>
@@ -93,9 +101,14 @@
                                 <span class="data-value text-white">333,000 Earths</span>
                             </div>
                             
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('sun')">
-                                <i class="fas fa-code me-2"></i> VIEW SCRIPT
-                            </button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('sun')">
+                                    <i class="fas fa-code me-2"></i> VIEW
+                                </button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('sun')">
+                                    <i class="fas fa-download me-2"></i> DOWNLOAD
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -114,7 +127,10 @@
                             <p class="text-dim small mb-4">Smallest planet and closest to the Sun. Extreme thermal variance.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">57.9M KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">88 DAYS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('mercury')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('mercury')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('mercury')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
 
@@ -133,7 +149,10 @@
                             <p class="text-dim small mb-4">Hottest planet in the system. Retrograde rotation and thick atmosphere.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">108.2M KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">225 DAYS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('venus')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('venus')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('venus')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
 
@@ -152,7 +171,10 @@
                             <p class="text-dim small mb-4">The only known planet capable of sustaining biological life forms.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">149.6M KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">365 DAYS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('earth')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('earth')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('earth')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
 
@@ -171,7 +193,10 @@
                             <p class="text-dim small mb-4">The red planet. Host to the largest volcanoes in the solar system.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">227.9M KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">687 DAYS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('mars')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('mars')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('mars')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
 
@@ -190,7 +215,10 @@
                             <p class="text-dim small mb-4">Gas giant. Massive gravitational influence and dozens of moons.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">778.5M KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">12 YEARS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('jupiter')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('jupiter')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('jupiter')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
 
@@ -209,7 +237,10 @@
                             <p class="text-dim small mb-4">Famous for its complex icy ring system and low density.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">1.4B KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">29 YEARS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('saturn')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('saturn')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('saturn')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
 
@@ -228,7 +259,10 @@
                             <p class="text-dim small mb-4">Ice giant with a unique tilted axis of rotation.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">2.9B KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">84 YEARS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('uranus')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('uranus')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('uranus')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
 
@@ -247,7 +281,10 @@
                             <p class="text-dim small mb-4">Most distant major planet. Subject to supersonic wind speeds.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">4.5B KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">165 YEARS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('neptune')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('neptune')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('neptune')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
                         </div>
                     </div>
 
@@ -266,7 +303,46 @@
                             <p class="text-dim small mb-4">Famous dwarf planet located in the Kuiper Belt region.</p>
                             <div class="data-row"><span class="data-label">Distance</span><span class="data-value text-white">5.9B KM</span></div>
                             <div class="data-row"><span class="data-label">Orbit</span><span class="data-value text-white">248 YEARS</span></div>
-                            <button type="button" class="btn-outline-pro mt-4" onclick="toggleScript('pluto')"><i class="fas fa-code me-2"></i> VIEW SCRIPT</button>
+                            <div class="d-flex gap-2 mt-4">
+                                <button type="button" class="btn-outline-pro flex-grow-1" onclick="toggleScript('pluto')"><i class="fas fa-code me-2"></i> VIEW</button>
+                                <button type="button" class="btn-pro flex-grow-1" onclick="downloadScript('pluto')"><i class="fas fa-download me-2"></i> DOWNLOAD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full System Overview Section -->
+        <section class="section border-top border-thin bg-deep">
+            <div class="container">
+                <div class="hero-label reveal-up">Grand Finale</div>
+                <h2 class="text-white display-4 mb-5 reveal-up">SOLAR SYSTEM OVERVIEW</h2>
+                
+                <div class="row g-0 border border-thin bg-surface reveal-up">
+                    <div class="col-lg-12">
+                        <div class="card-pro-img rounded-0 video-placeholder" style="aspect-ratio: 21/9;">
+                            <!-- Video source will be added here once rendered -->
+                        </div>
+                    </div>
+                    <div class="col-lg-12 p-5 text-center">
+                        <div class="hero-label mx-auto" style="padding-left: 0;">Technical Synthesis</div>
+                        <h3 class="text-white mb-4">THE COMPLETE CELESTIAL MECHANICS</h3>
+                        <p class="text-dim max-width-600 mx-auto mb-5">A comprehensive visualization of all planetary bodies, demonstrating relative scales, orbital velocities, and gravitational relationships in a single synchronized simulation.</p>
+                        
+                        <div class="d-flex justify-content-center gap-3">
+                            <div class="stat-box text-start">
+                                <div class="stat-value">8</div>
+                                <div class="stat-label">Major Planets</div>
+                            </div>
+                            <div class="stat-box text-start">
+                                <div class="stat-value">1</div>
+                                <div class="stat-label">Star</div>
+                            </div>
+                            <div class="stat-box text-start">
+                                <div class="stat-value">200+</div>
+                                <div class="stat-label">Moons</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -281,7 +357,12 @@
         <div class="modal-content-pro">
             <div class="modal-header-pro">
                 <h3 id="modalTitle" class="text-white mb-0">PYTHON SCRIPT</h3>
-                <button type="button" class="modal-close-btn" onclick="closeModal()">&times;</button>
+                <div class="d-flex align-items-center gap-3">
+                    <button id="modalDownloadBtn" type="button" class="btn-pro py-2 px-3 fs-7">
+                        <i class="fas fa-download me-2"></i> DOWNLOAD
+                    </button>
+                    <button type="button" class="modal-close-btn" onclick="closeModal()">&times;</button>
+                </div>
             </div>
             <div class="modal-body-pro">
                 <pre id="modalScriptContent" class="script-viewer-modal"></pre>
