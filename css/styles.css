@@ -44,6 +44,65 @@ body {
     overflow-x: hidden;
 }
 
+/* Dynamic Background Grid */
+.dynamic-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.dynamic-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Floating Particles */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--brand-yellow);
+    border-radius: 50%;
+    opacity: 0.3;
+    will-change: transform;
+}
+
+@keyframes floatBase {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(30px); }
+    100% { transform: translateX(0px); }
+}
+
 h1, h2, h3, h4, h5, .display-font {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
@@ -129,11 +188,33 @@ h1, h2, h3, h4, h5, .display-font {
     background: var(--bg-surface);
     border: 1px solid var(--border-thin);
     border-radius: 4px;
-    transition: var(--transition-base);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.card-pro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.card-pro:hover::before {
+    left: 100%;
+}
+
+.card-pro:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px -15px rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
 }
 
 .age-input, 
@@ -168,7 +249,12 @@ input.form-control::placeholder {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: var(--transition-base);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-pro:hover .card-pro-img video,
+.card-pro:hover .card-pro-img img {
+    transform: scale(1.1);
 }
 
 .card-pro-body {
@@ -488,6 +574,20 @@ input.form-control.calculator-input:focus {
     color: var(--brand-yellow);
 }
 
+/* Step-by-Step Section Enhancements */
+.step-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.step-container .row.g-0 {
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.step-container:hover .row.g-0 {
+    transform: scale(1.01);
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -530,4 +630,24 @@ input.form-control.calculator-input:focus {
     font-weight: 700;
     letter-spacing: 5px;
     font-size: 0.8rem;
+}
+
+/* Parallax Effect Helper */
+.parallax-layer {
+    transition: transform 0.3s ease-out;
+}
+
+/* Glow Text Effect */
+.glow-text {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2), 0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.pulse {
+    animation: pulse 2s infinite ease-in-out;
 }
