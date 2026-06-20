@@ -35,35 +35,47 @@
             </div>
         </div>
 
-        <!-- Calculator Section -->
-        <section class="section border-top border-bottom border-thin" style="background: #050505;">
+        <!-- Full System Overview Section -->
+        <section class="section border-top border-thin bg-deep">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 reveal-left">
-                        <div class="calculator-card">
-                            <div class="hero-label">Interactive</div>
-                            <h2 class="text-white mb-4">PLANETARY AGE<br>CALCULATOR</h2>
-                            <p class="text-dim mb-4">Convert Earth years into planetary orbital cycles to understand time progression across the solar system.</p>
-                            
-                            <div class="age-input-group">
-                                <label>ENTER EARTH YEARS</label>
-                                <input id="ageInput" class="form-control calculator-input" type="number" placeholder="0.00">
-                            </div>
-                            
-                            <button id="calculateBtn" type="button" class="btn-pro w-100 justify-content-center">
-                                <i class="fas fa-calculator me-2"></i> EXECUTE CALCULATION
-                            </button>
+                <div class="hero-label reveal-up">Grand Finale</div>
+                <h2 class="text-white display-4 mb-5 reveal-up">SOLAR SYSTEM OVERVIEW</h2>
+                
+                <div class="row g-0 border border-thin bg-surface reveal-up">
+                    <div class="col-lg-12">
+                        <div class="card-pro-img rounded-0" style="aspect-ratio: 21/9;">
+                            <video controls autoplay muted loop playsinline class="w-100 h-100">
+                                <source src="../videos/solarsystem/solarsystem.mp4" type="video/mp4">
+                            </video>
                         </div>
                     </div>
-                    <div class="col-lg-6 offset-lg-1 mt-5 mt-lg-0 reveal-up">
-                        <div id="ageResults">
-                            <div id="planetAges" class="row g-3">
-                                <!-- Results will be injected here -->
-                                <div class="col-12 text-center p-5 border border-thin bg-surface">
-                                    <i class="fas fa-microchip text-accent mb-3 fs-1"></i>
-                                    <p class="text-dim mb-0">System ready. Enter data to calculate orbital age across the solar system.</p>
-                                </div>
+                    <div class="col-lg-12 p-5 text-center">
+                        <div class="hero-label mx-auto" style="padding-left: 0;">Technical Synthesis</div>
+                        <h3 class="text-white mb-4">THE COMPLETE CELESTIAL MECHANICS</h3>
+                        <p class="text-dim max-width-600 mx-auto mb-5">A comprehensive visualization of all planetary bodies, demonstrating relative scales, orbital velocities, and gravitational relationships in a single synchronized simulation.</p>
+                        
+                        <div class="d-flex justify-content-center gap-3 mb-5">
+                            <div class="stat-box text-start">
+                                <div class="stat-value">8</div>
+                                <div class="stat-label">Major Planets</div>
                             </div>
+                            <div class="stat-box text-start">
+                                <div class="stat-value">1</div>
+                                <div class="stat-label">Star</div>
+                            </div>
+                            <div class="stat-box text-start">
+                                <div class="stat-value">200+</div>
+                                <div class="stat-label">Moons</div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex gap-2 justify-content-center">
+                            <button type="button" class="btn-outline-pro" onclick="toggleScript('solarsystem')">
+                                <i class="fas fa-code me-2"></i> VIEW SCRIPT
+                            </button>
+                            <button type="button" class="btn-pro" onclick="downloadScript('solarsystem')">
+                                <i class="fas fa-download me-2"></i> DOWNLOAD SCRIPT
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -313,35 +325,34 @@
             </div>
         </section>
 
-        <!-- Full System Overview Section -->
-        <section class="section border-top border-thin bg-deep">
+        <!-- Calculator Section -->
+        <section class="section border-top border-bottom border-thin" style="background: #050505;">
             <div class="container">
-                <div class="hero-label reveal-up">Grand Finale</div>
-                <h2 class="text-white display-4 mb-5 reveal-up">SOLAR SYSTEM OVERVIEW</h2>
-                
-                <div class="row g-0 border border-thin bg-surface reveal-up">
-                    <div class="col-lg-12">
-                        <div class="card-pro-img rounded-0 video-placeholder" style="aspect-ratio: 21/9;">
-                            <!-- Video source will be added here once rendered -->
+                <div class="row align-items-center">
+                    <div class="col-lg-5 reveal-left">
+                        <div class="calculator-card">
+                            <div class="hero-label">Interactive</div>
+                            <h2 class="text-white mb-4">PLANETARY AGE<br>CALCULATOR</h2>
+                            <p class="text-dim mb-4">Convert Earth years into planetary orbital cycles to understand time progression across the solar system.</p>
+                            
+                            <div class="age-input-group">
+                                <label>ENTER EARTH YEARS</label>
+                                <input id="ageInput" class="form-control calculator-input" type="number" placeholder="0.00">
+                            </div>
+                            
+                            <button id="calculateBtn" type="button" class="btn-pro w-100 justify-content-center">
+                                <i class="fas fa-calculator me-2"></i> EXECUTE CALCULATION
+                            </button>
                         </div>
                     </div>
-                    <div class="col-lg-12 p-5 text-center">
-                        <div class="hero-label mx-auto" style="padding-left: 0;">Technical Synthesis</div>
-                        <h3 class="text-white mb-4">THE COMPLETE CELESTIAL MECHANICS</h3>
-                        <p class="text-dim max-width-600 mx-auto mb-5">A comprehensive visualization of all planetary bodies, demonstrating relative scales, orbital velocities, and gravitational relationships in a single synchronized simulation.</p>
-                        
-                        <div class="d-flex justify-content-center gap-3">
-                            <div class="stat-box text-start">
-                                <div class="stat-value">8</div>
-                                <div class="stat-label">Major Planets</div>
-                            </div>
-                            <div class="stat-box text-start">
-                                <div class="stat-value">1</div>
-                                <div class="stat-label">Star</div>
-                            </div>
-                            <div class="stat-box text-start">
-                                <div class="stat-value">200+</div>
-                                <div class="stat-label">Moons</div>
+                    <div class="col-lg-6 offset-lg-1 mt-5 mt-lg-0 reveal-up">
+                        <div id="ageResults">
+                            <div id="planetAges" class="row g-3">
+                                <!-- Results will be injected here -->
+                                <div class="col-12 text-center p-5 border border-thin bg-surface">
+                                    <i class="fas fa-microchip text-accent mb-3 fs-1"></i>
+                                    <p class="text-dim mb-0">System ready. Enter data to calculate orbital age across the solar system.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
