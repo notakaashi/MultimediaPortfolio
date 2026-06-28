@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Scroll Reveal Animation Observer
     initScrollReveal();
+    
+    // Initialize Counters
+    initCounters();
 });
 
 function createParticles() {
@@ -126,10 +129,68 @@ function initScrollReveal() {
         });
     }, observerOptions);
     
-    // Observe all elements with reveal classes
-    document.querySelectorAll('.reveal-up, .reveal-left').forEach(el => {
+    // Observe all sections and reveal elements
+    document.querySelectorAll('.section, .reveal-up, .reveal-left').forEach(el => {
+        if (el.classList.contains('section') && !el.classList.contains('reveal-up') && !el.classList.contains('reveal-left')) {
+            el.classList.add('reveal-up');
+        }
         el.style.opacity = '0';
         el.style.animationPlayState = 'paused';
         observer.observe(el);
     });
 }
+
+function initCounters() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const originalText = target.getAttribute('data-counter-target') || target.innerText;
+                target.setAttribute('data-counter-target', originalText);
+                
+                const match = originalText.match(/(\d+)/);
+                if (match) {
+                    const finalNum = parseInt(match[1], 10);
+                    const prefix = originalText.substring(0, match.index);
+                    const suffix = originalText.substring(match.index + match[1].length);
+                    const padLength = match[1].length;
+                    
+                    let currentNum = 0;
+                    const duration = 1500;
+                    const frames = 30; // approx 30 steps
+                    const stepVal = Math.max(1, Math.floor(finalNum / frames));
+                    const stepTime = duration / frames;
+                    
+                    const timer = setInterval(() => {
+                        currentNum += stepVal;
+                        if (currentNum >= finalNum) {
+                            currentNum = finalNum;
+                            clearInterval(timer);
+                        }
+                        const numStr = currentNum.toString().padStart(padLength, '0');
+                        target.innerText = prefix + numStr + suffix;
+                    }, stepTime);
+                }
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.stat-value, .hero-label').forEach(el => {
+        const text = el.innerText;
+        if (text.toLowerCase().includes('step') || el.classList.contains('stat-value')) {
+            if (/\d/.test(text)) {
+                observer.observe(el);
+            }
+        }
+    });
+}
+
+// Parallax for dynamic background
+window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const dynamicBg = document.querySelector('.dynamic-bg');
+    if (dynamicBg) {
+        dynamicBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+});
