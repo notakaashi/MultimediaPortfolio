@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcus Inigo S. Aristain - Multimedia & Authoring Portfolio</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -12,146 +13,193 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Dynamic Background -->
     <div class="dynamic-bg"></div>
-    
+
     <!-- Floating Particles -->
     <div class="particles" id="particles"></div>
 
     <div id="header-container"></div>
-    
+
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero-pro">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 reveal-up">
-                        <div class="hero-label">Available for Work</div>
-                        <h1 class="hero-title text-white">MULTIMEDIA<br><span class="text-dim">& AUTHORING</span></h1>
-                        <p class="text-dim fs-5 mb-5 max-width-600">Combining technical precision with creative vision. Specialized in 3D visualization, post-production, and digital storytelling.</p>
-                        <div class="d-flex gap-4">
-                            <a href="#portfolio" class="btn-pro">View Portfolio</a>
-                            <a href="#about" class="btn-outline-pro">About Me</a>
+            <div class="hero-texture"></div>
+            <div class="container position-relative z-1">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 reveal-left">
+                        <div class="pill-badge mb-4">
+                            <span class="dot"></span> BSIT-S-2A | MARCUS INIGO S. ARISTAIN
+                        </div>
+                        <h1 class="hero-title" style="font-size: clamp(2.5rem, 8vw, 4.5rem);">
+                            <span class="text-white">MULTIMIDEA &</span><br>
+                            <span class="text-gradient">AUTHORING</span>
+                        </h1>
+                        <p class="text-dim fs-5 mb-5 max-width-600">Portfolio showcasing technical precision and
+                            creative vision through 3D rendering workflows and advanced rotoscoping techniques.</p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="#portfolio" class="btn-primary-pill">Explore Work &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 position-relative reveal-up mockup-cluster mt-5 mt-lg-0">
+                        <div class="glow-blob"></div>
+                        <!-- Primary Fake App Window -->
+                        <div class="fake-window primary-window">
+                            <div class="window-chrome">
+                                <div class="traffic-lights">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="window-title">orbit_render.py &mdash; output</div>
+                            </div>
+                            <div class="window-content position-relative">
+                                <div class="orbit-animation">
+                                    <div class="sun"></div>
+                                    <div class="orbit-ring ring-1">
+                                        <div class="planet orb-1"></div>
+                                    </div>
+                                    <div class="orbit-ring ring-2">
+                                        <div class="planet orb-2"></div>
+                                    </div>
+                                    <div class="orbit-ring ring-3">
+                                        <div class="planet orb-3"></div>
+                                    </div>
+                                    <div class="orbit-ring ring-4">
+                                        <div class="planet orb-4"></div>
+                                    </div>
+                                </div>
+                                <div class="monospace-stat top-left">FPS: 60</div>
+                                <div class="monospace-stat bottom-right">FRAME: 0142</div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Fake App Window -->
+                        <div class="fake-window secondary-window">
+                            <div class="window-chrome">
+                                <div class="window-title">Frame Tracker</div>
+                            </div>
+                            <div class="window-content">
+                                <div class="swatch-row">
+                                    <div class="swatch" style="background: #ff5252"></div>
+                                    <div class="swatch" style="background: #ffeb3b"></div>
+                                    <div class="swatch" style="background: #00e5ff"></div>
+                                    <div class="swatch" style="background: #b388ff"></div>
+                                </div>
+                                <div class="timecode">00:01:45:22</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Stats Section -->
-        <div class="section border-bottom border-thin">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-md-4 reveal-up" style="animation-delay: 0.1s;">
-                        <div class="stat-box">
-                            <div class="stat-value text-white">12+</div>
-                            <div class="stat-label">Project Weeks</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 reveal-up" style="animation-delay: 0.2s;">
-                        <div class="stat-box">
-                            <div class="stat-value text-white">09</div>
-                            <div class="stat-label">Planets Modeled</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 reveal-up" style="animation-delay: 0.3s;">
-                        <div class="stat-box">
-                            <div class="stat-value text-white">HD</div>
-                            <div class="stat-label">Standard Rendering</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="section">
+        <!-- Bento Dashboard Section -->
+        <section id="portfolio" class="section py-5">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-end mb-5 reveal-up">
                     <div>
-                        <div class="hero-label">Showcase</div>
-                        <h2 class="text-white display-4 mb-0">SELECTED WORK</h2>
+                        <div class="pill-badge mb-3"><span class="dot"></span> Dashboard</div>
+                        <h2 class="text-white display-4 mb-0">OVERVIEW</h2>
                     </div>
-                    <div class="text-muted small">01 / 02</div>
                 </div>
 
-                <div class="row g-4">
-                    <!-- Project 1 -->
-                    <div class="col-lg-6 reveal-up" style="animation-delay: 0.1s;">
-                        <a href="./portfolio/solarsystem.html" class="card-pro text-decoration-none">
-                            <div class="card-pro-img">
-                                <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1200" alt="3D Solar System">
+                <div class="bento-grid">
+                    <!-- Project 1 (Large) -->
+                    <div class="bento-item bento-col-span-2 bento-row-span-2 reveal-up p-0 d-flex flex-column h-100 card-pro"
+                        style="animation-delay: 0.1s;">
+                        <a href="./portfolio/solarsystem.html" class="text-decoration-none d-flex flex-column h-100"
+                            style="border-radius: 12px; overflow: hidden;">
+                            <div class="window-chrome"
+                                style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 16px;">
+                                <div class="traffic-lights"><span></span><span></span><span></span></div>
+                                <div class="window-title">solarsystem.mp4</div>
                             </div>
-                            <div class="card-pro-body">
-                                <div class="card-category">3D RENDERING</div>
+                            <div class="card-pro-img" style="aspect-ratio: 16/9; position: relative;">
+                                <img src="./images/solar_system_cover.png" alt="Solar System Cover"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="card-pro-body bg-deep p-4 d-flex flex-column flex-grow-1"
+                                style="border-radius: 0 0 12px 12px;">
+                                <div class="pill-badge mb-3 align-self-start"><span class="dot"></span> 3D RENDERING
+                                </div>
                                 <h3 class="text-white mb-2">SOLAR SYSTEM VISUALIZATION</h3>
-                                <p class="text-dim small mb-0">An interactive 3D solar system with realistic planetary motion and PBR textures.</p>
+                                <p class="text-dim small mb-0">An interactive 3D solar system with realistic planetary
+                                    motion and PBR textures.</p>
                             </div>
                         </a>
                     </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="col-lg-6 reveal-up" style="animation-delay: 0.2s;">
-                        <a href="./portfolio/rotoscope.html" class="card-pro text-decoration-none">
-                            <div class="card-pro-img">
-                                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200" alt="Video Rotoscope">
+
+                    <!-- Project 2 (Wide) -->
+                    <div class="bento-item bento-col-span-2 bento-row-span-1 reveal-up p-0 d-flex flex-column card-pro"
+                        style="animation-delay: 0.2s;">
+                        <a href="./portfolio/rotoscope.html" class="text-decoration-none d-flex flex-column h-100"
+                            style="border-radius: 12px; overflow: hidden;">
+                            <div class="window-chrome"
+                                style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 16px;">
+                                <div class="traffic-lights"><span></span><span></span><span></span></div>
+                                <div class="window-title">rotoscope_final.mp4</div>
                             </div>
-                            <div class="card-pro-body">
-                                <div class="card-category">POST-PRODUCTION</div>
-                                <h3 class="text-white mb-2">ROTOSCOPING WORKFLOW</h3>
-                                <p class="text-dim small mb-0">Technical frame-by-frame masking and advanced subject isolation process. Currently showcasing progress through Week 7.</p>
+                            <div class="card-pro-img position-relative" style="height: 180px;">
+                                <img src="./images/rotoscope_cover.png" alt="Rotoscope Cover"
+                                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                            </div>
+                            <div class="card-pro-body bg-deep p-3 d-flex flex-column flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="text-white mb-0">ROTOSCOPING WORKFLOW</h4>
+                                    <div class="pill-badge"><span class="dot"></span> POST</div>
+                                </div>
+                                <p class="text-dim small mb-0">Technical frame-by-frame masking process.</p>
                             </div>
                         </a>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- About Section -->
-        <section id="about" class="section bg-surface border-top border-bottom border-thin">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 reveal-left">
-                        <div class="hero-label">Background</div>
-                        <h2 class="text-white display-4 mb-4">THE ARTIST</h2>
-                        <p class="text-dim fs-5 mb-4">Passion for multimedia and digital storytelling. Combining technology and creativity to produce engaging visual experiences through industry-standard tools.</p>
-                        <ul class="list-unstyled text-white d-grid gap-3">
-                            <li><i class="fas fa-check text-accent me-2"></i> 3D Modeling & Animation</li>
-                            <li><i class="fas fa-check text-accent me-2"></i> Advanced Video Editing</li>
-                            <li><i class="fas fa-check text-accent me-2"></i> Python Automation</li>
-                        </ul>
+
+                    <!-- Stats (Small boxes) -->
+                    <div class="bento-item bento-col-span-1 bento-row-span-1 reveal-up d-flex flex-column justify-content-center text-center"
+                        style="animation-delay: 0.3s; background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,40,0.8));">
+                        <div class="stat-value text-gradient display-4 fw-bold">12+</div>
+                        <div class="stat-label text-uppercase tracking-widest text-muted small mt-2">Project Weeks</div>
                     </div>
-                    <div class="col-md-5 offset-md-1 mt-5 mt-md-0 reveal-up">
-                        <div class="p-5 border border-thin rounded-0 text-center">
-                            <i class="fas fa-microchip fa-4x text-accent mb-4"></i>
-                            <h3 class="text-white mb-3">TECHNICAL FOCUS</h3>
-                            <p class="text-dim small">Specializing in Blender, After Effects, and Python-driven creative workflows.</p>
+
+                    <div class="bento-item bento-col-span-1 bento-row-span-1 reveal-up d-flex flex-column justify-content-center text-center"
+                        style="animation-delay: 0.4s; background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,40,0.8));">
+                        <div class="stat-value text-gradient display-4 fw-bold">09</div>
+                        <div class="stat-label text-uppercase tracking-widest text-muted small mt-2">Planets Modeled
                         </div>
                     </div>
+
+                    <!-- About / Contact -->
+                    <div class="bento-item bento-col-span-4 reveal-up d-flex flex-column flex-md-row align-items-center justify-content-between p-5"
+                        style="animation-delay: 0.5s; border-top: 2px solid var(--accent-1);">
+                        <div>
+                            <div class="pill-badge mb-3"><span class="dot"></span> The Artist</div>
+                            <h2 class="text-white mb-3">MARCUS INIGO S. ARISTAIN</h2>
+                            <p class="text-dim mb-0 max-width-600">Passion for multimedia and digital storytelling.
+                                Specializing in Blender, After Effects, and Python-driven creative workflows.</p>
+                        </div>
+                        <div class="mt-4 mt-md-0 text-md-end">
+                            <div class="text-dim small tracking-widest mb-2">ESTABLISH CONNECTION</div>
+                            <a href="mailto:marcusinigo1205@gmail.com"
+                                class="text-white fs-5 text-decoration-none d-block mb-4 hover-text-accent"
+                                style="font-family: var(--font-mono);">marcusinigo1205@gmail.com</a>
+                            <a href="#home" class="btn-primary-pill">
+                                BACK TO TOP <i class="fas fa-arrow-up ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container text-center reveal-up">
-                <div class="hero-label mx-auto">Get in touch</div>
-                <h2 class="text-white display-3 mb-5">ESTABLISH<br>CONNECTION</h2>
-                <div class="text-dim fs-4 mb-5">marcusinigo1205@gmail.com</div>
-                <a href="#home" class="btn-pro btn-lg">
-                    BACK TO TOP <i class="fas fa-arrow-up ms-2"></i>
-                </a>
             </div>
         </section>
     </main>
-    
+
     <div id="footer-container"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         /* jshint esversion: 6 */
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             fetch('components/header.html').then(r => r.text()).then(d => {
                 const header = document.getElementById('header-container');
                 header.innerHTML = d;
@@ -169,4 +217,5 @@
         });
     </script>
 </body>
+
 </html>

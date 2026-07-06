@@ -22,83 +22,40 @@
     <div id="header-container"></div>
     
     <main>
-        <!-- Project Hero -->
-        <section class="hero-pro border-bottom border-thin">
-            <div class="container reveal-up">
-                <div class="hero-label">Post-Production</div>
-                <h1 class="hero-title text-white">ROTOSCOPING<br><span class="text-dim">WORKFLOW</span></h1>
-                <p class="text-dim fs-5 max-width-600 mb-0">High-precision frame-by-frame masking and subject isolation. A technical breakdown of the animation process.</p>
-            </div>
-        </section>
-
-        <!-- Back Link Section -->
-        <div class="section py-4">
-            <div class="container reveal-up">
-                <a href="../index.html#portfolio" class="btn-outline-pro py-2 px-4">
-                    <i class="fas fa-arrow-left me-2"></i> BACK TO WORK
-                </a>
-            </div>
-        </div>
-
-        <!-- Technical Breakdown -->
-        <div class="section">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-7 reveal-up">
-                        <div class="card-pro overflow-hidden">
-                            <div class="card-pro-img" style="aspect-ratio: 16/9;">
-                                <video controls autoplay muted loop class="w-100 h-100">
-                                    <source src="../videos/rotoscope/source_video.mp4" type="video/mp4">
-                                </video>
-                            </div>
+        <!-- Cinematic Hero -->
+        <section class="cinematic-hero">
+            <video autoplay muted loop playsinline>
+                <source src="../videos/rotoscope/final_video.mp4" type="video/mp4">
+            </video>
+            
+            <div class="hud-overlay">
+                <div class="container-fluid px-4 px-lg-5">
+                    <a href="../index.html#portfolio" class="text-decoration-none text-dim small tracking-widest mb-4 d-inline-block hover-text-accent">
+                        <i class="fas fa-arrow-left me-2"></i> BACK TO OVERVIEW
+                    </a>
+                    
+                    <div class="row align-items-end mb-4">
+                        <div class="col-lg-8 reveal-up">
+                            <div class="pill-badge mb-3 bg-dark bg-opacity-50 border-light"><span class="dot text-success"></span> Post-Production</div>
+                            <h1 class="display-1 fw-bold text-white mb-2" style="line-height: 1.1; letter-spacing: -2px;">
+                                ROTOSCOPING<br>
+                                <span class="text-gradient">WORKFLOW</span>
+                            </h1>
+                            <p class="text-light fs-5 max-width-600 mb-0">High-precision frame-by-frame masking and subject isolation. A technical breakdown of the animation process.</p>
                         </div>
-                    </div>
-                    <div class="col-lg-5 reveal-left">
-                        <div class="hero-label">Reference</div>
-                        <h2 class="text-white mb-4">SOURCE MATERIAL</h2>
-                        <p class="text-dim">The original footage serves as the foundation for the rotoscoping process. Every frame is analyzed for motion paths and silhouette accuracy.</p>
-                        <div class="d-grid gap-3 mt-4">
-                            <div class="stat-box">
-                                <div class="stat-label">Frame Rate</div>
-                                <div class="text-white fw-bold">30 FPS</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-label">Resolution</div>
-                                <div class="text-white fw-bold">1920 x 1080</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Final Video Section -->
-        <section class="section">
-            <div class="container reveal-up">
-                <div class="hero-label">Complete</div>
-                <h2 class="text-white display-4 mb-5">FINAL VIDEO</h2>
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5 reveal-left">
-                        <div class="hero-label">Project Title</div>
-                        <h2 class="text-white mb-4">"RUDE!" — Hearts2Hearts (하츠투하츠)</h2>
-                        <p class="text-dim">DISCLAIMER: This rotoscoping project is intended for educational purposes only, showcasing technical animation and post-production skills. All rights and credits belong to the original owner(s).</p>
-                        <div class="d-grid gap-3 mt-4">
-                            <div class="stat-box">
-                                <div class="stat-label">Total Frames</div>
-                                <div class="text-white fw-bold">1830 FRAMES</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-label">Duration</div>
-                                <div class="text-white fw-bold">1:01</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 reveal-up">
-                        <div class="card-pro overflow-hidden">
-                            <div class="card-pro-img" style="aspect-ratio: 16/9;">
-                                <video controls autoplay muted loop class="w-100 h-100">
-                                    <source src="../videos/rotoscope/final_video.mp4" type="video/mp4">
-                                </video>
+                        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 reveal-left">
+                            <div class="glass-panel p-4 d-inline-block text-start w-100">
+                                <div class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-3">
+                                    <div>
+                                        <div class="text-muted small tracking-widest mb-1">FRAMES</div>
+                                        <div class="fs-3 fw-bold text-white">1830</div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="text-muted small tracking-widest mb-1">DURATION</div>
+                                        <div class="fs-3 fw-bold text-white">1:01</div>
+                                    </div>
+                                </div>
+                                <div class="text-muted small mt-2">DISCLAIMER: For educational purposes only. All rights belong to original owners.</div>
                             </div>
                         </div>
                     </div>
@@ -106,271 +63,127 @@
             </div>
         </section>
 
-        <!-- Step-by-Step Workflow -->
-        <section class="section">
-            <div class="container step-container">
-                <div class="hero-label reveal-up">Workflow</div>
-                <h2 class="text-white display-4 mb-5 reveal-up glow-text">STEP-BY-STEP</h2>
+        <!-- Toolset Panel -->
+        <section class="py-5 bg-dark">
+            <div class="container-fluid px-4 px-lg-5 reveal-up">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="glass-panel">
+                            <div class="d-flex align-items-center mb-4">
+                                <i class="fas fa-tools fa-2x text-accent me-3"></i>
+                                <div>
+                                    <h3 class="text-white mb-0">TECHNICAL ARSENAL</h3>
+                                    <div class="text-muted small tracking-widest">SOFTWARE STACK</div>
+                                </div>
+                            </div>
+                            <div class="row g-4 mt-2">
+                                <div class="col-md-6 border-end border-secondary pe-md-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fab fa-adobe fa-2x text-accent me-3"></i>
+                                        <h4 class="text-white mb-0">AFTER EFFECTS</h4>
+                                    </div>
+                                    <p class="text-dim small mb-0">Primary engine for masking, interpolation, and advanced subject isolation using the Roto Brush and Pen toolsets.</p>
+                                </div>
+                                <div class="col-md-6 ps-md-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-bolt fa-2x text-accent me-3"></i>
+                                        <h4 class="text-white mb-0">CAPCUT</h4>
+                                    </div>
+                                    <p class="text-dim small mb-0">Optimized for final assembly, mobile-ready formatting, and seamless social media delivery.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow Bento -->
+        <section class="py-5 bg-black">
+            <div class="container-fluid px-4 px-lg-5 reveal-up">
+                <div class="d-flex align-items-center mb-4">
+                    <h3 class="text-white mb-0 me-3">WORKFLOW STEPS</h3>
+                    <div class="flex-grow-1 border-top border-secondary"></div>
+                </div>
                 
-                <div class="d-grid gap-5">
-                    <!-- Step 1 -->
-                    <div class="row g-0 border border-thin bg-surface reveal-up">
-                        <div class="col-lg-7">
-                            <div class="card-pro-img rounded-0 h-100" style="min-height: 300px;">
-                                <img src="../steps/rotoscope/step_1.png" alt="Step 1" class="w-100 h-100 object-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
-                            <div class="hero-label">Step 01</div>
-                            <h2 class="text-white mb-3">FIND REFERENCE VIDEO</h2>
-                            <p class="text-dim small mb-4">Source and select the original footage that will serve as the foundation for your rotoscoping project.</p>
+                <div class="bento-grid mt-0">
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
+                        <img src="../steps/rotoscope/step_1.png" alt="Step 1" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
+                            <div class="text-accent small fw-bold tracking-widest">01</div>
+                            <div class="text-white fw-bold">REFERENCE</div>
                         </div>
                     </div>
-
-                    <!-- Step 2 -->
-                    <div class="row g-0 border border-thin bg-surface reveal-up" style="flex-direction: row-reverse;">
-                        <div class="col-lg-7">
-                            <div class="card-pro-img rounded-0 h-100" style="min-height: 300px;">
-                                <img src="../steps/rotoscope/step_2.png" alt="Step 2" class="w-100 h-100 object-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
-                            <div class="hero-label">Step 02</div>
-                            <h2 class="text-white mb-3">EDIT IN CAPCUT (5s CLIPS)</h2>
-                            <p class="text-dim small mb-4">Trim and cut your reference video into manageable 5-second clips for easier rotoscoping.</p>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
+                        <img src="../steps/rotoscope/step_2.png" alt="Step 2" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
+                            <div class="text-accent small fw-bold tracking-widest">02</div>
+                            <div class="text-white fw-bold">TRIM CLIPS</div>
                         </div>
                     </div>
-
-                    <!-- Step 3 -->
-                    <div class="row g-0 border border-thin bg-surface reveal-up">
-                        <div class="col-lg-7">
-                            <div class="card-pro-img rounded-0 h-100" style="min-height: 300px;">
-                                <img src="../steps/rotoscope/step_3.png" alt="Step 3" class="w-100 h-100 object-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
-                            <div class="hero-label">Step 03</div>
-                            <h2 class="text-white mb-3">ROTOSCOPE IN AFTER EFFECTS</h2>
-                            <p class="text-dim small mb-4">Use Adobe After Effects and the Roto Brush tool to create frame-by-frame masks and isolate your subject.</p>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
+                        <img src="../steps/rotoscope/step_3.png" alt="Step 3" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
+                            <div class="text-accent small fw-bold tracking-widest">03</div>
+                            <div class="text-white fw-bold">ROTOSCOPE</div>
                         </div>
                     </div>
-
-                    <!-- Step 4 -->
-                    <div class="row g-0 border border-thin bg-surface reveal-up" style="flex-direction: row-reverse;">
-                        <div class="col-lg-7">
-                            <div class="card-pro-img rounded-0 h-100" style="min-height: 300px;">
-                                <img src="../steps/rotoscope/step_4.png" alt="Step 4" class="w-100 h-100 object-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
-                            <div class="hero-label">Step 04</div>
-                            <h2 class="text-white mb-3">RENDER EACH CLIP</h2>
-                            <p class="text-dim small mb-4">Export each rotoscoped clip from After Effects in your desired resolution and format.</p>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
+                        <img src="../steps/rotoscope/step_4.png" alt="Step 4" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
+                            <div class="text-accent small fw-bold tracking-widest">04</div>
+                            <div class="text-white fw-bold">RENDER</div>
                         </div>
                     </div>
-
-                    <!-- Step 5 -->
-                    <div class="row g-0 border border-thin bg-surface reveal-up">
-                        <div class="col-lg-7">
-                            <div class="card-pro-img rounded-0 h-100" style="min-height: 300px;">
-                                <img src="../steps/rotoscope/step_5.png" alt="Step 5" class="w-100 h-100 object-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
-                            <div class="hero-label">Step 05</div>
-                            <h2 class="text-white mb-3">COMBINE ALL CLIPS</h2>
-                            <p class="text-dim small mb-4">Import all rendered clips and assemble them in sequence to form your complete rotoscoped animation.</p>
+                    <div class="bento-item bento-col-span-2 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
+                        <img src="../steps/rotoscope/step_5.png" alt="Step 5" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
+                            <div class="text-accent small fw-bold tracking-widest">05</div>
+                            <div class="text-white fw-bold">ASSEMBLE CLIPS</div>
                         </div>
                     </div>
-
-                    <!-- Step 6 -->
-                    <div class="row g-0 border border-thin bg-surface reveal-up" style="flex-direction: row-reverse;">
-                        <div class="col-lg-7">
-                            <div class="card-pro-img rounded-0 h-100" style="min-height: 300px;">
-                                <img src="../steps/rotoscope/step_6.png" alt="Step 6" class="w-100 h-100 object-cover">
-                            </div>
-                        </div>
-                        <div class="col-lg-5 p-5 d-flex flex-column justify-content-center">
-                            <div class="hero-label">Step 06</div>
-                            <h2 class="text-white mb-3">FINAL EDIT IN CAPCUT</h2>
-                            <p class="text-dim small mb-4">Polish your final video in CapCut with transitions, effects, and any additional edits for the final output.</p>
+                    <div class="bento-item bento-col-span-2 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
+                        <img src="../steps/rotoscope/step_6.png" alt="Step 6" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
+                            <div class="text-accent small fw-bold tracking-widest">06</div>
+                            <div class="text-white fw-bold">FINAL COLOR & EDIT</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Weekly Progress -->
-        <section class="section bg-surface">
-            <div class="container">
-                <div class="hero-label reveal-up">Timeline</div>
-                <h2 class="text-white display-4 mb-5 reveal-up">PRODUCTION LOG</h2>
-                
+        <!-- Source Material and Raw -->
+        <section class="py-5 bg-dark">
+            <div class="container-fluid px-4 px-lg-5 reveal-up">
+                <div class="d-flex align-items-center mb-5">
+                    <h3 class="text-white mb-0 me-3">SOURCE & RAW MATERIAL</h3>
+                    <div class="flex-grow-1 border-top border-secondary"></div>
+                </div>
+
                 <div class="row g-4">
-                    <!-- Week 1 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.1s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 01</h4>
+                    <!-- Source Video -->
+                    <div class="col-lg-6">
+                        <div class="glass-panel p-0 h-100 rounded-4 overflow-hidden position-relative border-0" style="min-height: 400px;">
+                            <video controls autoplay muted loop playsinline class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                                <source src="../videos/rotoscope/source_video.mp4" type="video/mp4">
+                            </video>
+                            <div class="position-absolute top-0 start-0 w-100 p-4" style="background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); pointer-events: none;">
+                                <h4 class="text-white mb-0">SOURCE VIDEO</h4>
+                                <div class="text-muted small tracking-widest">REFERENCE FOOTAGE</div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Week 2 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.2s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_2.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 02</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 3 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.3s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_3.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 03</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 4 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.4s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_4.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 04</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 5 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.1s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_5.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 05</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 6 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.2s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_6.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 06</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 7 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.3s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_7.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 07</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 8 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.4s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_8.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 08</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 9 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.1s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_9.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 09</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 10 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.2s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_10.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 10</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 11 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.3s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_11.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 11</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Week 12 -->
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.4s;">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/dance_12.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WEEK 12</h4>
+                    <!-- Raw Unedited -->
+                    <div class="col-lg-6">
+                        <div class="glass-panel p-0 h-100 rounded-4 overflow-hidden position-relative border-0" style="min-height: 400px;">
+                            <video controls autoplay muted loop playsinline class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                                <source src="../videos/rotoscope/whole_video.mp4" type="video/mp4">
+                            </video>
+                            <div class="position-absolute top-0 start-0 w-100 p-4" style="background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); pointer-events: none;">
+                                <h4 class="text-white mb-0">RAW EXPORT</h4>
+                                <div class="text-muted small tracking-widest">WHOLE_VIDEO.mp4</div>
                             </div>
                         </div>
                     </div>
@@ -378,49 +191,91 @@
             </div>
         </section>
 
-        <!-- Raw Unedited Video -->
-        <section class="section bg-surface">
-            <div class="container">
-                <div class="hero-label reveal-up">Unedited</div>
-                <h2 class="text-white display-4 mb-5 reveal-up">RAW VERSION</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-6 reveal-up">
-                        <div class="card-pro">
-                            <div class="card-pro-img">
-                                <video controls autoplay muted loop>
-                                    <source src="../videos/rotoscope/whole_video.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <div class="card-pro-body text-center">
-                                <h4 class="text-white mb-0">WHOLE VIDEO</h4>
-                            </div>
-                        </div>
+        <!-- Production Log -->
+        <section class="py-5 bg-black pb-6">
+            <div class="container-fluid px-4 px-lg-5 reveal-up">
+                <div class="d-flex align-items-center mb-5">
+                    <h3 class="text-white mb-0 me-3">PRODUCTION LOG (CLIPS)</h3>
+                    <div class="flex-grow-1 border-top border-secondary"></div>
+                </div>
+
+                <div class="bento-grid mt-0" style="grid-template-columns: repeat(4, 1fr);">
+                    <!-- We'll do 4 columns to make it look like a gallery of clips -->
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_1.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 01</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_2.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 02</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_3.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 03</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_4.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 04</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_5.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 05</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_6.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 06</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_7.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 07</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_8.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 08</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_9.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 09</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_10.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 10</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_11.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 11</div>
+                    </div>
+                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-3 overflow-hidden" style="min-height: 200px;">
+                        <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                            <source src="../videos/rotoscope/dance_12.mp4" type="video/mp4">
+                        </video>
+                        <div class="position-absolute top-0 start-0 m-2 pill-badge bg-dark bg-opacity-75"><span class="dot text-info"></span> WK 12</div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Toolset -->
-        <div class="section">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.1s;">
-                        <div class="p-5 border border-thin h-100">
-                            <div class="text-accent mb-4"><i class="fab fa-adobe fa-3x"></i></div>
-                            <h3 class="text-white">AFTER EFFECTS</h3>
-                            <p class="text-dim small mb-0">Primary engine for masking, interpolation, and advanced subject isolation using the Roto Brush and Pen toolsets.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 reveal-up" style="animation-delay: 0.2s;">
-                        <div class="p-5 border border-thin h-100">
-                            <div class="text-accent mb-4"><i class="fas fa-bolt fa-3x"></i></div>
-                            <h3 class="text-white">CAPCUT</h3>
-                            <p class="text-dim small mb-0">Optimized for final assembly, mobile-ready formatting, and seamless social media delivery.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
     
     <div id="footer-container"></div>
