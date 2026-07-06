@@ -808,6 +808,25 @@
             document.addEventListener('DOMContentLoaded', () => {
                 const firstBtn = document.querySelector('.db-nav-btn');
                 if (firstBtn) selectPlanet('Sun', firstBtn);
+                
+                // Load Header and Footer
+                fetch('../components/header.html').then(r => r.text()).then(d => {
+                    const header = document.getElementById('header-container');
+                    if (header) {
+                        header.innerHTML = d;
+                        // Fix relative paths for sub-folder pages
+                        header.querySelectorAll('[data-nav-link]').forEach(link => {
+                            const href = link.getAttribute('href');
+                            if (href && !href.startsWith('../') && !href.startsWith('http') && !href.startsWith('mailto:')) {
+                                link.setAttribute('href', '../' + href);
+                            }
+                        });
+                    }
+                });
+                fetch('../components/footer.html').then(r => r.text()).then(d => {
+                    const footer = document.getElementById('footer-container');
+                    if (footer) footer.innerHTML = d;
+                });
             });
         </script>
     </body>
