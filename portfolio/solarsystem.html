@@ -1,388 +1,815 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar System in Blender - Marcus Inigo S. Aristain</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-    <!-- Dynamic Background -->
-    <div class="dynamic-bg"></div>
-    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar System in Blender - Marcus Inigo S. Aristain</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-    <!-- Dynamic Background -->
-    <div class="dynamic-bg"></div>
-    
-    <!-- Floating Particles -->
-    <div class="particles" id="particles"></div>
 
-    <div id="header-container"></div>
-    
-    <main>
-        <!-- Cinematic Hero -->
-        <section class="cinematic-hero position-relative" style="min-height: 80vh; display: flex; align-items: center; z-index: 0;">
-            <!-- Local GIF Background -->
-            <img src="../images/hero_bg.gif" alt="Space Background" class="position-absolute w-100 h-100 object-fit-cover" style="top: 0; left: 0; z-index: 0; filter: brightness(0.4);">
-            
-            <div class="hud-overlay w-100 position-relative" style="z-index: 1;">
-                <div class="container-fluid px-4 px-lg-5">
-                    <a href="../index.html#portfolio" class="text-decoration-none text-dim small tracking-widest mb-4 d-inline-block hover-text-accent">
-                        <i class="fas fa-arrow-left me-2"></i> BACK TO OVERVIEW
-                    </a>
-                    
-                    <div class="row align-items-end mb-4">
-                        <div class="col-lg-8 reveal-up">
-                            <div class="pill-badge mb-3 bg-dark bg-opacity-50 border-light"><span class="dot text-success"></span> 3D Visualization</div>
-                            <h1 class="display-1 fw-bold text-white mb-2" style="line-height: 1.1; letter-spacing: -2px;">
-                                SOLAR SYSTEM<br>
-                                <span class="text-gradient">BLENDER</span>
-                            </h1>
-                            <p class="text-light fs-5 max-width-600 mb-0">Technical exploration of planetary orbits, PBR texturing, and automated animation workflows.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System in Blender - Marcus Inigo S. Aristain</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <!-- Dynamic Background -->
+    <div class="dynamic-bg"></div>
+
+    <body>
+        <!-- Dynamic Background -->
+        <div class="dynamic-bg"></div>
+
+        <!-- Floating Particles -->
+        <div class="particles" id="particles"></div>
+
+        <div id="header-container"></div>
+
+        <main>
+            <!-- Cinematic Hero -->
+            <section class="cinematic-hero position-relative"
+                style="min-height: 80vh; display: flex; align-items: center; z-index: 0;">
+                <!-- Local GIF Background -->
+                <div class="position-absolute w-100 h-100"
+                    style="top: 0; left: 0; z-index: 0; filter: brightness(0.5); background: url('../stars.gif') center center / cover no-repeat;">
+                </div>
+
+                <div class="hud-overlay w-100 position-relative" style="z-index: 1;">
+                    <div class="container-fluid px-4 px-lg-5">
+                        <a href="../index.html#portfolio"
+                            class="text-decoration-none text-dim small tracking-widest mb-4 d-inline-block hover-text-accent">
+                            <i class="fas fa-arrow-left me-2"></i> BACK TO OVERVIEW
+                        </a>
+
+                        <div class="row align-items-end mb-4">
+                            <div class="col-lg-8 reveal-up">
+                                <div class="pill-badge mb-3 bg-dark bg-opacity-50 border-light"><span
+                                        class="dot text-success"></span> 3D Visualization</div>
+                                <h1 class="display-1 fw-bold text-white mb-2"
+                                    style="line-height: 1.1; letter-spacing: -2px; font-family: 'Space Grotesk', serif;">
+                                    SOLAR SYSTEM BLENDER
+                                </h1>
+                                <p class="text-light fs-5 max-width-600 mb-0">Technical exploration of planetary orbits,
+                                    PBR texturing, and automated animation workflows.</p>
+                            </div>
                         </div>
-                        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 reveal-left">
-                            <div class="glass-panel p-4 d-inline-block text-start w-100">
-                                <div class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-3">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Intro Section -->
+            <section class="section bg-deep position-relative pt-5 pb-5 border-top border-thin" id="project-intro">
+                <div class="container py-5 reveal-up">
+                    <div class="row align-items-center g-5">
+                        <!-- Left Content -->
+                        <div class="col-lg-6 pe-lg-5">
+                            <div class="text-warning small mb-3 fw-bold tracking-widest" style="letter-spacing: 3px;">TECHNICAL OVERVIEW &mdash; SOLAR SYSTEM SIMULATION</div>
+                            <h2 class="display-3 text-white mb-4" style="font-family: 'Space Grotesk', serif; font-weight: 400; letter-spacing: -1px;">
+                                Automated 3D Simulation
+                            </h2>
+                            <div class="border-top border-secondary opacity-50 mb-4" style="width: 60px; border-width: 1px !important;"></div>
+                            <p class="text-dim fs-5 mb-5 lh-lg" style="opacity: 0.85;">
+                                Exploring the intersection of code and 3D space. This visualization leverages Python to mathematically plot planetary orbits, automate keyframing, and generate accurate celestial scales within the Blender environment.
+                            </p>
+                            
+                            <!-- Badges -->
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge border border-secondary text-light px-3 py-2 bg-dark rounded-1 d-flex align-items-center gap-2" style="font-weight: 500; font-family: monospace; font-size: 0.8rem; opacity: 0.9;">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Blender_logo_no_text.svg" alt="Blender" width="14" height="14">
+                                    Blender 3.6 LTS
+                                </span>
+                                <span class="badge border border-secondary text-light px-3 py-2 bg-dark rounded-1 d-flex align-items-center gap-2" style="font-weight: 500; font-family: monospace; font-size: 0.8rem; opacity: 0.9;">
+                                    <i class="fab fa-python" style="color: #FFD43B; font-size: 0.9rem;"></i>
+                                    Python
+                                </span>
+                                <span class="badge border border-secondary text-light px-3 py-2 bg-dark rounded-1 d-flex align-items-center gap-2" style="font-weight: 500; font-family: monospace; font-size: 0.8rem; opacity: 0.9;">
+                                    3D Animation
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Video -->
+                        <div class="col-lg-6 mt-5 mt-lg-0">
+                            <div class="p-1 rounded-2 border border-secondary position-relative overflow-hidden" style="background: rgba(20,20,20,0.8); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <!-- Top right UI icons like the screenshot -->
+                                <div class="position-absolute d-flex gap-1" style="top: 12px; right: 12px; z-index: 10;">
+                                    <div class="bg-black bg-opacity-75 border border-secondary rounded-1 d-flex align-items-center justify-content-center hover-glow" style="width: 28px; height: 28px; cursor: pointer; transition: all 0.2s;">
+                                        <i class="fas fa-external-link-alt text-light" style="font-size: 0.65rem;"></i>
+                                    </div>
+                                    <div class="bg-black bg-opacity-75 border border-secondary rounded-1 d-flex align-items-center justify-content-center hover-glow" style="width: 28px; height: 28px; cursor: pointer; transition: all 0.2s;">
+                                        <i class="fas fa-step-forward text-light" style="font-size: 0.65rem;"></i>
+                                    </div>
+                                </div>
+                                <video autoplay loop muted playsinline class="w-100 rounded-1 object-fit-cover" style="aspect-ratio: 16/9; pointer-events: none; filter: contrast(1.1) brightness(0.9);">
+                                    <source src="../videos/solarsystem/solarsystem.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Full System Overview Section -->
+            <section class="section border-top border-thin bg-deep">
+                <div class="container">
+                    <div class="hero-label reveal-up">Grand Finale</div>
+                    <h2 class="text-white display-4 mb-5 reveal-up">SOLAR SYSTEM OVERVIEW</h2>
+
+                    <div class="row g-0 border border-thin bg-surface reveal-up rounded-4 overflow-hidden shadow-sm">
+                        <div class="col-lg-12">
+                            <div class="card-pro-img rounded-0" style="aspect-ratio: 21/9; background: #000;">
+                                <video controls autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
+                                    <source src="../videos/solarsystem/solarsystem.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 p-5 text-center">
+                            <div class="hero-label mx-auto" style="padding-left: 0;">Technical Synthesis</div>
+                            <h3 class="text-white mb-4">THE COMPLETE CELESTIAL MECHANICS</h3>
+                            <p class="text-dim max-width-600 mx-auto mb-5">A comprehensive visualization of all
+                                planetary bodies, demonstrating relative scales, orbital velocities, and gravitational
+                                relationships in a single synchronized simulation.</p>
+
+                            <div class="d-flex justify-content-center gap-3 mb-5">
+                                <div class="stat-box text-start">
+                                    <div class="stat-value">8</div>
+                                    <div class="stat-label">Major Planets</div>
+                                </div>
+                                <div class="stat-box text-start">
+                                    <div class="stat-value">1</div>
+                                    <div class="stat-label">Star</div>
+                                </div>
+                                <div class="stat-box text-start">
+                                    <div class="stat-value">200+</div>
+                                    <div class="stat-label">Moons</div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2 justify-content-center flex-wrap">
+                                <button type="button" class="btn-outline-pro px-4 py-2" style="border-radius: 100px;"
+                                    onclick="toggleScript('solarsystem')">
+                                    <i class="fas fa-code me-2"></i> VIEW SCRIPT
+                                </button>
+                                <button type="button" class="btn-pro px-4 py-2" style="border-radius: 100px;"
+                                    onclick="downloadScript('solarsystem')">
+                                    <i class="fas fa-download me-2"></i> DOWNLOAD SCRIPT
+                                </button>
+                                <a href="../blend_files/solarsystem.blend" class="btn-pro px-4 py-2 text-decoration-none" style="border-radius: 100px;" download>
+                                    <i class="fas fa-cube me-2"></i> DOWNLOAD .BLEND
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orbit Calculator Glass Panel -->
+            <section class="py-5 bg-dark">
+                <div class="container-fluid px-4 px-lg-5 reveal-up">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="glass-panel">
+                                <div class="d-flex align-items-center mb-4">
+                                    <i class="fas fa-calculator fa-2x text-accent me-3"></i>
                                     <div>
-                                        <div class="text-muted small tracking-widest mb-1">PLANETS</div>
-                                        <div class="fs-3 fw-bold text-white">8</div>
-                                    </div>
-                                    <div class="text-end">
-                                        <div class="text-muted small tracking-widest mb-1">STAR</div>
-                                        <div class="fs-3 fw-bold text-white">1</div>
+                                        <h3 class="text-white mb-0">ORBIT CALCULATOR</h3>
+                                        <div class="text-muted small tracking-widest">INTERACTIVE WIDGET</div>
                                     </div>
                                 </div>
-                                <div class="d-flex gap-2">
-                                    <button type="button" class="btn btn-outline-light flex-grow-1" style="border-radius: 8px; font-size: 0.8rem;" onclick="toggleScript('solarsystem')">
-                                        <i class="fas fa-code me-2"></i> SOURCE
-                                    </button>
-                                    <button type="button" class="btn btn-light" style="border-radius: 8px;" onclick="downloadScript('solarsystem')">
-                                        <i class="fas fa-download"></i>
-                                    </button>
+                                <div class="row g-3">
+                                    <div class="col-md-8">
+                                        <input id="ageInput"
+                                            class="form-control bg-dark text-white border-secondary py-3 px-4"
+                                            type="number" placeholder="Enter Earth Years"
+                                            style="border-radius: 12px; font-family: var(--font-mono);">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button id="calculateBtn" type="button"
+                                            class="btn btn-light w-100 h-100 fw-bold"
+                                            style="border-radius: 12px; letter-spacing: 1px;">
+                                            CALCULATE
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="ageResults" class="mt-4">
+                                    <div id="planetAges" class="row g-3"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- The Complete Celestial Mechanics (Restored Epic Look) -->
-        <section class="position-relative" style="min-height: 80vh; display: flex; align-items: center;">
-            <video autoplay muted loop playsinline class="position-absolute w-100 h-100 object-fit-cover" style="top: 0; left: 0; z-index: -1; filter: brightness(0.6);">
-                <source src="../videos/solarsystem/solarsystem.mp4" type="video/mp4">
-            </video>
-            <div class="container-fluid px-4 px-lg-5 h-100 py-5" style="z-index: 1;">
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-10 reveal-up">
-                        <div class="text-warning small text-uppercase mb-3 fw-bold tracking-widest">Technical Synthesis</div>
-                        <h2 class="display-5 fw-bold text-white mb-4" style="letter-spacing: 1px;">THE COMPLETE CELESTIAL MECHANICS</h2>
-                        <p class="text-light fs-5 mx-auto mb-5 max-width-800" style="opacity: 0.9;">A comprehensive visualization of all planetary bodies, demonstrating relative scales, orbital velocities, and gravitational relationships in a single synchronized simulation.</p>
-                        
-                        <div class="d-flex justify-content-center gap-5 mb-5 mx-auto" style="max-width: 600px;">
-                            <div class="text-start">
-                                <div class="display-4 fw-bold text-white lh-1">8</div>
-                                <div class="text-muted small tracking-widest text-uppercase mt-2" style="font-size: 0.75rem;">Major Planets</div>
-                            </div>
-                            <div class="border-start border-secondary"></div>
-                            <div class="text-start">
-                                <div class="display-4 fw-bold text-white lh-1">1</div>
-                                <div class="text-muted small tracking-widest text-uppercase mt-2" style="font-size: 0.75rem;">Star</div>
-                            </div>
-                            <div class="border-start border-secondary"></div>
-                            <div class="text-start">
-                                <div class="display-4 fw-bold text-white lh-1">200+</div>
-                                <div class="text-muted small tracking-widest text-uppercase mt-2" style="font-size: 0.75rem;">Moons</div>
+            <!-- Workflow Bento -->
+            <section class="py-5 bg-black">
+                <div class="container-fluid px-4 px-lg-5 reveal-up">
+                    <div class="d-flex align-items-center mb-4">
+                        <h3 class="text-white mb-0 me-3">WORKFLOW</h3>
+                        <div class="flex-grow-1 border-top border-secondary"></div>
+                    </div>
+
+                    <div class="bento-grid mt-0">
+                        <div
+                            class="bento-item bento-col-span-2 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden" style="min-height: 350px;">
+                            <img src="../steps/solarsystem/step_1.png" alt="Step 1" class="w-100 h-100 object-fit-cover"
+                                style="opacity: 0.8;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75"
+                                style="backdrop-filter: blur(10px);">
+                                <div class="text-accent small fw-bold tracking-widest mb-1">01</div>
+                                <div class="text-white fw-bold mb-2">CREATE THE SCRIPT</div>
+                                <div class="text-dim" style="font-size: 1rem; line-height: 1.6;">Write and set up your Python script to procedurally generate the full solar system geometry, including orbital paths, within Blender.</div>
                             </div>
                         </div>
+                        <div
+                            class="bento-item bento-col-span-2 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden" style="min-height: 350px;">
+                            <img src="../steps/solarsystem/step_2.png" alt="Step 2" class="w-100 h-100 object-fit-cover"
+                                style="opacity: 0.8;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75"
+                                style="backdrop-filter: blur(10px);">
+                                <div class="text-accent small fw-bold tracking-widest mb-1">02</div>
+                                <div class="text-white fw-bold mb-2">RUN THE SCRIPT</div>
+                                <div class="text-dim" style="font-size: 1rem; line-height: 1.6;">Execute your Python script directly in Blender to automate the generation of the solar system geometry and animation keyframes.</div>
+                            </div>
+                        </div>
+                        <div
+                            class="bento-item bento-col-span-2 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden" style="min-height: 350px;">
+                            <img src="../steps/solarsystem/step_3.png" alt="Step 3" class="w-100 h-100 object-fit-cover"
+                                style="opacity: 0.8;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75"
+                                style="backdrop-filter: blur(10px);">
+                                <div class="text-accent small fw-bold tracking-widest mb-1">03</div>
+                                <div class="text-white fw-bold mb-2">APPLY TEXTURES</div>
+                                <div class="text-dim" style="font-size: 1rem; line-height: 1.6;">Select and apply high-quality PBR textures using BlenderKit assets to bring each generated planetary body to life.</div>
+                            </div>
+                        </div>
+                        <div
+                            class="bento-item bento-col-span-2 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden" style="min-height: 350px;">
+                            <img src="../steps/solarsystem/step_4.png" alt="Step 4" class="w-100 h-100 object-fit-cover"
+                                style="opacity: 0.8;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75"
+                                style="backdrop-filter: blur(10px);">
+                                <div class="text-accent small fw-bold tracking-widest mb-1">04</div>
+                                <div class="text-white fw-bold mb-2">RENDER IT</div>
+                                <div class="text-dim" style="font-size: 1rem; line-height: 1.6;">Set up your final lighting, camera angles, and render settings to generate the complete animation or image sequence.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                        <div class="d-flex gap-3 justify-content-center">
-                            <button type="button" class="btn btn-outline-light px-4 py-3" style="border-radius: 4px; letter-spacing: 1px; font-size: 0.85rem;" onclick="toggleScript('solarsystem')">
-                                <i class="fas fa-code me-2"></i> VIEW SCRIPT
+            <style>
+                .hover-trigger .overlay-info {
+                    opacity: 0 !important;
+                }
+                .hover-trigger:hover .overlay-info {
+                    opacity: 1 !important;
+                }
+                .hover-trigger .transform-up {
+                    transform: translateY(20px) !important;
+                }
+                .hover-trigger:hover .transform-up {
+                    transform: translateY(0) !important;
+                }
+                .hover-trigger:hover video {
+                    filter: brightness(0.5) !important;
+                    transform: scale(1.02);
+                }
+                .db-container video {
+                    transition: filter 0.4s ease, transform 0.8s ease;
+                }
+                .custom-scrollbar::-webkit-scrollbar {
+                    width: 6px;
+                }
+                .custom-scrollbar::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                .custom-scrollbar::-webkit-scrollbar-thumb {
+                    background: rgba(255,255,255,0.2);
+                    border-radius: 10px;
+                }
+                .hover-white:hover {
+                    color: white !important;
+                }
+            </style>
+
+            <!-- Celestial Database HUD -->
+            <section class="py-0 bg-black position-relative" style="min-height: 90vh;" id="celestial-db">
+                <!-- Background Video Player -->
+                <video id="db-video" autoplay muted loop playsinline
+                    class="position-absolute w-100 h-100 object-fit-cover"
+                    style="top: 0; left: 0; z-index: 0; filter: brightness(0.6);">
+                    <source src="../videos/solarsystem/sun.mkv" type="video/x-matroska">
+                </video>
+
+                <div class="position-absolute top-0 start-0 w-100 h-100"
+                    style="background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%); z-index: 1;">
+                </div>
+
+                <div class="container-fluid px-4 px-lg-5 h-100 position-relative"
+                    style="z-index: 2; min-height: 90vh; display: flex; align-items: center;">
+                    <div class="row w-100 py-5">
+                        <!-- Left Column: Navigation & Stats -->
+                        <div class="col-lg-5 col-md-8">
+                            <div class="text-accent small tracking-widest text-uppercase mb-2 fw-bold"
+                                style="letter-spacing: 4px;" id="db-type">STAR</div>
+                            <h2 class="display-3 fw-bold text-white mb-4" id="db-title"
+                                style="text-transform: capitalize; letter-spacing: -1px; font-family: 'Space Grotesk', serif;">The Sun</h2>
+                            
+                            <div class="border-top border-secondary opacity-50 mb-4" style="width: 40px; border-width: 2px !important;"></div>
+                            
+                            <!-- Stats List -->
+                            <div class="mb-4" id="db-stats">
+                                <!-- Injected via JS -->
+                            </div>
+
+                            <p class="text-dim fs-6 mb-5 lh-lg" id="db-desc" style="opacity: 0.8;">The gravitational anchor of our system.</p>
+
+                            <button type="button" class="btn btn-outline-light px-4 py-2 border-light mb-5"
+                                style="border-radius: 4px; letter-spacing: 2px; font-size: 0.75rem;" id="db-script-btn"
+                                onclick="openPlanetModal()">
+                                <i class="fas fa-terminal me-2"></i> VIEW PLANET DETAILS
                             </button>
-                            <button type="button" class="btn btn-warning text-dark px-4 py-3 fw-bold border-0" style="border-radius: 4px; letter-spacing: 1px; font-size: 0.85rem;" onclick="downloadScript('solarsystem')">
-                                <i class="fas fa-download me-2"></i> DOWNLOAD SCRIPT
-                            </button>
+
+                            <!-- Planet Selector -->
+                            <div class="d-flex gap-2 flex-wrap mt-2 border-top border-secondary pt-4">
+                                <button class="btn btn-sm btn-light text-dark px-3 py-1 db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Sun', this)">SUN</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Mercury', this)">MERCURY</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Venus', this)">VENUS</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Earth', this)">EARTH</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Mars', this)">MARS</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Jupiter', this)">JUPITER</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Saturn', this)">SATURN</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Uranus', this)">URANUS</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Neptune', this)">NEPTUNE</button>
+                                <button class="btn btn-sm btn-outline-light px-3 py-1 border-secondary db-nav-btn rounded-pill fw-bold" style="font-size: 0.75rem;" onclick="selectPlanet('Pluto', this)">PLUTO</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <!-- Orbit Calculator Glass Panel -->
-        <section class="py-5 bg-dark">
-            <div class="container-fluid px-4 px-lg-5 reveal-up">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="glass-panel">
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fas fa-calculator fa-2x text-accent me-3"></i>
-                                <div>
-                                    <h3 class="text-white mb-0">ORBIT CALCULATOR</h3>
-                                    <div class="text-muted small tracking-widest">INTERACTIVE WIDGET</div>
-                                </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-8">
-                                    <input id="ageInput" class="form-control bg-dark text-white border-secondary py-3 px-4" type="number" placeholder="Enter Earth Years" style="border-radius: 12px; font-family: var(--font-mono);">
-                                </div>
-                                <div class="col-md-4">
-                                    <button id="calculateBtn" type="button" class="btn btn-light w-100 h-100 fw-bold" style="border-radius: 12px; letter-spacing: 1px;">
-                                        CALCULATE
+        <div id="footer-container"></div>
+
+        <!-- Planet Details Split-Screen Modal (Popup) -->
+        <div id="planetModal" class="script-modal d-none" style="position: fixed; inset: 0; z-index: 1050; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);">
+            <div class="modal-dialog modal-xl modal-dialog-centered h-100 d-flex align-items-center justify-content-center" style="max-width: 1200px;">
+                <div class="modal-content border-secondary border-opacity-50 overflow-hidden shadow-lg rounded-3" style="background: #0a0a0a; max-height: 85vh; display: flex; flex-direction: column; width: 100%;">
+                    
+                    <!-- Header -->
+                    <div class="d-flex justify-content-between align-items-start p-4 px-5 border-bottom border-secondary" style="border-opacity: 0.5;">
+                        <div>
+                            <h1 class="display-5 text-white mb-1" style="font-family: 'Space Grotesk', serif; letter-spacing: -1px;" id="modal-title">Pluto</h1>
+                            <div class="text-muted tracking-widest text-uppercase small" style="letter-spacing: 3px;" id="modal-subtitle">DWARF PLANET</div>
+                        </div>
+                        <button type="button" class="btn btn-link text-muted hover-white p-0" onclick="closePlanetModal()" style="font-size: 1.5rem; text-decoration: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- Body Split -->
+                    <div class="row g-0 flex-grow-1 overflow-hidden">
+                        <!-- Left: Info & Video -->
+                        <div id="modal-left-col" class="col-lg-6 p-5 overflow-auto border-end border-secondary custom-scrollbar" style="border-opacity: 0.5; max-height: calc(85vh - 100px);">
+                            
+                            <div class="position-relative rounded-2 overflow-hidden mb-5 border border-secondary" style="aspect-ratio: 16/9;">
+                                <video id="modal-video" autoplay loop muted playsinline class="w-100 h-100 object-fit-cover">
+                                    <source src="" type="video/mp4">
+                                </video>
+                                <div class="position-absolute top-0 end-0 p-3">
+                                    <button class="btn btn-sm border border-warning text-warning rounded-1 bg-dark bg-opacity-75 d-flex align-items-center gap-2" style="font-size: 0.7rem; letter-spacing: 1px; backdrop-filter: blur(5px);" onclick="toggleFullscreenVideo('modal-video')">
+                                        <i class="fas fa-expand"></i> FULLSCREEN
                                     </button>
                                 </div>
                             </div>
-                            <div id="ageResults" class="mt-4">
-                                <div id="planetAges" class="row g-3"></div>
+
+                            <p class="text-dim fs-5 lh-lg mb-5" id="modal-desc" style="opacity: 0.85;">
+                                <!-- Description injected here -->
+                            </p>
+
+                            <h6 class="text-warning tracking-widest text-uppercase small mb-4 pb-2 border-bottom border-secondary opacity-75" style="letter-spacing: 2px;">PLANET INFO</h6>
+                            
+                            <div id="modal-stats" class="d-flex flex-column gap-3 mb-5">
+                                <!-- Stats injected here -->
+                            </div>
+
+                        </div>
+
+                        <!-- Right: Script -->
+                        <div id="modal-right-col" class="col-lg-6 p-0 d-flex flex-column bg-black" style="max-height: calc(85vh - 100px);">
+                            <div class="d-flex justify-content-between align-items-center p-4 border-bottom border-secondary flex-wrap gap-3" style="border-opacity: 0.25;">
+                                <h6 id="modal-script-title" class="text-warning tracking-widest text-uppercase mb-0 small" style="letter-spacing: 2px;">PLANET SCRIPT</h6>
+                                <div class="d-flex gap-2 flex-wrap justify-content-end">
+                                    <a id="modal-download-texture-btn" class="btn btn-sm border border-info text-info rounded-1 px-3 text-decoration-none" style="font-size: 0.7rem; letter-spacing: 1px; background: transparent; transition: all 0.2s;" download>DOWNLOAD TEXTURE</a>
+                                    <a id="modal-download-blend-btn" class="btn btn-sm border border-success text-success rounded-1 px-3 text-decoration-none" style="font-size: 0.7rem; letter-spacing: 1px; background: transparent; transition: all 0.2s;" download>DOWNLOAD .BLEND</a>
+                                    <button class="btn btn-sm border border-secondary text-light rounded-1 px-3 hover-white" style="font-size: 0.7rem; letter-spacing: 1px; background: transparent; transition: all 0.2s;" onclick="copyModalScript()">COPY SCRIPT</button>
+                                    <button id="modal-download-btn" class="btn btn-sm border border-warning text-warning rounded-1 px-3" style="font-size: 0.7rem; letter-spacing: 1px; background: transparent; transition: all 0.2s;">DOWNLOAD SCRIPT</button>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 p-4 overflow-auto terminal-style custom-scrollbar" style="background: #0d0d0d;">
+                                <pre id="modal-script-content" class="text-success m-0" style="font-family: 'Fira Code', var(--font-mono); font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; word-break: break-all;"></pre>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Workflow Bento -->
-        <section class="py-5 bg-black">
-            <div class="container-fluid px-4 px-lg-5 reveal-up">
-                <div class="d-flex align-items-center mb-4">
-                    <h3 class="text-white mb-0 me-3">WORKFLOW</h3>
-                    <div class="flex-grow-1 border-top border-secondary"></div>
-                </div>
-                
-                <div class="bento-grid mt-0">
-                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
-                        <img src="../steps/solarsystem/step_1.png" alt="Step 1" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
-                            <div class="text-accent small fw-bold tracking-widest">01</div>
-                            <div class="text-white fw-bold">PYTHON SCRIPTING</div>
-                        </div>
-                    </div>
-                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
-                        <img src="../steps/solarsystem/step_2.png" alt="Step 2" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
-                            <div class="text-accent small fw-bold tracking-widest">02</div>
-                            <div class="text-white fw-bold">EXECUTION</div>
-                        </div>
-                    </div>
-                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
-                        <img src="../steps/solarsystem/step_3.png" alt="Step 3" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
-                            <div class="text-accent small fw-bold tracking-widest">03</div>
-                            <div class="text-white fw-bold">PBR TEXTURING</div>
-                        </div>
-                    </div>
-                    <div class="bento-item bento-col-span-1 p-0 position-relative glass-panel border-0 rounded-4 overflow-hidden">
-                        <img src="../steps/solarsystem/step_4.png" alt="Step 4" class="w-100 h-100 object-fit-cover" style="opacity: 0.8;">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75" style="backdrop-filter: blur(10px);">
-                            <div class="text-accent small fw-bold tracking-widest">04</div>
-                            <div class="text-white fw-bold">EEVEE RENDER</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Celestial Database HUD -->
-        <section class="py-0 bg-black position-relative" style="min-height: 90vh;" id="celestial-db">
-            <!-- Background Video Player -->
-            <video id="db-video" autoplay muted loop playsinline class="position-absolute w-100 h-100 object-fit-cover" style="top: 0; left: 0; z-index: 0; filter: brightness(0.6);">
-                <source src="../videos/solarsystem/sun.mkv" type="video/x-matroska">
-            </video>
-
-            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%); z-index: 1;"></div>
-
-            <div class="container-fluid px-4 px-lg-5 h-100 position-relative" style="z-index: 2; min-height: 90vh; display: flex; align-items: center;">
-                <div class="row w-100 py-5">
-                    <!-- Left Column: Navigation & Stats -->
-                    <div class="col-lg-5 col-md-8">
-                        <div class="text-accent small tracking-widest text-uppercase mb-2 fw-bold" style="letter-spacing: 4px;">Interactive Database</div>
-                        <h2 class="display-3 fw-bold text-white mb-2" id="db-title" style="text-transform: uppercase; letter-spacing: -1px;">THE SUN</h2>
-                        <p class="text-light opacity-75 mb-5 fs-5" id="db-desc">The gravitational anchor of our system.</p>
-
-                        <!-- Stats Grid -->
-                        <div class="row g-4 mb-5" id="db-stats">
-                            <!-- Injected via JS -->
-                        </div>
-
-                        <button type="button" class="btn btn-outline-light px-4 py-3 border-light mb-5" style="border-radius: 4px; letter-spacing: 2px; font-size: 0.85rem;" id="db-script-btn" onclick="toggleScript('sun')">
-                            <i class="fas fa-terminal me-2"></i> VIEW SOURCE CODE
-                        </button>
-
-                        <!-- Planet Selector -->
-                        <div class="d-flex gap-2 flex-wrap mt-4 border-top border-secondary pt-4">
-                            <button class="btn btn-sm btn-light px-4 py-2 fw-bold db-nav-btn" onclick="selectPlanet('Sun', this)" style="border-radius: 20px;">SUN</button>
-                            <button class="btn btn-sm btn-outline-light px-4 py-2 border-secondary db-nav-btn" onclick="selectPlanet('Earth', this)" style="border-radius: 20px;">EARTH</button>
-                            <button class="btn btn-sm btn-outline-light px-4 py-2 border-secondary db-nav-btn" onclick="selectPlanet('Mars', this)" style="border-radius: 20px;">MARS</button>
-                            <button class="btn btn-sm btn-outline-light px-4 py-2 border-secondary db-nav-btn" onclick="selectPlanet('Jupiter', this)" style="border-radius: 20px;">JUPITER</button>
-                            <button class="btn btn-sm btn-outline-light px-4 py-2 border-secondary db-nav-btn" onclick="selectPlanet('Saturn', this)" style="border-radius: 20px;">SATURN</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <div id="footer-container"></div>
-
-    <!-- Modal for Script Viewer (Terminal Style) -->
-    <div id="scriptModal" class="script-modal" style="position: fixed; inset: 0; z-index: 1050; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);">
-        <div class="modal-dialog modal-xl modal-dialog-centered h-100 d-flex align-items-center justify-content-center">
-            <div class="modal-content terminal-style w-100 border-0" style="max-height: 85vh;">
-                <div class="modal-header d-flex justify-content-between align-items-center">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-terminal text-muted me-2"></i>
-                        <span class="modal-title ms-2" id="modalTitle">script.py</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <button id="modalDownloadBtn" type="button" class="btn btn-sm btn-outline-light" style="font-size: 0.75rem; border-radius: 4px;">
-                            <i class="fas fa-download me-1"></i> RAW
-                        </button>
-                        <button type="button" class="btn-close btn-close-white" onclick="closeModal()" aria-label="Close" style="font-size: 0.75rem;"></button>
-                    </div>
-                </div>
-                <div class="modal-body p-4 overflow-auto" style="max-height: calc(85vh - 60px);">
-                    <pre id="modalScriptContent" class="text-success m-0" style="font-family: 'Fira Code', var(--font-mono); font-size: 0.9rem; white-space: pre-wrap; word-break: break-all;"></pre>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        // Interactive Celestial Database HUD Logic
-        const planetDatabase = {
-            'Sun': {
-                video: '../videos/solarsystem/sun.mkv',
-                desc: 'The gravitational anchor of our system.',
-                scriptKey: 'sun',
-                data: {
-                    type: 'G2V Star',
-                    mass: '330,000 × Earth',
-                    temperature: '5,500 °C',
-                    age: '4.6 Billion Yrs'
-                }
-            },
-            'Earth': {
-                video: '../videos/solarsystem/earth.mp4',
-                desc: 'The only known planet capable of sustaining biological life forms.',
-                scriptKey: 'earth',
-                data: {
+        <!-- External Libraries & Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="../js/solarsystem.js"></script>
+        <script>
+            // Interactive Celestial Database HUD Logic
+            const planetDatabase = {
+                'Solar System': {
+                    video: '../videos/solarsystem/solarsystem.mp4',
+                    desc: 'A comprehensive visualization of all planetary bodies, demonstrating relative scales, orbital velocities, and gravitational relationships in a single synchronized simulation.',
+                    scriptKey: 'solarsystem',
+                    type: 'Full System',
+                    blendFile: '../blend_files/solarsystem.blend',
+                    data: {
+                        'Major Planets': '8',
+                        'Star': '1',
+                        'Moons': '200+'
+                    }
+                },
+                'Sun': {
+                    video: '../videos/solarsystem/sun.mkv',
+                    desc: 'The Sun is a G-type main-sequence star (G2V). As the gravitational anchor of our system, it accounts for 99.86% of the mass in the Solar System. Its core fuses about 600 million tons of hydrogen into helium every second.',
+                    scriptKey: 'sun',
+                    type: 'Star',
+                    blendFile: '../blend_files/sun.blend',
+                    textureFile: '../images/solarsystem/sun_surface.jpg',
+                    data: {
+                        'Equatorial Radius': '696,340 km',
+                        'Mass': '330,000 × Earth',
+                        'Surface Temp': '5,505 °C',
+                        'Age': '4.6 Billion Yrs'
+                    }
+                },
+                'Mercury': {
+                    video: '../videos/solarsystem/mercury.mp4',
+                    desc: 'Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit is highly eccentric, and it has no atmosphere to retain heat, leading to extreme temperature variations.',
+                    scriptKey: 'mercury',
                     type: 'Terrestrial',
-                    orbit: '365.25 Days',
-                    moons: '1 Moon',
-                    atmosphere: 'N2 / O2'
-                }
-            },
-            'Mars': {
-                video: '../videos/solarsystem/mars.mp4',
-                desc: 'The red planet. Host to the largest volcanoes in the solar system.',
-                scriptKey: 'mars',
-                data: {
+                    blendFile: '../blend_files/mercury.blend',
+                    textureFile: '../images/solarsystem/mercury_surface.jpg',
+                    data: {
+                        'Orbital Period': '88 Earth Days',
+                        'Distance from Sun': '57.9 M km',
+                        'Moons': '0',
+                        'Surface Temp': '-173 to 427 °C'
+                    }
+                },
+                'Venus': {
+                    video: '../videos/solarsystem/venus.mp4',
+                    desc: 'Venus is Earth\'s closest planetary neighbor. It has a thick, toxic atmosphere filled with carbon dioxide and it’s perpetually shrouded in thick, yellowish clouds of sulfuric acid that trap heat.',
+                    scriptKey: 'venus',
                     type: 'Terrestrial',
-                    orbit: '687 Days',
-                    moons: '2 Moons',
-                    atmosphere: 'CO2 (95%)'
-                }
-            },
-            'Jupiter': {
-                video: '../videos/solarsystem/jupiter.mp4',
-                desc: 'Gas giant. Massive gravitational influence.',
-                scriptKey: 'jupiter',
-                data: {
+                    blendFile: '../blend_files/venus.blend',
+                    textureFile: '../images/solarsystem/venus_surface.jpg',
+                    data: {
+                        'Orbital Period': '225 Earth Days',
+                        'Distance from Sun': '108.2 M km',
+                        'Moons': '0',
+                        'Surface Temp': '465 °C'
+                    }
+                },
+                'Earth': {
+                    video: '../videos/solarsystem/earth.mp4',
+                    desc: 'Earth is the third planet from the Sun and the only astronomical object known to harbor life. About 71% of Earth\'s surface is made up of the ocean, dwarfing Earth\'s polar ice, lakes, and rivers.',
+                    scriptKey: 'earth',
+                    type: 'Terrestrial',
+                    blendFile: '../blend_files/earth.blend',
+                    textureFile: '../images/solarsystem/earth_daymap.jpg',
+                    data: {
+                        'Orbital Period': '365.25 Days',
+                        'Distance from Sun': '149.6 M km',
+                        'Moons': '1 (The Moon)',
+                        'Atmosphere': '78% N2, 21% O2'
+                    }
+                },
+                'Mars': {
+                    video: '../videos/solarsystem/mars.mp4',
+                    desc: 'Mars is the fourth planet from the Sun. The red planet is host to Olympus Mons, the largest volcano and highest known mountain on any planet in the Solar System, and Valles Marineris, one of the largest canyons.',
+                    scriptKey: 'mars',
+                    type: 'Terrestrial',
+                    blendFile: '../blend_files/mars.blend',
+                    textureFile: '../images/solarsystem/mars_surface.jpg',
+                    data: {
+                        'Orbital Period': '687 Earth Days',
+                        'Distance from Sun': '227.9 M km',
+                        'Moons': '2 (Phobos & Deimos)',
+                        'Atmosphere': '95% CO2'
+                    }
+                },
+                'Jupiter': {
+                    video: '../videos/solarsystem/jupiter.mp4',
+                    desc: 'Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined.',
+                    scriptKey: 'jupiter',
                     type: 'Gas Giant',
-                    orbit: '11.86 Yrs',
-                    moons: '95 Moons',
-                    feature: 'Great Red Spot'
-                }
-            },
-            'Saturn': {
-                video: '../videos/solarsystem/saturn.mp4',
-                desc: 'Famous for its complex icy ring system.',
-                scriptKey: 'saturn',
-                data: {
+                    blendFile: '../blend_files/jupiter.blend',
+                    textureFile: '../images/solarsystem/jupiter_map.jpg',
+                    data: {
+                        'Orbital Period': '11.86 Earth Years',
+                        'Distance from Sun': '778.5 M km',
+                        'Moons': '95 Known',
+                        'Notable Feature': 'Great Red Spot'
+                    }
+                },
+                'Saturn': {
+                    video: '../videos/solarsystem/saturn.mp4',
+                    desc: 'Saturn is a gas giant famous for its bright rings made of ice and rock particles. Despite its huge size, it is the least dense planet and would float in water if a large enough ocean existed.',
+                    scriptKey: 'saturn',
                     type: 'Gas Giant',
-                    orbit: '29.45 Yrs',
-                    moons: '146 Moons',
-                    rings: 'Ice & Rock'
+                    blendFile: '../blend_files/saturn.blend',
+                    textureFile: '../images/solarsystem/saturn_map.jpg',
+                    data: {
+                        'Orbital Period': '29.45 Earth Years',
+                        'Distance from Sun': '1.43 B km',
+                        'Moons': '146 Known',
+                        'Notable Feature': 'Complex Ring System'
+                    }
+                },
+                'Uranus': {
+                    video: '../videos/solarsystem/uranus.mp4',
+                    desc: 'Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System. It is the only planet whose equator is nearly at a right angle to its orbit.',
+                    scriptKey: 'uranus',
+                    type: 'Ice Giant',
+                    blendFile: '../blend_files/uranus.blend',
+                    textureFile: '../images/solarsystem/uranus_map.jpg',
+                    data: {
+                        'Orbital Period': '84 Earth Years',
+                        'Distance from Sun': '2.87 B km',
+                        'Moons': '28 Known',
+                        'Notable Feature': 'Rotates on its side'
+                    }
+                },
+                'Neptune': {
+                    video: '../videos/solarsystem/neptune.mp4',
+                    desc: 'Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.',
+                    scriptKey: 'neptune',
+                    type: 'Ice Giant',
+                    blendFile: '../blend_files/neptune.blend',
+                    textureFile: '../images/solarsystem/neptune_map.jpg',
+                    data: {
+                        'Orbital Period': '164.8 Earth Years',
+                        'Distance from Sun': '4.5 B km',
+                        'Moons': '16 Known',
+                        'Notable Feature': 'Supersonic Winds'
+                    }
+                },
+                'Pluto': {
+                    video: '../videos/solarsystem/pluto.mp4',
+                    desc: 'Pluto is a dwarf planet in the Kuiper belt, a ring of bodies beyond the orbit of Neptune. It was the first object discovered in the Kuiper belt and remains the largest known plutoid.',
+                    scriptKey: 'pluto',
+                    type: 'Dwarf Planet',
+                    blendFile: '../blend_files/pluto.blend',
+                    textureFile: '../images/solarsystem/pluto.jpg',
+                    data: {
+                        'Orbital Period': '248 Earth Years',
+                        'Distance from Sun': '5.9 B km',
+                        'Moons': '5 Known',
+                        'Notable Feature': 'Highly Eccentric Orbit'
+                    }
+                }
+            };
+
+            let currentSelectedPlanet = 'Sun';
+
+            function selectPlanet(planetName, btnElement) {
+                currentSelectedPlanet = planetName;
+                const data = planetDatabase[planetName];
+                if (!data) return;
+
+                // Update UI elements
+                document.getElementById('db-title').textContent = planetName;
+                document.getElementById('db-type').textContent = data.type;
+                document.getElementById('db-desc').textContent = data.desc;
+
+                // Update Stats Grid
+                const statsContainer = document.getElementById('db-stats');
+                let statsHtml = '';
+                for (const [key, value] of Object.entries(data.data)) {
+                    statsHtml += `
+                        <div class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-2 mb-2">
+                            <span class="text-secondary" style="font-size: 0.9rem;">${key}</span>
+                            <span class="text-white fw-medium" style="font-size: 0.95rem;">${value}</span>
+                        </div>
+                    `;
+                }
+                statsContainer.innerHTML = statsHtml;
+
+                // Update Background Video smoothly
+                const videoEl = document.getElementById('db-video');
+                const sourceEl = videoEl.querySelector('source');
+                
+                // Fade out video
+                gsap.to(videoEl, {
+                    opacity: 0, 
+                    duration: 0.3, 
+                    onComplete: () => {
+                        sourceEl.src = data.video;
+                        sourceEl.type = data.video.endsWith('.mkv') ? 'video/x-matroska' : 'video/mp4';
+                        videoEl.load();
+                        videoEl.play();
+                        // Fade in video
+                        gsap.to(videoEl, {opacity: 1, duration: 0.5});
+                    }
+                });
+
+                // Update Button Styles
+                document.querySelectorAll('.db-nav-btn').forEach(btn => {
+                    btn.classList.remove('btn-light', 'text-dark');
+                    btn.classList.add('btn-outline-light', 'text-white');
+                });
+                btnElement.classList.remove('btn-outline-light', 'text-white');
+                btnElement.classList.add('btn-light', 'text-dark');
+            }
+
+            function toggleScript(scriptKey) {
+                if(scriptKey === 'solarsystem') {
+                    currentSelectedPlanet = 'Solar System';
+                    openPlanetModal();
                 }
             }
-        };
 
-        function selectPlanet(planetName, btnElement) {
-            const data = planetDatabase[planetName];
-            if (!data) return;
 
-            // Update UI elements
-            document.getElementById('db-title').textContent = planetName;
-            document.getElementById('db-desc').textContent = data.desc;
-            
-            // Update Script Button
-            const scriptBtn = document.getElementById('db-script-btn');
-            scriptBtn.setAttribute('onclick', \`toggleScript('\${data.scriptKey}')\`);
+            function openPlanetModal() {
+                try {
+                    const data = planetDatabase[currentSelectedPlanet];
+                    if (!data) {
+                        alert("No data for planet: " + currentSelectedPlanet);
+                        return;
+                    }
 
-            // Update Stats Grid
-            const statsContainer = document.getElementById('db-stats');
-            let statsHtml = '';
-            for (const [key, value] of Object.entries(data.data)) {
-                statsHtml += \`
-                    <div class="col-6 col-sm-3">
-                        <div class="text-muted small tracking-widest text-uppercase mb-1" style="font-size: 0.7rem;">\${key}</div>
-                        <div class="fw-bold text-white fs-6">\${value}</div>
-                    </div>
-                \`;
-            }
-            statsContainer.innerHTML = statsHtml;
+                    const leftCol = document.getElementById('modal-left-col');
+                    const rightCol = document.getElementById('modal-right-col');
+                    const scriptTitle = document.getElementById('modal-script-title');
 
-            // Update Background Video smoothly
-            const videoEl = document.getElementById('db-video');
-            const sourceEl = videoEl.querySelector('source');
-            
-            // Fade out video
-            gsap.to(videoEl, {
-                opacity: 0, 
-                duration: 0.3, 
-                onComplete: () => {
-                    sourceEl.src = data.video;
-                    sourceEl.type = data.video.endsWith('.mkv') ? 'video/x-matroska' : 'video/mp4';
-                    videoEl.load();
-                    videoEl.play();
-                    // Fade in video
-                    gsap.to(videoEl, {opacity: 1, duration: 0.5});
+                    if (currentSelectedPlanet === 'Solar System') {
+                        // Full Screen Script Mode
+                        if (leftCol) leftCol.style.display = 'none';
+                        if (rightCol) {
+                            rightCol.classList.remove('col-lg-6');
+                            rightCol.classList.add('col-lg-12');
+                        }
+                        if (scriptTitle) scriptTitle.textContent = 'FULL PYTHON WORKFLOW SCRIPT';
+                        
+                        document.getElementById('modal-title').textContent = 'Solar System Simulation';
+                        document.getElementById('modal-subtitle').textContent = 'PYTHON SCRIPT';
+                    } else {
+                        // Split Screen Planet Mode
+                        if (leftCol) leftCol.style.display = 'block';
+                        if (rightCol) {
+                            rightCol.classList.remove('col-lg-12');
+                            rightCol.classList.add('col-lg-6');
+                        }
+                        if (scriptTitle) scriptTitle.textContent = 'PLANET SCRIPT';
+
+                        // Populate Modal Header
+                        document.getElementById('modal-title').textContent = currentSelectedPlanet;
+                        document.getElementById('modal-subtitle').textContent = data.type;
+                    }
+
+                    // Populate Modal Description
+                    document.getElementById('modal-desc').textContent = data.desc;
+
+                    // Update New Download Buttons
+                    const textureBtn = document.getElementById('modal-download-texture-btn');
+                    const blendBtn = document.getElementById('modal-download-blend-btn');
+                    
+                    if (data.textureFile) {
+                        textureBtn.onclick = function(e) {
+                            e.preventDefault();
+                            const filename = data.textureFile.split('/').pop();
+                            fetch(data.textureFile)
+                                .then(response => response.blob())
+                                .then(blob => {
+                                    const blobUrl = window.URL.createObjectURL(blob);
+                                    const a = document.createElement('a');
+                                    a.href = blobUrl;
+                                    a.download = filename;
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    window.URL.revokeObjectURL(blobUrl);
+                                    document.body.removeChild(a);
+                                })
+                                .catch(err => {
+                                    console.log('Fetch download failed, falling back to direct link');
+                                    const a = document.createElement('a');
+                                    a.href = data.textureFile;
+                                    a.download = filename;
+                                    a.target = '_blank';
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    document.body.removeChild(a);
+                                });
+                        };
+                        textureBtn.href = '#';
+                        textureBtn.style.display = 'inline-block';
+                    } else {
+                        textureBtn.style.display = 'none';
+                    }
+
+                    if (data.blendFile) {
+                        blendBtn.href = data.blendFile;
+                        blendBtn.setAttribute('download', data.blendFile.split('/').pop());
+                        blendBtn.style.display = 'inline-block';
+                    } else {
+                        blendBtn.style.display = 'none';
+                    }
+
+                    // Populate Modal Stats
+                    const statsContainer = document.getElementById('modal-stats');
+                    let statsHtml = '';
+                    if (data.data) {
+                        for (const [key, value] of Object.entries(data.data)) {
+                            statsHtml += `
+                                <div class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-3">
+                                    <span class="text-secondary" style="font-size: 0.95rem; letter-spacing: 1px;">${key}</span>
+                                    <span class="text-white fw-medium" style="font-size: 1rem;">${value}</span>
+                                </div>
+                            `;
+                        }
+                    }
+                    statsContainer.innerHTML = statsHtml;
+
+                    // Populate Modal Video
+                    const videoEl = document.getElementById('modal-video');
+                    const sourceEl = videoEl.querySelector('source');
+                    if (sourceEl) {
+                        sourceEl.src = data.video || '';
+                        sourceEl.type = data.video && data.video.endsWith('.mkv') ? 'video/x-matroska' : 'video/mp4';
+                        videoEl.load();
+                        videoEl.play().catch(e => console.warn("Video autoplay blocked:", e));
+                    }
+
+                    // Populate Modal Script
+                    const scriptContent = scripts ? scripts[data.scriptKey] : null;
+                    const scriptContainer = document.getElementById('modal-script-content');
+                    const downloadBtn = document.getElementById('modal-download-btn');
+                    
+                    if (scriptContent) {
+                        scriptContainer.textContent = scriptContent;
+                        scriptContainer.style.opacity = "1";
+                        if(downloadBtn) {
+                            downloadBtn.style.display = 'inline-block';
+                            downloadBtn.onclick = () => downloadScript(data.scriptKey);
+                        }
+                    } else {
+                        scriptContainer.textContent = '# Python script unavailable for ' + currentSelectedPlanet + '...';
+                        scriptContainer.style.opacity = "0.5";
+                        if(downloadBtn) downloadBtn.style.display = 'none';
+                    }
+
+                    // Show Modal
+                    const modal = document.getElementById('planetModal');
+                    if (modal) {
+                        modal.classList.remove('d-none');
+                        modal.style.display = "flex"; // Fallback to ensure display
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        alert("Could not find planetModal element!");
+                    }
+                } catch(err) {
+                    alert("Error opening modal: " + err.message);
+                    console.error("openPlanetModal error:", err);
                 }
-            });
+            }
 
-            // Update Button Styles
-            document.querySelectorAll('.db-nav-btn').forEach(btn => {
-                btn.classList.remove('btn-light');
-                btn.classList.add('btn-outline-light', 'text-white');
-            });
-            btnElement.classList.remove('btn-outline-light', 'text-white');
-            btnElement.classList.add('btn-light');
-        }
+            function closePlanetModal() {
+                const modal = document.getElementById('planetModal');
+                modal.classList.add('d-none');
+                document.body.style.overflow = 'auto';
+                document.getElementById('modal-video').pause();
+            }
 
-        // Initialize with Sun stats
-        document.addEventListener('DOMContentLoaded', () => {
-            const firstBtn = document.querySelector('.db-nav-btn');
-            if (firstBtn) selectPlanet('Sun', firstBtn);
-        });
-    </script>
-</body>
-</html>
+            function copyModalScript() {
+                const content = document.getElementById('modal-script-content').textContent;
+                navigator.clipboard.writeText(content).then(() => {
+                    alert("Script copied to clipboard!");
+                });
+            }
+
+            function toggleFullscreenVideo(id) {
+                const video = document.getElementById(id);
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                }
+            }
+
+            // Initialize with Sun stats
+            document.addEventListener('DOMContentLoaded', () => {
+                const firstBtn = document.querySelector('.db-nav-btn');
+                if (firstBtn) selectPlanet('Sun', firstBtn);
+            });
+        </script>
+    </body>
+
+    </html>
